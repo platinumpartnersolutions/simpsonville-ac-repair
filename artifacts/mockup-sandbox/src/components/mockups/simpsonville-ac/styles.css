@@ -71,34 +71,34 @@ ul { list-style:none; margin:0; padding:0 }
 .phone-city { font-size:11px; color:#666; line-height:1 }
 .phone-num  { font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; color:var(--navy); line-height:1.2 }
 
-/* ─── NAV BAR — lime green, exact match to reference ─── */
-.hdr-nav { background:var(--lime) }
+/* ─── NAV BAR — navy brand color ─── */
+.hdr-nav { background:var(--navy) }
 .nav-inner { height:46px; gap:0 }
 .nav-list { display:flex; align-items:stretch; height:100% }
 .nav-list li { display:flex }
 .nav-link {
   display:flex; align-items:center; gap:3px;
   padding:0 14px; font-family:'Poppins',sans-serif;
-  font-size:13px; font-weight:700; color:var(--navy-dk);
+  font-size:13px; font-weight:600; color:rgba(255,255,255,.9);
   border-bottom:3px solid transparent;
-  transition:background .15s,border-color .15s;
+  transition:background .15s,border-color .15s,color .15s;
   white-space:nowrap;
 }
-.nav-link:hover { background:rgba(0,0,0,.08); border-bottom-color:var(--navy); color:var(--navy) }
-.nav-link svg { opacity:.65 }
+.nav-link:hover { background:rgba(255,255,255,.1); border-bottom-color:#fff; color:#fff }
+.nav-link svg { opacity:.7 }
 .nav-right { margin-left:auto; display:flex; align-items:center; gap:4px }
-.nav-search-btn { display:flex; padding:8px; color:var(--navy-dk); border-radius:4px; transition:background .15s }
-.nav-search-btn:hover { background:rgba(0,0,0,.1) }
+.nav-search-btn { display:flex; padding:8px; color:rgba(255,255,255,.85); border-radius:4px; transition:background .15s }
+.nav-search-btn:hover { background:rgba(255,255,255,.12); color:#fff }
 
-/* BOOK NOW — navy block on right, exactly as in reference */
+/* BOOK NOW — red CTA to stand out on navy nav */
 .book-now {
   display:flex; align-items:center; gap:7px;
-  background:var(--navy-dk); color:#fff;
+  background:var(--red); color:#fff;
   font-family:'Poppins',sans-serif; font-weight:800; font-size:13.5px;
   padding:0 22px; height:46px; letter-spacing:.5px;
   transition:background .2s;
 }
-.book-now:hover { background:var(--navy); color:#fff }
+.book-now:hover { background:var(--red-dk); color:#fff }
 
 /* ─── HERO — full-bleed van background ─── */
 .hero {
