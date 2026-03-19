@@ -3,7 +3,15 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { LeadForm } from "@/components/LeadForm";
 import { SEO, serviceSchema } from "@/components/SEO";
+import { getHvacIcon } from "@/components/Icons";
 import "./landing.css";
+
+const EMOJI_ICON: Record<string, string> = {
+  "⚡": "lightning", "🔧": "wrench", "💰": "dollar", "🛡️": "shield",
+  "🏆": "certificate", "⏱": "clock", "🌡️": "hvac", "🔄": "replace",
+  "📦": "install", "❄️": "ac", "🎯": "minisplit", "🛠️": "maintenance",
+  "♻️": "heatpump", "🔥": "furnace", "⭐": "star", "✅": "shield",
+};
 
 interface ServiceData {
   h1: string;
@@ -238,7 +246,7 @@ export default function ServicePage() {
             <div className="inner-benefits-grid">
               {data.benefits.map((b, i) => (
                 <div key={i} className="inner-benefit-card">
-                  <div className="inner-benefit-icon">{b.icon}</div>
+                  <div className="inner-benefit-icon">{getHvacIcon(EMOJI_ICON[b.icon] ?? b.icon, 36)}</div>
                   <h3>{b.title}</h3>
                   <p>{b.body}</p>
                 </div>

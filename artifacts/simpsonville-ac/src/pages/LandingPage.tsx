@@ -4,6 +4,7 @@ import { SiteHeader, Stars, TopBar } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SEO, LOCAL_BUSINESS_SCHEMA, FAQ_SCHEMA } from "@/components/SEO";
 import { LeadForm } from "@/components/LeadForm";
+import { getHvacIcon } from "@/components/Icons";
 import "./landing.css";
 
 function useInView(threshold = 0.1) {
@@ -83,14 +84,14 @@ function TrustBadges() {
     <div className="trust-bar">
       <div className="trust-bar-inner">
         {[
-          { icon: "⭐", label: "4.8 Google Rating", sub: "7,445+ reviews" },
-          { icon: "✅", label: "Licensed & Insured", sub: "SC Contractor" },
-          { icon: "⚡", label: "Same-Day Service", sub: "Available now" },
-          { icon: "💰", label: "Free Estimates", sub: "No obligation" },
-          { icon: "🎉", label: "No Payments Until 2027", sub: "Financing available" },
+          { icon: "star",       label: "4.8 Google Rating", sub: "7,445+ reviews" },
+          { icon: "shield",     label: "Licensed & Insured", sub: "SC Contractor" },
+          { icon: "lightning",  label: "Same-Day Service", sub: "Available now" },
+          { icon: "dollar",     label: "Free Estimates", sub: "No obligation" },
+          { icon: "financing",  label: "No Payments Until 2027", sub: "Financing available" },
         ].map((b, i) => (
           <div key={i} className="trust-badge-item">
-            <span className="trust-badge-icon">{b.icon}</span>
+            <span className="trust-badge-icon">{getHvacIcon(b.icon, 24)}</span>
             <div>
               <div className="trust-badge-label">{b.label}</div>
               <div className="trust-badge-sub">{b.sub}</div>
@@ -104,14 +105,14 @@ function TrustBadges() {
 
 /* ─── ALL SERVICES GRID ─── */
 const ALL_SERVICES = [
-  { icon: "❄️", title: "AC Repair", path: "/ac-repair/", desc: "Fast diagnosis and repair for all central AC systems." },
-  { icon: "🌡️", title: "HVAC Repair", path: "/hvac-repair/", desc: "Full heating and cooling system repair and restoration." },
-  { icon: "📦", title: "AC Installation", path: "/ac-installation/", desc: "New AC system installation — all brands, proper sizing." },
-  { icon: "🔄", title: "AC Replacement", path: "/ac-replacement/", desc: "Upgrade from your old, inefficient unit to a modern system." },
-  { icon: "♻️", title: "Heat Pump Repair", path: "/heat-pump-repair/", desc: "Expert heat pump diagnosis, repair, and installation." },
-  { icon: "🔥", title: "Furnace Repair", path: "/furnace-repair/", desc: "Same-day furnace repair — gas, electric, and oil systems." },
-  { icon: "🛠️", title: "AC Maintenance", path: "/ac-maintenance/", desc: "Seasonal tune-ups to prevent breakdowns and lower bills." },
-  { icon: "🎯", title: "Ductless Mini Split", path: "/ductless-mini-split/", desc: "Zone cooling for additions, garages, and rooms without ducts." },
+  { icon: "ac",          title: "AC Repair",          path: "/ac-repair/",          desc: "Fast diagnosis and repair for all central AC systems." },
+  { icon: "hvac",        title: "HVAC Repair",         path: "/hvac-repair/",        desc: "Full heating and cooling system repair and restoration." },
+  { icon: "install",     title: "AC Installation",     path: "/ac-installation/",    desc: "New AC system installation — all brands, proper sizing." },
+  { icon: "replace",     title: "AC Replacement",      path: "/ac-replacement/",     desc: "Upgrade from your old, inefficient unit to a modern system." },
+  { icon: "heatpump",    title: "Heat Pump Repair",    path: "/heat-pump-repair/",   desc: "Expert heat pump diagnosis, repair, and installation." },
+  { icon: "furnace",     title: "Furnace Repair",      path: "/furnace-repair/",     desc: "Same-day furnace repair — gas, electric, and oil systems." },
+  { icon: "maintenance", title: "AC Maintenance",      path: "/ac-maintenance/",     desc: "Seasonal tune-ups to prevent breakdowns and lower bills." },
+  { icon: "minisplit",   title: "Ductless Mini Split", path: "/ductless-mini-split/",desc: "Zone cooling for additions, garages, and rooms without ducts." },
 ];
 
 function ServicesGrid() {
@@ -127,7 +128,7 @@ function ServicesGrid() {
           {ALL_SERVICES.map((s, i) => (
             <Reveal key={i} delay={i * 60}>
               <Link href={s.path} className="all-service-card">
-                <div className="asc-icon">{s.icon}</div>
+                <div className="asc-icon">{getHvacIcon(s.icon, 44)}</div>
                 <h3 className="asc-title">{s.title}</h3>
                 <p className="asc-desc">{s.desc}</p>
                 <span className="asc-link">Learn More →</span>
@@ -185,10 +186,10 @@ function ContentOffer() {
 
 /* ─── LOCAL FACTORS ─── */
 const FACTORS = [
-  { icon: "☀️", title: "Extended Summer Heat", body: "Summers across the Greenville area bring long stretches of warm weather. Cooling systems often run throughout the day, especially during peak summer months when humidity levels climb." },
-  { icon: "🏘️", title: "Rapid Housing Growth", body: "Simpsonville continues to attract new residential development. Many homes are part of newer subdivisions, while others have been part of the community for decades. This mix of housing means system needs can vary widely across neighborhoods." },
-  { icon: "⛈️", title: "Storm Activity", body: "Afternoon thunderstorms are common in the Upstate during summer. Sudden downpours and lightning can occasionally affect electrical components or expose weaknesses in plumbing systems." },
-  { icon: "👨‍👩‍👧", title: "Busy Household Usage", body: "With many growing families living in the area, household systems often see heavy daily use. Water heaters, cooling systems, and electrical circuits all work hard to support modern living." },
+  { icon: "sun",    title: "Extended Summer Heat",  body: "Summers across the Greenville area bring long stretches of warm weather. Cooling systems often run throughout the day, especially during peak summer months when humidity levels climb." },
+  { icon: "house",  title: "Rapid Housing Growth",  body: "Simpsonville continues to attract new residential development. Many homes are part of newer subdivisions, while others have been part of the community for decades. This mix of housing means system needs can vary widely across neighborhoods." },
+  { icon: "storm",  title: "Storm Activity",         body: "Afternoon thunderstorms are common in the Upstate during summer. Sudden downpours and lightning can occasionally affect electrical components or expose weaknesses in plumbing systems." },
+  { icon: "family", title: "Busy Household Usage",  body: "With many growing families living in the area, household systems often see heavy daily use. Water heaters, cooling systems, and electrical circuits all work hard to support modern living." },
 ];
 
 function LocalFactors() {
@@ -204,7 +205,7 @@ function LocalFactors() {
           {FACTORS.map((f, i) => (
             <Reveal key={i} delay={i * 90}>
               <div className="factor-card">
-                <div className="factor-icon-wrap"><span className="factor-icon">{f.icon}</span></div>
+                <div className="factor-icon-wrap">{getHvacIcon(f.icon, 40)}</div>
                 <div>
                   <h3 className="factor-title">{f.title}</h3>
                   <p className="factor-desc">{f.body}</p>
