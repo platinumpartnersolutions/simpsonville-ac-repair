@@ -64,12 +64,12 @@ function Hero() {
             <span className="hero-h1-geo">in Simpsonville, SC</span>
           </h1>
           <div className="hero-ctas">
-            <Link href="/free-estimate/" className="cta-primary">📅 Schedule Service Today</Link>
+            <a href="tel:8647547291" className="cta-primary">Call Now — Same Day Service</a>
             <a href="tel:8647547291" className="cta-outline">864-754-7291</a>
           </div>
           <div style={{ marginTop: 14 }}>
-            <Link href="/emergency-ac-repair/" style={{ color: "#fca5a5", fontSize: 13.5, fontWeight: 700, display: "inline-flex", alignItems: "center", gap: 6 }}>
-              🚨 Need emergency service right now?
+            <Link href="/emergency-ac-repair/" style={{ color: "#fff", fontSize: 13.5, fontWeight: 700, display: "inline-flex", alignItems: "center", gap: 6, textShadow: "-1px -1px 0 #CC2229, 1px -1px 0 #CC2229, -1px 1px 0 #CC2229, 1px 1px 0 #CC2229" }}>
+              Need emergency service right now?
             </Link>
           </div>
         </div>
