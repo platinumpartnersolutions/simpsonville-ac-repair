@@ -68,7 +68,7 @@ function Hero() {
             <a href="tel:8647547291" className="cta-outline">864-754-7291</a>
           </div>
           <div style={{ marginTop: 14 }}>
-            <Link href="/emergency-ac-repair/" style={{ color: "#fff", fontSize: 13.5, fontWeight: 700, display: "inline-flex", alignItems: "center", gap: 6, textShadow: "-1px -1px 0 #CC2229, 1px -1px 0 #CC2229, -1px 1px 0 #CC2229, 1px 1px 0 #CC2229" }}>
+            <Link href="/emergency-ac-repair/" style={{ color: "#fff", fontSize: 13.5, fontWeight: 700, display: "inline-flex", alignItems: "center", gap: 6, textShadow: "-0.4px -0.4px 0 #CC2229, 0.4px -0.4px 0 #CC2229, -0.4px 0.4px 0 #CC2229, 0.4px 0.4px 0 #CC2229" }}>
               Need emergency service right now?
             </Link>
           </div>
