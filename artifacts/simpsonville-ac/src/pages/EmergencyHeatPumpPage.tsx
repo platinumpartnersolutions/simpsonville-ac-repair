@@ -11,13 +11,13 @@ const PROBLEMS = [
 
 const config: EmergencyPageConfig = {
   seo: {
-    title: "Emergency Heat Pump Repair Simpsonville SC | Same-Day Service | (810) 998-6747",
-    description: "Heat pump failure in Simpsonville? Same-day emergency repair available. Local, licensed, ready now. No after-hours upcharge. Call (810) 998-6747.",
+    title: "Emergency Heat Pump Repair Simpsonville SC | Same-Day Service | 864-754-7291",
+    description: "Heat pump failure in Simpsonville? Same-day emergency repair available. Local, licensed, ready now. No after-hours upcharge. Call 864-754-7291.",
     canonical: "/emergency-heat-pump-repair/",
   },
   breadcrumb: "Emergency Heat Pump Repair",
   h1: "Emergency Heat Pump Repair in Simpsonville, SC",
-  tagline: "A heat pump failure in Simpsonville means losing both your heating and cooling in one failure — we provide same-day emergency heat pump repair so you're not stuck without climate control. Call (810) 998-6747 now.",
+  tagline: "A heat pump failure in Simpsonville means losing both your heating and cooling in one failure — we provide same-day emergency heat pump repair so you're not stuck without climate control. Call 864-754-7291 now.",
   bannerLabel: "EMERGENCY HEAT PUMP REPAIR — AVAILABLE NOW",
   defaultService: "Heat Pump Repair",
   heroColor: "linear-gradient(135deg, #064e3b 0%, #065f46 100%)",
@@ -50,7 +50,7 @@ const config: EmergencyPageConfig = {
       content: (
         <div className="emergency-steps">
           {[
-            { n: "1", title: "You call — we dispatch same-day", body: "Call (810) 998-6747 and we'll get a technician to your Simpsonville home today. Heat pump emergencies are dispatched with the same priority as AC failures." },
+            { n: "1", title: "You call — we dispatch same-day", body: "Call 864-754-7291 and we'll get a technician to your Simpsonville home today. Heat pump emergencies are dispatched with the same priority as AC failures." },
             { n: "2", title: "Mode testing and fault code retrieval", body: "Heat pump diagnostics are more involved than standard AC — we test both heating and cooling modes, check refrigerant pressures, and retrieve any stored fault codes from the control board." },
             { n: "3", title: "Root cause identified and explained", body: "We don't guess. We identify the exact component that failed, explain it in plain language, and give you a written quote before any repair begins." },
             { n: "4", title: "Same-visit repair in most cases", body: "We carry reversing valves, capacitors, contactors, refrigerant, and control boards for the most common heat pump brands on every service van." },

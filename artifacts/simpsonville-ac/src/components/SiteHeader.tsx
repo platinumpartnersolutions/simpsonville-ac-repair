@@ -182,22 +182,22 @@ export function SiteHeader() {
                 </div>
               </div>
               <div className="hdr-phones">
-                <a href="tel:8109986747" className="hdr-phone">
+                <a href="tel:8647547291" className="hdr-phone">
                   <svg className="phone-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
                   </svg>
                   <div>
                     <div className="phone-city">Simpsonville</div>
-                    <div className="phone-num">(810) 998-6747</div>
+                    <div className="phone-num">864-754-7291</div>
                   </div>
                 </a>
-                <a href="tel:8643809450" className="hdr-phone">
+                <a href="tel:8647547291" className="hdr-phone">
                   <svg className="phone-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
                   </svg>
                   <div>
                     <div className="phone-city">Greenville</div>
-                    <div className="phone-num">864-380-9450</div>
+                    <div className="phone-num">864-754-7291</div>
                   </div>
                 </a>
               </div>
@@ -224,8 +224,8 @@ export function SiteHeader() {
                 ))}
               </ul>
               <div className="nav-right">
-                <a href="tel:8109986747" className="nav-tel-compact" aria-label="Call Simpsonville: (810) 998-6747">
-                  📞 (810) 998-6747
+                <a href="tel:8647547291" className="nav-tel-compact" aria-label="Call Simpsonville: 864-754-7291">
+                  📞 864-754-7291
                 </a>
                 <Link href="/emergency-ac-repair/" className="book-now">
                   🚨 Emergency Service
@@ -246,8 +246,8 @@ export function SiteHeader() {
       >
         {/* Phone CTA at top of mobile menu */}
         <div className="mobile-nav-top">
-          <a href="tel:8109986747" className="mobile-call-btn">
-            📞 Call (810) 998-6747
+          <a href="tel:8647547291" className="mobile-call-btn">
+            📞 Call 864-754-7291
           </a>
           <Link href="/free-estimate/" className="mobile-estimate-btn" onClick={() => setMobileOpen(false)}>
             📅 Get Free Estimate

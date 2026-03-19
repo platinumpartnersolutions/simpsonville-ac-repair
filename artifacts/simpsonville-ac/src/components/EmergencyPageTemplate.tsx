@@ -83,7 +83,7 @@ export function EmergencyPageTemplate({ config }: { config: EmergencyPageConfig 
         <div className="tb-inner">
           <span>🚨 EMERGENCY SERVICE AVAILABLE NOW</span>
           <span className="tb-div">|</span>
-          <a href="tel:8109986747" style={{ color: "#fff", fontWeight: 700 }}>📞 CALL (810) 998-6747 NOW</a>
+          <a href="tel:8647547291" style={{ color: "#fff", fontWeight: 700 }}>📞 CALL 864-754-7291 NOW</a>
         </div>
       </div>
       <SiteHeader />
@@ -94,10 +94,10 @@ export function EmergencyPageTemplate({ config }: { config: EmergencyPageConfig 
           <div className="emergency-pulse">🚨</div>
           <div>
             <div className="emergency-banner-label">{config.bannerLabel}</div>
-            <a href="tel:8109986747" className="emergency-phone-link">(810) 998-6747</a>
+            <a href="tel:8647547291" className="emergency-phone-link">864-754-7291</a>
             <div className="emergency-banner-sub">Simpsonville &amp; Greenville Area · Same-Day Response</div>
           </div>
-          <a href="tel:8109986747" className="emergency-call-btn">📞 CALL NOW</a>
+          <a href="tel:8647547291" className="emergency-call-btn">📞 CALL NOW</a>
         </div>
       </div>
 
@@ -142,8 +142,8 @@ export function EmergencyPageTemplate({ config }: { config: EmergencyPageConfig 
             {/* Bottom CTA */}
             <div style={{ marginTop: 40, padding: "28px 24px", background: "#9b1c1c", borderRadius: 12, textAlign: "center" }}>
               <p style={{ color: "#fca5a5", fontSize: 15, marginBottom: 16 }}>{config.bottomCta}</p>
-              <a href="tel:8109986747" className="cta-primary" style={{ display: "inline-flex" }}>
-                📞 Call (810) 998-6747 Now
+              <a href="tel:8647547291" className="cta-primary" style={{ display: "inline-flex" }}>
+                📞 Call 864-754-7291 Now
               </a>
             </div>
           </main>
@@ -151,8 +151,8 @@ export function EmergencyPageTemplate({ config }: { config: EmergencyPageConfig 
           <aside className="inner-sidebar">
             <div className="emergency-sidebar-phone">
               <div style={{ fontSize: 13, color: "#fff", opacity: 0.8, marginBottom: 4 }}>CALL NOW — EMERGENCY LINE</div>
-              <a href="tel:8109986747" style={{ fontSize: 26, fontFamily: "'Poppins',sans-serif", fontWeight: 900, color: "#fff", display: "block", marginBottom: 4 }}>
-                (810) 998-6747
+              <a href="tel:8647547291" style={{ fontSize: 26, fontFamily: "'Poppins',sans-serif", fontWeight: 900, color: "#fff", display: "block", marginBottom: 4 }}>
+                864-754-7291
               </a>
               <div style={{ fontSize: 12, color: "rgba(255,255,255,.7)" }}>Available for urgent HVAC failures</div>
             </div>

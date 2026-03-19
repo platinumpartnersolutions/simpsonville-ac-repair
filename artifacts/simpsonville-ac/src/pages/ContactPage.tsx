@@ -9,15 +9,15 @@ export default function ContactPage() {
   return (
     <div className="page-root">
       <SEO
-        title="Contact Simpsonville AC Repair | (810) 998-6747"
-        description="Contact Simpsonville AC Repair for HVAC, plumbing, and electrical service. Call (810) 998-6747 or fill out our online form. Serving Simpsonville & Greenville SC."
+        title="Contact Simpsonville AC Repair | 864-754-7291"
+        description="Contact Simpsonville AC Repair for HVAC, plumbing, and electrical service. Call 864-754-7291 or fill out our online form. Serving Simpsonville & Greenville SC."
         canonical="/contact/"
       />
       <div className="topbar">
         <div className="tb-inner">
           <span>📍 Serving Simpsonville &amp; Greenville Areas</span>
           <span className="tb-div">|</span>
-          <span>📞 <a href="tel:8109986747" style={{ color: "#fff", fontWeight: 700 }}>(810) 998-6747</a></span>
+          <span>📞 <a href="tel:8647547291" style={{ color: "#fff", fontWeight: 700 }}>864-754-7291</a></span>
         </div>
       </div>
       <SiteHeader />
@@ -30,8 +30,8 @@ export default function ContactPage() {
             <span>Contact</span>
           </div>
           <h1 className="inner-h1">Contact Simpsonville AC Repair</h1>
-          <a href="tel:8109986747" className="inner-cta-phone">
-            📞 <strong>(810) 998-6747</strong> — Call Anytime
+          <a href="tel:8647547291" className="inner-cta-phone">
+            📞 <strong>864-754-7291</strong> — Call Anytime
           </a>
         </div>
       </div>
@@ -48,9 +48,9 @@ export default function ContactPage() {
               <div className="contact-detail-card">
                 <div className="contact-detail-icon">📞</div>
                 <h3>Phone</h3>
-                <a href="tel:8109986747" className="contact-detail-val">(810) 998-6747</a>
+                <a href="tel:8647547291" className="contact-detail-val">864-754-7291</a>
                 <div className="contact-detail-sub">Simpsonville Line</div>
-                <a href="tel:8643809450" className="contact-detail-val">864-380-9450</a>
+                <a href="tel:8647547291" className="contact-detail-val">864-754-7291</a>
                 <div className="contact-detail-sub">Greenville Line</div>
               </div>
               <div className="contact-detail-card">
@@ -108,7 +108,7 @@ export default function ContactPage() {
             <div className="sidebar-emergency" style={{ marginTop: 16 }}>
               <div style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: 15, color: "#CC2229", marginBottom: 6 }}>🚨 Emergency Service</div>
               <p style={{ fontSize: 13, color: "#555", margin: "0 0 12px" }}>AC out right now? Call us directly for fastest response.</p>
-              <a href="tel:8109986747" className="cta-primary" style={{ display: "block", textAlign: "center" }}>📞 (810) 998-6747</a>
+              <a href="tel:8647547291" className="cta-primary" style={{ display: "block", textAlign: "center" }}>📞 864-754-7291</a>
             </div>
           </aside>
         </div>

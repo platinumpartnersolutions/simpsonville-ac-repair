@@ -40,8 +40,8 @@ export function SiteFooter() {
           </div>
           <p className="footer-desc">Simpsonville's most trusted HVAC, plumbing, and electrical company. Serving our community with pride since 2023.</p>
           <div className="footer-contact-info">
-            <div>📞 <a href="tel:8109986747" style={{ color: "inherit" }}>(810) 998-6747</a></div>
-            <div>📞 <a href="tel:8643809450" style={{ color: "inherit" }}>864-380-9450</a></div>
+            <div>📞 <a href="tel:8647547291" style={{ color: "inherit" }}>864-754-7291</a></div>
+            <div>📞 <a href="tel:8647547291" style={{ color: "inherit" }}>864-754-7291</a></div>
             <div>🌐 simpsonvilleacrepair.com</div>
             <div>📍 Simpsonville, SC 29681</div>
           </div>
@@ -77,7 +77,7 @@ export function SiteFooter() {
             <Link key={i} href={href} className="footer-col-link">{label}</Link>
           ))}
           <div className="footer-cta-block">
-            <a href="tel:8109986747" className="footer-cta-btn">(810) 998-6747</a>
+            <a href="tel:8647547291" className="footer-cta-btn">864-754-7291</a>
           </div>
         </div>
       </div>

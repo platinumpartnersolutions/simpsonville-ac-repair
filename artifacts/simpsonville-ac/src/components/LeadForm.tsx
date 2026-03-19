@@ -54,8 +54,8 @@ export function LeadForm({ title = "Request Service", subtitle, dark = false, de
           <p style={{ color: "#555", marginBottom: 20 }}>
             We'll call you back shortly to confirm your appointment.
           </p>
-          <a href="tel:8109986747" className="cta-primary" style={{ display: "inline-flex" }}>
-            📞 Call Now: (810) 998-6747
+          <a href="tel:8647547291" className="cta-primary" style={{ display: "inline-flex" }}>
+            📞 Call Now: 864-754-7291
           </a>
         </div>
       </div>
@@ -92,7 +92,7 @@ export function LeadForm({ title = "Request Service", subtitle, dark = false, de
             value={form.phone}
             onChange={handle}
             required
-            placeholder="(810) 555-0000"
+            placeholder="(864) 555-0000"
             autoComplete="tel"
           />
         </div>
@@ -133,7 +133,7 @@ export function LeadForm({ title = "Request Service", subtitle, dark = false, de
 
       <div style={{ marginTop: 14, textAlign: "center", fontSize: 13, color: "#888" }}>
         Or call directly:{" "}
-        <a href="tel:8109986747" style={{ color: "#0D2D6E", fontWeight: 700 }}>(810) 998-6747</a>
+        <a href="tel:8647547291" style={{ color: "#0D2D6E", fontWeight: 700 }}>864-754-7291</a>
       </div>
     </div>
   );

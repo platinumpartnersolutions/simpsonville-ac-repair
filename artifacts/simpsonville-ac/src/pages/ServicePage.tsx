@@ -22,7 +22,7 @@ const DATA: Record<string, ServiceData> = {
   "/ac-repair/": {
     h1: "AC Repair in Simpsonville, SC",
     metaTitle: "AC Repair Simpsonville SC | Same-Day Service | Free Estimate",
-    metaDesc: "Fast, reliable AC repair in Simpsonville, SC. Licensed technicians, same-day service, free estimates. Call (810) 998-6747 now.",
+    metaDesc: "Fast, reliable AC repair in Simpsonville, SC. Licensed technicians, same-day service, free estimates. Call 864-754-7291 now.",
     intro: "When your air conditioner stops working or struggles to keep your home cool during Simpsonville's hot summers, you need fast, dependable repair service. Licensed technicians in our network diagnose and fix all makes and models of central air conditioning systems — from refrigerant leaks and frozen coils to faulty compressors and electrical failures. We connect you with same-day service and transparent pricing with no surprise fees.",
     benefits: [
       { icon: "⚡", title: "Same-Day Service", body: "Local licensed contractors are dispatched quickly so you're not stuck in the heat. Most repairs are completed on the first visit." },
@@ -47,7 +47,7 @@ const DATA: Record<string, ServiceData> = {
   "/hvac-repair/": {
     h1: "HVAC Repair in Simpsonville, SC",
     metaTitle: "HVAC Repair Simpsonville SC | Licensed Technicians | Call Today",
-    metaDesc: "Professional HVAC repair in Simpsonville, SC. Licensed contractors, all systems serviced. Call (810) 998-6747 for same-day service.",
+    metaDesc: "Professional HVAC repair in Simpsonville, SC. Licensed contractors, all systems serviced. Call 864-754-7291 for same-day service.",
     intro: "Your HVAC system is responsible for keeping your home comfortable year-round in Simpsonville's climate — from humid summer heat to cooler winter evenings. When heating or cooling performance drops, a properly trained HVAC technician can diagnose the root cause and restore reliable operation. We service all types of residential HVAC systems, including split systems, packaged units, heat pumps, and gas furnace combinations.",
     benefits: [
       { icon: "🌡️", title: "Full System Diagnostics", body: "We test every component — compressor, blower motor, heat exchanger, refrigerant levels — to find the exact cause of your issue." },
@@ -69,7 +69,7 @@ const DATA: Record<string, ServiceData> = {
   "/ac-installation/": {
     h1: "AC Installation in Simpsonville, SC",
     metaTitle: "AC Installation Simpsonville SC | New Units | Free Estimate",
-    metaDesc: "Expert AC installation in Simpsonville, SC. All major brands, free estimates, financing available. Call (810) 998-6747.",
+    metaDesc: "Expert AC installation in Simpsonville, SC. All major brands, free estimates, financing available. Call 864-754-7291.",
     intro: "Installing a new air conditioning system in your Simpsonville home is one of the most impactful comfort upgrades you can make. A properly sized and installed central AC unit delivers consistent, efficient cooling through the Upstate's long, hot summers. Licensed installation teams handle everything from equipment selection and load calculations to refrigerant charging and system commissioning — leaving your home cool and your new system running correctly from day one.",
     benefits: [
       { icon: "📐", title: "Proper Load Calculation", body: "We size your new system correctly using Manual J load calculations — not guesswork. Correct sizing means lower bills and fewer breakdowns." },
@@ -90,7 +90,7 @@ const DATA: Record<string, ServiceData> = {
   "/ac-replacement/": {
     h1: "AC Replacement in Simpsonville, SC",
     metaTitle: "AC Replacement Simpsonville SC | Same-Day Quotes | All Brands",
-    metaDesc: "Fast AC replacement in Simpsonville, SC. Same-day quotes, all brands, financing available. Call (810) 998-6747.",
+    metaDesc: "Fast AC replacement in Simpsonville, SC. Same-day quotes, all brands, financing available. Call 864-754-7291.",
     intro: "When repairing your existing air conditioner no longer makes financial sense, replacing it with a modern high-efficiency unit is the smarter investment. Our network of licensed contractors helps Simpsonville homeowners navigate the replacement process — from selecting the right capacity and efficiency rating to professional removal of the old system and complete installation of the new one. We connect you with competitive pricing and same-day quotes so you can make an informed decision quickly.",
     benefits: [
       { icon: "💡", title: "Energy Savings", body: "Modern SEER2-rated systems use significantly less electricity than units from 10+ years ago. Most homeowners see monthly savings immediately." },
@@ -111,7 +111,7 @@ const DATA: Record<string, ServiceData> = {
   "/heat-pump-repair/": {
     h1: "Heat Pump Repair & Installation in Simpsonville, SC",
     metaTitle: "Heat Pump Repair Simpsonville SC | Install & Replace | Call Now",
-    metaDesc: "Expert heat pump repair and installation in Simpsonville, SC. All brands serviced. Call (810) 998-6747 for same-day service.",
+    metaDesc: "Expert heat pump repair and installation in Simpsonville, SC. All brands serviced. Call 864-754-7291 for same-day service.",
     intro: "Heat pumps are the most energy-efficient way to heat and cool homes in Simpsonville's moderate climate — moving heat rather than generating it. When your heat pump struggles in either cooling or heating mode, local licensed technicians can diagnose the issue quickly, from reversing valve failures and defrost cycle problems to refrigerant leaks and compressor issues. We also connect you with full heat pump installations and replacements for homeowners upgrading from gas or older systems.",
     benefits: [
       { icon: "♻️", title: "Dual-Mode Expertise", body: "We service heat pumps in both cooling and heating modes — understanding the full refrigerant cycle and reversing valve operation." },
@@ -134,7 +134,7 @@ const DATA: Record<string, ServiceData> = {
   "/furnace-repair/": {
     h1: "Furnace Repair in Simpsonville, SC",
     metaTitle: "Furnace Repair Simpsonville SC | Same-Day Heat Restored",
-    metaDesc: "Fast furnace repair in Simpsonville, SC. Same-day service, gas and electric furnaces, licensed technicians. Call (810) 998-6747.",
+    metaDesc: "Fast furnace repair in Simpsonville, SC. Same-day service, gas and electric furnaces, licensed technicians. Call 864-754-7291.",
     intro: "When your furnace stops working during a Simpsonville winter, licensed technicians in our network respond quickly to restore heat to your home. We connect you with repair service for all types of residential furnaces including gas, electric, and oil systems — diagnosing ignition failures, heat exchanger cracks, blower motor issues, and control board faults. Most furnace repairs are completed on the same day, and contractor service vehicles carry common repair parts.",
     benefits: [
       { icon: "🔥", title: "Same-Day Heat Restoration", body: "We prioritize furnace calls during cold weather, dispatching technicians quickly to get your heat working again as fast as possible." },
@@ -158,7 +158,7 @@ const DATA: Record<string, ServiceData> = {
   "/ac-maintenance/": {
     h1: "AC Tune-Up & Maintenance in Simpsonville, SC",
     metaTitle: "AC Maintenance Simpsonville SC | Tune-Up & Service Plans",
-    metaDesc: "Professional AC tune-up and maintenance in Simpsonville, SC. Prevent breakdowns, lower bills, extend system life. Call (810) 998-6747.",
+    metaDesc: "Professional AC tune-up and maintenance in Simpsonville, SC. Prevent breakdowns, lower bills, extend system life. Call 864-754-7291.",
     intro: "Regular AC maintenance is the most cost-effective way to prevent breakdowns, lower your monthly energy bills, and extend the life of your Simpsonville home's cooling system. Our comprehensive seasonal tune-up includes over 20 inspection and service points — from cleaning the evaporator coil and checking refrigerant levels to lubricating moving parts and testing electrical connections. Schedule your tune-up before peak cooling season to ensure your system is ready for Simpsonville's summer heat.",
     benefits: [
       { icon: "📋", title: "20-Point Inspection", body: "We check refrigerant levels, inspect coils, test capacitors, clean drain lines, measure airflow, and verify all electrical connections." },
@@ -179,7 +179,7 @@ const DATA: Record<string, ServiceData> = {
   "/ductless-mini-split/": {
     h1: "Ductless Mini Split Installation in Simpsonville, SC",
     metaTitle: "Mini Split Installation Simpsonville SC | Ductless HVAC Experts",
-    metaDesc: "Professional ductless mini split installation in Simpsonville, SC. Multi-zone systems, all brands. Call (810) 998-6747 for a free estimate.",
+    metaDesc: "Professional ductless mini split installation in Simpsonville, SC. Multi-zone systems, all brands. Call 864-754-7291 for a free estimate.",
     intro: "Ductless mini split systems are the ideal solution for Simpsonville homes without existing ductwork, room additions, garages, sunrooms, and spaces where traditional ducted systems can't reach. These systems provide precise zone-by-zone temperature control with exceptional energy efficiency. Licensed technicians in our network handle design, installation, and commissioning of single-zone and multi-zone mini split systems from all major manufacturers.",
     benefits: [
       { icon: "🎯", title: "Zone Control", body: "Each indoor unit controls a specific zone independently. No more heating or cooling unoccupied rooms — saving energy and money." },
@@ -223,8 +223,8 @@ export default function ServicePage() {
             <span>{data.h1.split(" in ")[0]}</span>
           </div>
           <h1 className="inner-h1">{data.h1}</h1>
-          <a href="tel:8109986747" className="inner-cta-phone">
-            📞 <strong>(810) 998-6747</strong> — Call for Same-Day Service
+          <a href="tel:8647547291" className="inner-cta-phone">
+            📞 <strong>864-754-7291</strong> — Call for Same-Day Service
           </a>
         </div>
       </div>
@@ -257,7 +257,7 @@ export default function ServicePage() {
                 <strong>Need service now?</strong> Licensed contractors are standing by.
               </div>
               <div className="inner-cta-strip-btns">
-                <a href="tel:8109986747" className="cta-primary">📞 (810) 998-6747</a>
+                <a href="tel:8647547291" className="cta-primary">📞 864-754-7291</a>
                 <Link href="/free-estimate/" className="cta-outline-dark">Free Estimate →</Link>
               </div>
             </div>

@@ -64,7 +64,7 @@ function Hero() {
           </h1>
           <div className="hero-ctas">
             <Link href="/free-estimate/" className="cta-primary">📅 Schedule Service Today</Link>
-            <a href="tel:8109986747" className="cta-outline">(810) 998-6747</a>
+            <a href="tel:8647547291" className="cta-outline">864-754-7291</a>
           </div>
           <div style={{ marginTop: 14 }}>
             <Link href="/emergency-ac-repair/" style={{ color: "#fca5a5", fontSize: 13.5, fontWeight: 700, display: "inline-flex", alignItems: "center", gap: 6 }}>
@@ -425,14 +425,14 @@ function HomeLeadForm() {
                 <span className="contact-icon">📞</span>
                 <div>
                   <div style={{ color: "rgba(255,255,255,.6)", fontSize: 12 }}>Simpsonville</div>
-                  <a href="tel:8109986747" style={{ color: "#fff", fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 20 }}>(810) 998-6747</a>
+                  <a href="tel:8647547291" style={{ color: "#fff", fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 20 }}>864-754-7291</a>
                 </div>
               </div>
               <div className="contact-detail">
                 <span className="contact-icon">📞</span>
                 <div>
                   <div style={{ color: "rgba(255,255,255,.6)", fontSize: 12 }}>Greenville</div>
-                  <a href="tel:8643809450" style={{ color: "#fff", fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 20 }}>864-380-9450</a>
+                  <a href="tel:8647547291" style={{ color: "#fff", fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 20 }}>864-754-7291</a>
                 </div>
               </div>
               <div className="contact-badges">
@@ -461,7 +461,7 @@ export default function LandingPage() {
     <div className="page-root">
       <SEO
         title="AC Repair Simpsonville SC | 24/7 HVAC Service | Call Now"
-        description="Simpsonville's most trusted AC repair and HVAC company. Same-day service, free estimates, licensed technicians. Call (810) 998-6747."
+        description="Simpsonville's most trusted AC repair and HVAC company. Same-day service, free estimates, licensed technicians. Call 864-754-7291."
         canonical="/"
         schema={[LOCAL_BUSINESS_SCHEMA, FAQ_SCHEMA(FAQS)]}
       />

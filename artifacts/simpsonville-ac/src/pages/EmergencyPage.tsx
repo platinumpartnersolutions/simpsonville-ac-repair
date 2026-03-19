@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { EmergencyPageTemplate, IssueList, type EmergencyPageConfig } from "@/components/EmergencyPageTemplate";
 
 const STEPS = [
-  { n: "1", title: "You call — we confirm same-day availability", body: "Call (810) 998-6747 and we'll confirm we can get a technician to your Simpsonville home today. During peak summer months, calling early in the day secures the fastest slot." },
+  { n: "1", title: "You call — we confirm same-day availability", body: "Call 864-754-7291 and we'll confirm we can get a technician to your Simpsonville home today. During peak summer months, calling early in the day secures the fastest slot." },
   { n: "2", title: "Technician dispatched with fully stocked service van", body: "A local contractor is dispatched immediately. Contractor service vans are stocked with the most common replacement parts for Carrier, Trane, Lennox, Rheem, Goodman, York, and other major brands." },
   { n: "3", title: "Diagnosis on arrival — explained before touching anything", body: "When the technician arrives, they perform a thorough diagnostic and walk you through exactly what failed and why. You'll never be surprised by a repair you didn't understand." },
   { n: "4", title: "Upfront quote — no surprise charges", body: "Before any work begins, we give you a written quote. The price you approve is the price you pay. No after-hours upcharge, no hidden fees." },
@@ -20,13 +20,13 @@ const PROBLEMS = [
 
 const config: EmergencyPageConfig = {
   seo: {
-    title: "Emergency AC Repair Simpsonville SC | Same-Day | Call (810) 998-6747",
-    description: "AC broke down in Simpsonville? Our emergency AC repair team is available same-day. Licensed, local, and ready. Call (810) 998-6747 — no after-hours upcharge.",
+    title: "Emergency AC Repair Simpsonville SC | Same-Day | Call 864-754-7291",
+    description: "AC broke down in Simpsonville? Our emergency AC repair team is available same-day. Licensed, local, and ready. Call 864-754-7291 — no after-hours upcharge.",
     canonical: "/emergency-ac-repair/",
   },
   breadcrumb: "Emergency AC Repair",
   h1: "Emergency AC Repair in Simpsonville, SC — Available Now",
-  tagline: "If your AC just stopped working in Simpsonville, we offer same-day emergency repair service — most calls are diagnosed and repaired within 2–4 hours of your call. Call (810) 998-6747 now and we'll dispatch a technician to your home today.",
+  tagline: "If your AC just stopped working in Simpsonville, we offer same-day emergency repair service — most calls are diagnosed and repaired within 2–4 hours of your call. Call 864-754-7291 now and we'll dispatch a technician to your home today.",
   bannerLabel: "EMERGENCY AC REPAIR — AVAILABLE NOW",
   defaultService: "Emergency AC Repair",
   sections: [

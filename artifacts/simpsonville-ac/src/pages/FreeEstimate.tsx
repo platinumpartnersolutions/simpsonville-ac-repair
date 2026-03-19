@@ -17,7 +17,7 @@ export default function FreeEstimate() {
     <div className="page-root">
       <SEO
         title="Free AC & HVAC Estimate Simpsonville SC | No Obligation Quote"
-        description="Get a free, no-obligation HVAC estimate in Simpsonville, SC. We'll call within 1 hour. Call (810) 998-6747 or fill out the form."
+        description="Get a free, no-obligation HVAC estimate in Simpsonville, SC. We'll call within 1 hour. Call 864-754-7291 or fill out the form."
         canonical="/free-estimate/"
         schema={serviceSchema("Free HVAC Estimate", "Free, no-obligation HVAC estimates in Simpsonville, SC.", "/free-estimate/")}
       />
@@ -41,8 +41,8 @@ export default function FreeEstimate() {
           <p style={{ color: "#a8c4e8", fontSize: 16, maxWidth: 540, marginTop: 10 }}>
             No obligation. No pressure. Just an honest quote from licensed local technicians.
           </p>
-          <a href="tel:8109986747" className="inner-cta-phone" style={{ marginTop: 14 }}>
-            📞 <strong>(810) 998-6747</strong> — Call for an Immediate Response
+          <a href="tel:8647547291" className="inner-cta-phone" style={{ marginTop: 14 }}>
+            📞 <strong>864-754-7291</strong> — Call for an Immediate Response
           </a>
         </div>
       </div>
@@ -99,7 +99,7 @@ export default function FreeEstimate() {
             <div className="sidebar-emergency" style={{ marginTop: 16 }}>
               <div style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: 15, color: "#CC2229", marginBottom: 6 }}>🚨 Need Service Today?</div>
               <p style={{ fontSize: 13, color: "#555", margin: "0 0 12px" }}>Don't wait for an estimate — call us directly for same-day service.</p>
-              <a href="tel:8109986747" className="cta-primary" style={{ display: "block", textAlign: "center" }}>📞 (810) 998-6747</a>
+              <a href="tel:8647547291" className="cta-primary" style={{ display: "block", textAlign: "center" }}>📞 864-754-7291</a>
             </div>
             <Link href="/emergency-ac-repair/" className="cta-red" style={{ display: "block", textAlign: "center", marginTop: 10 }}>
               Emergency AC Repair →

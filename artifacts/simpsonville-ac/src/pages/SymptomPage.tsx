@@ -20,7 +20,7 @@ const DATA: Record<string, SymptomData> = {
   "/ac-not-cooling/": {
     h1: "AC Not Cooling in Simpsonville, SC? We Fix It Fast.",
     metaTitle: "AC Not Cooling Simpsonville SC | Emergency Repair | Call Now",
-    metaDesc: "AC blowing warm air in Simpsonville? Get fast diagnosis and repair. Same-day service available. Call (810) 998-6747 now.",
+    metaDesc: "AC blowing warm air in Simpsonville? Get fast diagnosis and repair. Same-day service available. Call 864-754-7291 now.",
     intro: "If your air conditioner is running but not cooling your Simpsonville home, several issues could be responsible — ranging from a simple refrigerant shortage to a failing compressor. The longer you wait, the hotter your home gets and the more stress is placed on the system. Local licensed technicians diagnose the exact cause quickly and restore cooling, usually on the same visit.",
     causes: [
       { icon: "🧊", cause: "Low or No Refrigerant", detail: "Refrigerant doesn't get used up — if levels are low, your system has a leak. We locate and repair the leak, then recharge to the correct level." },
@@ -37,7 +37,7 @@ const DATA: Record<string, SymptomData> = {
   "/ac-not-turning-on/": {
     h1: "AC Won't Turn On in Simpsonville, SC?",
     metaTitle: "AC Not Turning On Simpsonville SC | Same-Day Diagnosis",
-    metaDesc: "AC won't start in Simpsonville? Get same-day diagnosis and repair. Call (810) 998-6747 for fast service.",
+    metaDesc: "AC won't start in Simpsonville? Get same-day diagnosis and repair. Call 864-754-7291 for fast service.",
     intro: "An air conditioner that won't start or respond to the thermostat is one of the most urgent AC problems during Simpsonville's summer heat. The cause can be as simple as a tripped breaker or as involved as a failed control board. Local licensed technicians work through the diagnostic process systematically to find the exact cause and restore your system as quickly as possible.",
     causes: [
       { icon: "⚡", cause: "Tripped Circuit Breaker", detail: "AC units draw high current on startup. A tripped breaker — often caused by a power surge or an overloaded circuit — is the first thing to check." },
@@ -54,7 +54,7 @@ const DATA: Record<string, SymptomData> = {
   "/ac-leaking-water/": {
     h1: "AC Leaking Water in Simpsonville, SC?",
     metaTitle: "AC Leaking Water Simpsonville SC | Fast Repair Service",
-    metaDesc: "AC leaking water in Simpsonville? We diagnose and repair drain clogs, frozen coils, and more. Call (810) 998-6747.",
+    metaDesc: "AC leaking water in Simpsonville? We diagnose and repair drain clogs, frozen coils, and more. Call 864-754-7291.",
     intro: "Water leaking from your air conditioner — whether dripping from the indoor air handler or pooling on the floor — needs to be addressed quickly to prevent water damage, mold growth, and structural issues. In Simpsonville's humid climate, condensate drainage is critical to system performance and home health. Local licensed technicians diagnose the cause and fix it during the same visit in most cases.",
     causes: [
       { icon: "🚿", cause: "Clogged Condensate Drain Line", detail: "The most common cause. Algae, debris, and dirt build up in the drain line over time. We clear the blockage and treat the line to prevent regrowth." },
@@ -70,7 +70,7 @@ const DATA: Record<string, SymptomData> = {
   "/ac-making-noise/": {
     h1: "AC Making Loud Noise in Simpsonville, SC?",
     metaTitle: "AC Making Noise Simpsonville SC | Diagnose & Fix Today",
-    metaDesc: "Strange AC noises in Simpsonville? We diagnose banging, squealing, clicking, and rattling. Call (810) 998-6747 for same-day service.",
+    metaDesc: "Strange AC noises in Simpsonville? We diagnose banging, squealing, clicking, and rattling. Call 864-754-7291 for same-day service.",
     intro: "Your air conditioner should operate with a steady, low hum. Any new or unusual noise — banging, squealing, grinding, clicking, rattling, or hissing — is a signal that something is wrong inside the system. Catching and addressing these sounds early usually prevents more serious and expensive failures. Local licensed technicians can identify exactly what's causing the noise and repair it the same day.",
     causes: [
       { icon: "💥", cause: "Banging or Clanking", detail: "A loose or broken part — like a connecting rod, piston, or fan blade — hitting the housing or other components. Shut the system off and call us immediately." },
@@ -87,7 +87,7 @@ const DATA: Record<string, SymptomData> = {
   "/high-electric-bill/": {
     h1: "High Electric Bill from Your HVAC in Simpsonville, SC?",
     metaTitle: "HVAC High Electric Bill Simpsonville SC | Tune-Up & Repair",
-    metaDesc: "High electric bills from your HVAC in Simpsonville? A tune-up or repair could cut your costs. Call (810) 998-6747.",
+    metaDesc: "High electric bills from your HVAC in Simpsonville? A tune-up or repair could cut your costs. Call 864-754-7291.",
     intro: "If your electric bill has risen noticeably while your usage habits haven't changed, your HVAC system is often the culprit. Cooling and heating account for the largest portion of residential energy use in the Upstate, and an inefficient or struggling system can add hundreds of dollars to your annual utility costs. Local licensed technicians diagnose the specific cause of your system's energy waste and restore efficient operation.",
     causes: [
       { icon: "🌡️", cause: "Low Refrigerant", detail: "An AC with low refrigerant runs continuously trying to reach the setpoint — consuming electricity without effective cooling." },
@@ -130,8 +130,8 @@ export default function SymptomPage() {
             <span>Troubleshooting</span>
           </div>
           <h1 className="inner-h1">{data.h1}</h1>
-          <a href="tel:8109986747" className="inner-cta-phone urgent">
-            🚨 <strong>(810) 998-6747</strong> — Call for Same-Day Diagnosis
+          <a href="tel:8647547291" className="inner-cta-phone urgent">
+            🚨 <strong>864-754-7291</strong> — Call for Same-Day Diagnosis
           </a>
         </div>
       </div>
@@ -160,7 +160,7 @@ export default function SymptomPage() {
                 <p>Local licensed technicians will identify the exact cause and provide a written repair quote.</p>
               </div>
               <div className="inner-cta-strip-btns">
-                <a href="tel:8109986747" className="cta-primary">📞 Call Now</a>
+                <a href="tel:8647547291" className="cta-primary">📞 Call Now</a>
                 <Link href={data.relatedServicePath} className="cta-outline-dark">{data.relatedService} →</Link>
               </div>
             </div>

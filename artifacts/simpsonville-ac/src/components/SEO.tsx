@@ -96,7 +96,7 @@ export const LOCAL_BUSINESS_SCHEMA = {
   "@type": "HVACBusiness",
   "name": "Simpsonville AC Repair",
   "url": "https://simpsonvilleacrepair.com",
-  "telephone": "+18109986747",
+  "telephone": "+18647547291",
   "image": "https://simpsonvilleacrepair.com/van.jpeg",
   "address": {
     "@type": "PostalAddress",
@@ -140,7 +140,7 @@ export function serviceSchema(name: string, description: string, url: string) {
     "provider": {
       "@type": "HVACBusiness",
       "name": "Simpsonville AC Repair",
-      "telephone": "+18109986747",
+      "telephone": "+18647547291",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Simpsonville",

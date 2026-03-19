@@ -12,13 +12,13 @@ const PROBLEMS = [
 
 const config: EmergencyPageConfig = {
   seo: {
-    title: "Emergency Furnace Repair Simpsonville SC | Same-Day | Call (810) 998-6747",
-    description: "Furnace out in Simpsonville? Same-day emergency furnace repair available. Licensed, local, ready now. No after-hours upcharge. Call (810) 998-6747.",
+    title: "Emergency Furnace Repair Simpsonville SC | Same-Day | Call 864-754-7291",
+    description: "Furnace out in Simpsonville? Same-day emergency furnace repair available. Licensed, local, ready now. No after-hours upcharge. Call 864-754-7291.",
     canonical: "/emergency-furnace-repair/",
   },
   breadcrumb: "Emergency Furnace Repair",
   h1: "Emergency Furnace Repair in Simpsonville, SC — Same-Day Service",
-  tagline: "If your furnace stopped working in Simpsonville, we provide same-day emergency furnace repair — most homes are restored to heat within 2–4 hours of your call. Call (810) 998-6747 now.",
+  tagline: "If your furnace stopped working in Simpsonville, we provide same-day emergency furnace repair — most homes are restored to heat within 2–4 hours of your call. Call 864-754-7291 now.",
   bannerLabel: "EMERGENCY FURNACE REPAIR — AVAILABLE NOW",
   defaultService: "Emergency AC Repair",
   heroColor: "linear-gradient(135deg, #1e3a5f 0%, #0d2d6e 100%)",
@@ -63,7 +63,7 @@ const config: EmergencyPageConfig = {
       content: (
         <div className="emergency-steps">
           {[
-            { n: "1", title: "You call — we confirm same-day availability", body: "Call (810) 998-6747 and we confirm a technician can get to your Simpsonville home today. Most emergency furnace calls are dispatched within the hour." },
+            { n: "1", title: "You call — we confirm same-day availability", body: "Call 864-754-7291 and we confirm a technician can get to your Simpsonville home today. Most emergency furnace calls are dispatched within the hour." },
             { n: "2", title: "Technician arrives with fully stocked service van", body: "Contractor service vans carry ignitors, flame sensors, capacitors, contactors, and other commonly failed furnace components for all major brands." },
             { n: "3", title: "Safety check before diagnosis", body: "We test for gas leaks and carbon monoxide before beginning diagnostic work. Safety is step one on every furnace call." },
             { n: "4", title: "Diagnosis explained clearly before any repair", body: "We show you exactly what failed and why. You'll understand the problem before we quote the repair." },
