@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { SiteHeader, Stars, TopBar } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { SEO, LOCAL_BUSINESS_SCHEMA } from "@/components/SEO";
+import { SEO, LOCAL_BUSINESS_SCHEMA, FAQ_SCHEMA } from "@/components/SEO";
 import { LeadForm } from "@/components/LeadForm";
 import "./landing.css";
 
@@ -48,7 +48,7 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero-bg">
-        <img src="/van.jpeg" alt="Simpsonville AC Repair Service Van" className="hero-bg-img" />
+        <img src="/van.jpeg" alt="Simpsonville AC Repair service van in Simpsonville, SC" className="hero-bg-img" width={1200} height={800} fetchPriority="high" />
         <div className="hero-bg-overlay" />
       </div>
       <div className="hero-inner">
@@ -458,7 +458,7 @@ export default function LandingPage() {
         title="AC Repair Simpsonville SC | 24/7 HVAC Service | Call Now"
         description="Simpsonville's most trusted AC repair and HVAC company. Same-day service, free estimates, licensed technicians. Call (810) 998-6747."
         canonical="/"
-        schema={LOCAL_BUSINESS_SCHEMA}
+        schema={[LOCAL_BUSINESS_SCHEMA, FAQ_SCHEMA(FAQS)]}
       />
       <TopBar />
       <SiteHeader />

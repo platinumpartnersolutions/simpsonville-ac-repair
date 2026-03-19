@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import { Link } from "wouter";
+import { useState, useEffect, useRef } from "react";
+import { Link, useLocation } from "wouter";
 
 export function Stars({ n = 5, size = 15, color = "#FFD700" }: { n?: number; size?: number; color?: string }) {
   return (
-    <span style={{ display: "inline-flex", gap: 2 }}>
+    <span style={{ display: "inline-flex", gap: 2 }} aria-hidden="true">
       {Array.from({ length: n }).map((_, i) => (
         <svg key={i} width={size} height={size} viewBox="0 0 20 20" fill={color}>
           <path d="M10 1l2.4 7.2H20l-6.2 4.5 2.4 7.2L10 15.5l-6.2 4.4 2.4-7.2L0 8.2h7.6z" />
@@ -27,93 +27,298 @@ export function TopBar() {
   );
 }
 
-const NAV_ITEMS: [string, string, boolean][] = [
-  ["AC & Heating", "/ac-repair/", true],
-  ["Plumbing", "#", true],
-  ["Electrical", "#", true],
-  ["Special Offers", "/free-estimate/", true],
-  ["About", "/about/", true],
-  ["Contact", "/contact/", false],
+type NavLeaf = { label: string; href: string };
+type NavGroup = { label: string; dropdown: NavLeaf[] };
+type NavItem = NavLeaf | NavGroup;
+
+const NAV_ITEMS: NavItem[] = [
+  {
+    label: "Services",
+    dropdown: [
+      { label: "AC Repair", href: "/ac-repair/" },
+      { label: "AC Installation", href: "/ac-installation/" },
+      { label: "AC Replacement", href: "/ac-replacement/" },
+      { label: "HVAC Repair", href: "/hvac-repair/" },
+      { label: "Heat Pump Repair", href: "/heat-pump-repair/" },
+      { label: "Furnace Repair", href: "/furnace-repair/" },
+      { label: "AC Maintenance", href: "/ac-maintenance/" },
+      { label: "Ductless Mini Split", href: "/ductless-mini-split/" },
+    ],
+  },
+  {
+    label: "Problems We Fix",
+    dropdown: [
+      { label: "AC Not Cooling", href: "/ac-not-cooling/" },
+      { label: "AC Won't Turn On", href: "/ac-not-turning-on/" },
+      { label: "AC Leaking Water", href: "/ac-leaking-water/" },
+      { label: "AC Making Noise", href: "/ac-making-noise/" },
+      { label: "High Electric Bill", href: "/high-electric-bill/" },
+    ],
+  },
+  {
+    label: "Areas We Serve",
+    dropdown: [
+      { label: "Simpsonville, SC", href: "/simpsonville-sc/" },
+      { label: "Mauldin, SC", href: "/mauldin-sc/" },
+      { label: "Fountain Inn, SC", href: "/fountain-inn-sc/" },
+      { label: "Greenville, SC", href: "/greenville-sc/" },
+    ],
+  },
+  { label: "About", href: "/about/" },
+  { label: "Contact", href: "/contact/" },
 ];
+
+function ChevronDown() {
+  return (
+    <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" aria-hidden="true" style={{ marginLeft: 4, flexShrink: 0 }}>
+      <path d="M1 1l4 4 4-4" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function DesktopNavItem({ item }: { item: NavItem }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLLIElement>(null);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  if ("href" in item) {
+    return (
+      <li>
+        <Link href={item.href} className="nav-link">{item.label}</Link>
+      </li>
+    );
+  }
+
+  return (
+    <li
+      ref={ref}
+      className="nav-has-dd"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <button
+        className="nav-link nav-dd-trigger"
+        onClick={() => setOpen(o => !o)}
+        aria-expanded={open}
+        aria-haspopup="true"
+      >
+        {item.label}
+        <ChevronDown />
+      </button>
+      <div className={`nav-dropdown${open ? " open" : ""}`} role="menu">
+        {item.dropdown.map((child, i) => (
+          <Link
+            key={i}
+            href={child.href}
+            className="nav-dd-link"
+            role="menuitem"
+            onClick={() => setOpen(false)}
+          >
+            {child.label}
+          </Link>
+        ))}
+      </div>
+    </li>
+  );
+}
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [expanded, setExpanded] = useState<string | null>(null);
+  const [location] = useLocation();
+
+  useEffect(() => {
+    setMobileOpen(false);
+    setExpanded(null);
+  }, [location]);
+
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 4);
     window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
+
   return (
-    <header className={`site-header${scrolled ? " stuck" : ""}`}>
-      <div className="hdr-combined">
-        <Link href="/" className="brand-block">
-          <img src="/logo.png" alt="Simpsonville AC Repair" className="brand-block-logo" />
-          <div className="brand-block-text">
-            <div className="brand-block-name">SIMPSONVILLE<br />AC REPAIR</div>
-            <div className="brand-block-services">COOLING · HEATING · PLUMBING · ELECTRICAL</div>
-          </div>
-        </Link>
+    <>
+      <header className={`site-header${scrolled ? " stuck" : ""}`}>
+        <div className="hdr-combined">
+          <Link href="/" className="brand-block" onClick={() => setMobileOpen(false)}>
+            <img
+              src="/logo.png"
+              alt="Simpsonville AC Repair logo"
+              className="brand-block-logo"
+              width={96}
+              height={96}
+            />
+            <div className="brand-block-text">
+              <div className="brand-block-name">SIMPSONVILLE<br />AC REPAIR</div>
+              <div className="brand-block-services">COOLING · HEATING · PLUMBING · ELECTRICAL</div>
+            </div>
+          </Link>
 
-        <div className="hdr-right-col">
-          <div className="hdr-top-row">
-            <div className="hdr-tagline">
-              <div className="hdr-tagline-text">MOST TRUSTED. MOST CONVENIENT. MOST EXPERIENCED.</div>
-              <div className="hdr-rating">
-                <Stars size={14} />
-                <span>4.8 Google Rating</span>
+          <div className="hdr-right-col">
+            <div className="hdr-top-row">
+              <div className="hdr-tagline">
+                <div className="hdr-tagline-text">MOST TRUSTED. MOST CONVENIENT. MOST EXPERIENCED.</div>
+                <div className="hdr-rating">
+                  <Stars size={14} />
+                  <span>4.8 Google Rating</span>
+                </div>
               </div>
-            </div>
-            <div className="hdr-phones">
-              <a href="tel:8109986747" className="hdr-phone">
-                <svg className="phone-svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
-                </svg>
-                <div>
-                  <div className="phone-city">Simpsonville</div>
-                  <div className="phone-num">(810) 998-6747</div>
-                </div>
-              </a>
-              <a href="tel:8643809450" className="hdr-phone">
-                <svg className="phone-svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
-                </svg>
-                <div>
-                  <div className="phone-city">Greenville</div>
-                  <div className="phone-num">864-380-9450</div>
-                </div>
-              </a>
-            </div>
-          </div>
+              <div className="hdr-phones">
+                <a href="tel:8109986747" className="hdr-phone">
+                  <svg className="phone-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+                  </svg>
+                  <div>
+                    <div className="phone-city">Simpsonville</div>
+                    <div className="phone-num">(810) 998-6747</div>
+                  </div>
+                </a>
+                <a href="tel:8643809450" className="hdr-phone">
+                  <svg className="phone-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+                  </svg>
+                  <div>
+                    <div className="phone-city">Greenville</div>
+                    <div className="phone-num">864-380-9450</div>
+                  </div>
+                </a>
+              </div>
 
-          <nav className="hdr-nav">
-            <ul className="nav-list">
-              {NAV_ITEMS.map(([label, href, hasChevron], i) => (
-                <li key={i}>
-                  <Link href={href} className="nav-link">
-                    {label}
-                    {hasChevron && (
-                      <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" style={{ marginLeft: 3 }}>
-                        <path d="M2 4l4 4 4-4" />
-                      </svg>
-                    )}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div className="nav-right">
-              <a href="tel:8109986747" className="nav-tel-compact">📞 (810) 998-6747</a>
-              <Link href="/book-now/" className="book-now">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 00-2 2v16a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm0 18H5V8h14v13z" />
-                  <path d="M7 10h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2H7zm4 0h2v2h-2z" />
-                </svg>
-                BOOK NOW
-              </Link>
+              {/* Hamburger — mobile only */}
+              <button
+                className={`hamburger-btn${mobileOpen ? " is-open" : ""}`}
+                onClick={() => setMobileOpen(o => !o)}
+                aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+                aria-expanded={mobileOpen}
+                aria-controls="mobile-nav"
+              >
+                <span className="hb-line" />
+                <span className="hb-line" />
+                <span className="hb-line" />
+              </button>
             </div>
-          </nav>
+
+            {/* Desktop nav */}
+            <nav className="hdr-nav" aria-label="Main navigation">
+              <ul className="nav-list">
+                {NAV_ITEMS.map((item, i) => (
+                  <DesktopNavItem key={i} item={item} />
+                ))}
+              </ul>
+              <div className="nav-right">
+                <a href="tel:8109986747" className="nav-tel-compact" aria-label="Call Simpsonville: (810) 998-6747">
+                  📞 (810) 998-6747
+                </a>
+                <Link href="/free-estimate/" className="book-now">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 00-2 2v16a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm0 18H5V8h14v13z" />
+                  </svg>
+                  Get Free Estimate
+                </Link>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile nav overlay */}
+      <div
+        id="mobile-nav"
+        className={`mobile-nav${mobileOpen ? " mobile-nav-open" : ""}`}
+        aria-hidden={!mobileOpen}
+        role="dialog"
+        aria-label="Navigation menu"
+      >
+        {/* Phone CTA at top of mobile menu */}
+        <div className="mobile-nav-top">
+          <a href="tel:8109986747" className="mobile-call-btn">
+            📞 Call (810) 998-6747
+          </a>
+          <Link href="/free-estimate/" className="mobile-estimate-btn" onClick={() => setMobileOpen(false)}>
+            📅 Get Free Estimate
+          </Link>
+        </div>
+
+        <nav aria-label="Mobile navigation">
+          {NAV_ITEMS.map((item, i) => {
+            if ("href" in item) {
+              return (
+                <Link
+                  key={i}
+                  href={item.href}
+                  className="mobile-nav-link"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              );
+            }
+            const isOpen = expanded === item.label;
+            return (
+              <div key={i} className="mobile-nav-group">
+                <button
+                  className="mobile-nav-group-btn"
+                  onClick={() => setExpanded(isOpen ? null : item.label)}
+                  aria-expanded={isOpen}
+                >
+                  {item.label}
+                  <svg
+                    width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor"
+                    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                    aria-hidden="true"
+                    style={{ transform: isOpen ? "rotate(180deg)" : "none", transition: "transform .2s", flexShrink: 0 }}
+                  >
+                    <path d="M1 1l5 5 5-5" />
+                  </svg>
+                </button>
+                {isOpen && (
+                  <div className="mobile-nav-subnav">
+                    {item.dropdown.map((child, j) => (
+                      <Link
+                        key={j}
+                        href={child.href}
+                        className="mobile-nav-sublink"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </nav>
+
+        <div className="mobile-nav-footer">
+          <div style={{ fontSize: 13, color: "#666" }}>📍 Simpsonville, SC 29681</div>
+          <div style={{ fontSize: 13, color: "#666" }}>Serving Simpsonville, Mauldin, Fountain Inn &amp; Greenville</div>
         </div>
       </div>
-    </header>
+
+      {/* Backdrop */}
+      {mobileOpen && (
+        <div
+          className="mobile-nav-backdrop"
+          onClick={() => setMobileOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+    </>
   );
 }

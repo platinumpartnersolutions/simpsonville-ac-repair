@@ -1,0 +1,262 @@
+Here's the complete technical + content prompt to paste into Replit:
+
+TECHNICAL FOUNDATION — apply to every single page before writing any content
+You are building a production-grade local SEO lead generation site for 
+simpsonvilleacrepair.com. Every decision must prioritize: crawlability, 
+Core Web Vitals, mobile UX, and local search intent.
+
+1. CRAWLABILITY & SERVER-SIDE RENDERING
+All pages must render critical content as static HTML — zero dependency 
+on JavaScript for the following to be visible in raw page source:
+
+- H1 tag
+- First 2 sentences of body copy
+- Phone number (as a tel: link)
+- Lead form HTML (fields must exist in DOM, not injected by JS)
+- Meta title, meta description, canonical tag
+- Schema markup (JSON-LD in <head>)
+- Navigation links
+
+If using React or Next.js: use SSR or SSG (getStaticProps / getServerSideProps).
+If using plain HTML: no content in JS template literals.
+If using a JS framework: run Lighthouse crawl test and confirm 
+"Largest Contentful Paint" element is in initial HTML payload.
+
+Create /robots.txt with:
+  User-agent: *
+  Allow: /
+  Sitemap: https://simpsonvilleacrepair.com/sitemap.xml
+
+Create /sitemap.xml listing every page with:
+  <loc>, <lastmod>, <changefreq>monthly</changefreq>, <priority>
+
+For LLM crawlability create /llms.txt at root with:
+  # Simpsonville AC Repair
+  > Local HVAC and AC repair service in Simpsonville, SC
+  List every page URL with a one-line description of what it covers.
+
+2. PERFORMANCE — TARGET LCP UNDER 1.5s ON 4G
+Images:
+- All images must use next-gen format (WebP or AVIF)
+- Hero image must have width, height attributes set (prevents layout shift)
+- Hero image: <link rel="preload" as="image"> in <head>
+- All non-hero images: loading="lazy" decoding="async"
+- All images must have descriptive alt text (never empty, never "image")
+
+CSS:
+- Critical above-fold CSS must be inlined in <style> in <head>
+- No render-blocking stylesheets above the fold
+- No unused CSS loaded on page load
+
+JavaScript:
+- No JS libraries in <head> without defer or async attribute
+- No analytics, chat widgets, or third-party scripts blocking first paint
+- Google Analytics / GTM: load after user interaction or use defer
+
+Fonts:
+- Use system font stack for body: 
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+- If using Google Fonts: preconnect + display=swap only
+- Maximum 1 custom font family
+
+Hosting (recommend to Replit):
+- Enable Cloudflare CDN (caching enabled, bot fight mode OFF)
+- Set Cache-Control: max-age=31536000 on all static assets
+- Enable Brotli or Gzip compression
+
+3. MOBILE OPTIMIZATION
+Viewport meta tag on every page:
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+Breakpoints: design mobile-first. Base styles = mobile. 
+Media queries add desktop layout at min-width: 768px.
+
+Mobile requirements:
+- Phone number CTA button must be visible without scrolling on mobile
+- Tap targets minimum 48x48px (buttons, links, form fields)
+- Lead form fields: font-size minimum 16px (prevents iOS auto-zoom)
+- No horizontal scroll at any viewport width
+- Navigation: hamburger menu on mobile, full nav on desktop
+- Hero section: full readable headline visible above fold on 375px width
+- Form submit button: full width on mobile
+
+Test standard: passes Google Mobile-Friendly Test and 
+Lighthouse Mobile score 90+.
+
+4. SEO TECHNICAL — APPLY TO EVERY PAGE
+HEAD TAGS (every page gets unique versions of all of these):
+
+<title>{Primary Keyword} | Simpsonville AC Repair | Call 864-XXX-XXXX</title>
+<meta name="description" content="{150-160 char description starting with 
+the primary keyword, including a local signal and a CTA}">
+<link rel="canonical" href="https://simpsonvilleacrepair.com/{slug}/">
+<meta name="robots" content="index, follow">
+
+OPEN GRAPH (every page):
+<meta property="og:title" content="{page title}">
+<meta property="og:description" content="{meta description}">
+<meta property="og:url" content="https://simpsonvilleacrepair.com/{slug}/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://simpsonvilleacrepair.com/assets/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+TWITTER CARD (every page):
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{page title}">
+<meta name="twitter:description" content="{meta description}">
+<meta name="twitter:image" content="https://simpsonvilleacrepair.com/assets/og-default.jpg">
+
+SCHEMA MARKUP:
+
+Homepage — LocalBusiness:
+{
+  "@context": "https://schema.org",
+  "@type": "HVACBusiness",
+  "name": "Simpsonville AC Repair",
+  "url": "https://simpsonvilleacrepair.com",
+  "telephone": "864-XXX-XXXX",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Simpsonville",
+    "addressRegion": "SC",
+    "addressCountry": "US"
+  },
+  "areaServed": ["Simpsonville", "Mauldin", "Fountain Inn", "Greenville"],
+  "priceRange": "$$",
+  "openingHours": "Mo-Su 00:00-23:59",
+  "image": "https://simpsonvilleacrepair.com/assets/van-hero.jpg"
+}
+
+Each service page — Service schema:
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "{service name}",
+  "provider": {
+    "@type": "HVACBusiness",
+    "name": "Simpsonville AC Repair"
+  },
+  "areaServed": "Simpsonville, SC",
+  "description": "{first sentence of page content}"
+}
+
+FAQ pages — FAQPage schema with Question/Answer pairs 
+matching the FAQ section on the page.
+
+IMAGE ALT TEXT RULES:
+- Hero: alt="Simpsonville AC Repair technician servicing HVAC unit in Simpsonville SC"
+- Van: alt="Simpsonville AC Repair service van"
+- Never: alt="image", alt="photo", alt=""
+- Every decorative icon: alt="" (intentional empty for screen readers)
+
+HEADING HIERARCHY (every page):
+- Exactly one H1 (the primary keyword phrase)
+- H2s for major sections
+- H3s for subsections and FAQ questions
+- Never skip levels (no H1 → H3)
+
+5. NAVIGATION STRUCTURE
+Desktop nav: full horizontal menu with dropdowns.
+Mobile nav: hamburger → full-screen slide-in menu.
+
+NAVBAR STRUCTURE:
+
+Logo (links to /) | 
+
+[Services ▾]
+  AC Repair
+  AC Installation  
+  AC Replacement
+  HVAC Repair
+  Heat Pump Repair
+  Furnace Repair
+  AC Maintenance
+  Ductless Mini Split
+
+[Problems We Fix ▾]
+  AC Not Cooling
+  AC Won't Turn On
+  AC Leaking Water
+  AC Making Noise
+  High Electric Bill
+
+[Areas We Serve ▾]
+  Simpsonville, SC
+  Mauldin, SC
+  Fountain Inn, SC
+  Greenville, SC
+
+[About]
+[Contact]
+
+| [Get Free Estimate] ← CTA button, red bg, always visible
+| [864-XXX-XXXX] ← tel: link, always visible on desktop
+
+Mobile nav must include the phone number as a tap-to-call 
+button at the top of the open menu.
+
+6. CONTENT STANDARDS — EVERY PAGE
+STRUCTURE FOR EVERY SERVICE AND SYMPTOM PAGE:
+
+1. HERO ANSWER (above fold — first 1-2 sentences):
+   Answer the search query immediately. Do not warm up. Do not introduce.
+   
+   Example for /ac-not-cooling/:
+   WRONG: "When summer hits Simpsonville, the last thing you want is..."
+   RIGHT: "If your AC is running but not cooling, the most common causes 
+   in Simpsonville homes are a dirty air filter, low refrigerant, or a 
+   failing capacitor — all of which we diagnose and fix same-day."
+
+2. TRUST BAR (immediately below hero):
+   - Years in service | Licensed & Insured | Same-Day Available | 
+     4.8 Stars 7,445+ Reviews
+
+3. LEAD FORM (above fold on desktop, sticky CTA on mobile):
+   Fields: Name, Phone, What do you need help with? (dropdown), Zip Code
+   Button: "Get My Free Estimate"
+
+4. BODY CONTENT (after hero, 600-1000 words):
+   - What causes this problem (data-driven, specific to SC climate)
+   - What the repair process looks like step by step
+   - How long it takes, what it costs (price range, not exact)
+   - What happens if ignored
+   - Why choose a local contractor over a national chain
+   Write in first-person contractor voice. Use "we", "our team", 
+   "in our experience servicing Simpsonville homes."
+
+5. FAQ SECTION (every page, minimum 5 questions):
+   Questions must come directly from "People Also Ask" intent for 
+   that keyword. Each answer: 2-4 sentences, direct, no fluff.
+   Wrap in FAQPage schema.
+
+6. INTERNAL LINKS (every page minimum 3):
+   - Link to most relevant service page
+   - Link to /free-estimate/
+   - Link to most relevant location page
+   Anchor text must be descriptive (not "click here").
+
+7. SECONDARY CTA (bottom of every page):
+   "Ready to get your AC fixed today? Call 864-XXX-XXXX or 
+   fill out our form for a free estimate."
+
+7. LOCAL SEO SIGNALS — INJECT ON EVERY PAGE
+City name "Simpsonville" must appear:
+- In H1
+- In first sentence of body copy
+- In meta description
+- In at least 2 H2s or H3s
+- Naturally 3-5 times in body copy
+- In image alt text
+- In schema markup
+
+State abbreviation "SC" must appear alongside "Simpsonville" 
+in H1, meta title, and schema.
+
+Local trust signals to include on every page:
+- "Serving Simpsonville, Mauldin, Fountain Inn & Greenville"
+- Reference SC summer heat (avg 90°F+ in July/August) as 
+  context for urgency
+- Reference common housing stock in Simpsonville 
+  (newer subdivisions, slab foundations) where relevant
+- Do not mention competitor brand names

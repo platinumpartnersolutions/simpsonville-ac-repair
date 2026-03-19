@@ -34,9 +34,14 @@ export function LeadForm({ title = "Request Service", subtitle, dark = false, de
     setSubmitted(true);
   };
 
-  const cardStyle: React.CSSProperties = dark
-    ? { background: "#fff", borderRadius: 14, padding: "28px 28px 24px", boxShadow: "0 8px 40px rgba(0,0,0,.22)" }
-    : { background: "#fff", borderRadius: 14, padding: "28px 28px 24px", border: "1.5px solid #d8e2f3", boxShadow: "0 4px 20px rgba(13,45,110,.08)" };
+  const cardStyle: React.CSSProperties = {
+    background: "#fff",
+    borderRadius: 14,
+    padding: "28px 28px 24px",
+    ...(dark
+      ? { boxShadow: "0 8px 40px rgba(0,0,0,.22)" }
+      : { border: "1.5px solid #d8e2f3", boxShadow: "0 4px 20px rgba(13,45,110,.08)" }),
+  };
 
   if (submitted) {
     return (
@@ -64,30 +69,66 @@ export function LeadForm({ title = "Request Service", subtitle, dark = false, de
       </h3>
       {subtitle && <p style={{ fontSize: 13.5, color: "#666", marginBottom: 18, lineHeight: 1.6 }}>{subtitle}</p>}
 
-      <form onSubmit={submit}>
+      <form onSubmit={submit} noValidate>
         <div className="form-group">
-          <label>Full Name *</label>
-          <input name="name" value={form.name} onChange={handle} required placeholder="John Smith" />
+          <label htmlFor="lf-name">Full Name *</label>
+          <input
+            id="lf-name"
+            name="name"
+            type="text"
+            value={form.name}
+            onChange={handle}
+            required
+            placeholder="John Smith"
+            autoComplete="name"
+          />
         </div>
         <div className="form-group">
-          <label>Phone Number *</label>
-          <input name="phone" type="tel" value={form.phone} onChange={handle} required placeholder="(810) 555-0000" />
+          <label htmlFor="lf-phone">Phone Number *</label>
+          <input
+            id="lf-phone"
+            name="phone"
+            type="tel"
+            value={form.phone}
+            onChange={handle}
+            required
+            placeholder="(810) 555-0000"
+            autoComplete="tel"
+          />
         </div>
         <div className="form-group">
-          <label>Service Needed *</label>
-          <select name="service" value={form.service} onChange={handle} required>
+          <label htmlFor="lf-service">What do you need help with? *</label>
+          <select
+            id="lf-service"
+            name="service"
+            value={form.service}
+            onChange={handle}
+            required
+          >
             <option value="">Select a service…</option>
             {SERVICES.map((s, i) => <option key={i}>{s}</option>)}
           </select>
         </div>
         <div className="form-group">
-          <label>ZIP Code *</label>
-          <input name="zip" value={form.zip} onChange={handle} required placeholder="29681" maxLength={5} pattern="\d{5}" />
+          <label htmlFor="lf-zip">ZIP Code *</label>
+          <input
+            id="lf-zip"
+            name="zip"
+            type="text"
+            inputMode="numeric"
+            value={form.zip}
+            onChange={handle}
+            required
+            placeholder="29681"
+            maxLength={5}
+            pattern="\d{5}"
+            autoComplete="postal-code"
+          />
         </div>
-        <button type="submit" className="form-submit">📅 Get a Free Estimate</button>
+        <button type="submit" className="form-submit">📅 Get My Free Estimate</button>
       </form>
 
-      <div style={{ marginTop: 14, textAlign: "center", fontSize: 12.5, color: "#888" }}>
+      <div style={{ marginTop: 14, textAlign: "center", fontSize: 13, color: "#888" }}>
         Or call directly:{" "}
         <a href="tel:8109986747" style={{ color: "#0D2D6E", fontWeight: 700 }}>(810) 998-6747</a>
       </div>
