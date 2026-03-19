@@ -93,7 +93,6 @@ export default function FreeEstimate() {
           <aside className="inner-sidebar">
             <LeadForm
               title="Request a Free Estimate"
-              subtitle="We'll call back within 1 hour during business hours."
               dark
             />
             <div className="sidebar-emergency" style={{ marginTop: 16 }}>
