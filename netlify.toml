@@ -1,0 +1,9 @@
+[build]
+    command   = "pnpm --filter @workspace/simpsonville-ac run build"
+    publish   = "artifacts/simpsonville-ac/dist/public"
+
+  [[redirects]]
+    from   = "/*"
+    to     = "/index.html"
+    status = 200
+  
