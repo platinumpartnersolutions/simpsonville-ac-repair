@@ -82,8 +82,12 @@ export function SiteFooter() {
         </div>
       </div>
 
+      <div className="footer-disclaimer">
+        <p><strong>DISCLAIMER:</strong> Simpsonville AC Repair is a local lead generation and referral service, not a licensed HVAC contractor. We connect homeowners in the Simpsonville, SC area with pre-screened, licensed, and insured HVAC service providers. All service inquiries submitted through this website are forwarded to third-party contractors who will contact you directly. We do not perform HVAC services ourselves. By submitting your information, you consent to be contacted by one or more licensed HVAC contractors in your area. We may receive compensation from service providers for referrals made through this site.</p>
+      </div>
+
       <div className="footer-bottom">
-        <div>© 2026 Simpsonville AC Repair. All Rights Reserved. SC Contractor License #12345</div>
+        <div>© 2026 Simpsonville AC Repair. All Rights Reserved.</div>
         <div className="footer-bottom-links">
           {["Privacy Policy", "Terms of Service", "Sitemap"].map((l, i) => (
             <a key={i} href="#" className="fbl">{l}</a>

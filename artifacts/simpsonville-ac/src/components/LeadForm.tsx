@@ -125,6 +125,9 @@ export function LeadForm({ title = "Request Service", subtitle, dark = false, de
             autoComplete="postal-code"
           />
         </div>
+        <p style={{ fontSize: 11.5, color: "#888", lineHeight: 1.6, margin: "0 0 12px" }}>
+          By submitting this form, you agree to be contacted by a licensed HVAC contractor in your area. Message and data rates may apply.
+        </p>
         <button type="submit" className="form-submit">📅 Get My Free Estimate</button>
       </form>
 
