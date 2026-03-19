@@ -1,0 +1,143 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "Roboto",
+      "role": "body"
+    },
+    {
+      "family": "Poppins",
+      "role": "heading"
+    }
+  ],
+  "colors": {
+    "primary": "#002F87",
+    "accent": "#86FB12",
+    "background": "#FFFFFF",
+    "textPrimary": "#002F87",
+    "link": "#002F87"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Roboto",
+      "heading": "Poppins"
+    },
+    "fontStacks": {
+      "heading": [
+        "Poppins",
+        "sans-serif"
+      ],
+      "body": [
+        "Roboto",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Poppins",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "43.2px",
+      "h2": "40px",
+      "body": "14.4px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "10px"
+  },
+  "components": {
+    "input": {
+      "background": "#FFFFFF",
+      "textColor": "#000000",
+      "borderColor": null,
+      "borderRadius": "20px",
+      "borderRadiusCorners": {
+        "topLeft": "20px",
+        "topRight": "20px",
+        "bottomRight": "20px",
+        "bottomLeft": "20px"
+      },
+      "shadow": "none"
+    },
+    "buttonPrimary": {
+      "background": "#86FB12",
+      "textColor": "#002F87",
+      "borderColor": "#86FB12",
+      "borderRadius": "25px",
+      "borderRadiusCorners": {
+        "topLeft": "25px",
+        "topRight": "25px",
+        "bottomRight": "25px",
+        "bottomLeft": "25px"
+      },
+      "shadow": "rgba(0, 0, 0, 0.25) 0px 24.098px 48.196px -11.567px"
+    },
+    "buttonSecondary": {
+      "background": "#FFFFFF",
+      "textColor": "#000000",
+      "borderRadius": "0px",
+      "borderRadiusCorners": {
+        "topLeft": "0px",
+        "topRight": "0px",
+        "bottomRight": "0px",
+        "bottomLeft": "0px"
+      },
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "favicon": "File saved at: attached_assets/favicon.png",
+    "ogImage": null
+  },
+  "__llm_logo_reasoning": {
+    "selectedIndex": -1,
+    "reasoning": "No candidate clearly represents the brand 'Preferred Home Services' as a main logo. Most candidates are small icons or unrelated images.",
+    "confidence": 0.3,
+    "rejected": true,
+    "source": "llm"
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 3,
+      "text": "<img src=\"https://www.gopreferred.com/wp-content/uploads/2026/01/booking-icon.svg\" width=\"0\" height=",
+      "reasoning": "Button #3 has a vibrant green background (#86FB12), which stands out as a primary call-to-action color. It is also labeled as a 'secondary-btn', indicating a potential primary role in the context of the site."
+    },
+    "secondary": {
+      "index": 6,
+      "text": "Submit",
+      "reasoning": "Button #6 has a white background (#FFFFFF), which contrasts with the primary button's vibrant green. It serves a secondary function with a less prominent color."
+    },
+    "confidence": 0.9
+  },
+  "personality": {
+    "tone": "professional",
+    "energy": "medium",
+    "targetAudience": "homeowners in need of plumbing, HVAC, and electrical services"
+  },
+  "designSystem": {
+    "framework": "custom",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0.9,
+    "colors": 0.95,
+    "overall": 0.925
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": true,
+      "llmSucceeded": true,
+      "finalSource": "llm",
+      "rawLogoSelection": {
+        "selectedLogoIndex": -1,
+        "selectedLogoReasoning": "No candidate clearly represents the brand 'Preferred Home Services' as a main logo. Most candidates are small icons or unrelated images.",
+        "confidence": 0.3
+      }
+    },
+    "buttonClassification": {
+      "llmCalled": true,
+      "llmSucceeded": true
+    }
+  }
+}
