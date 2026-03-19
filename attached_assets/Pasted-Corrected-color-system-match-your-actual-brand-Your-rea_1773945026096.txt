@@ -1,0 +1,129 @@
+Corrected color system — match your actual brand
+Your real brand colors (pull from van wrap)
+Navy
+Red
+Blue
+White
+--navy:       #0D2D6E;
+--red:        #CC2229;
+--light-blue: #1A7AC4;
+--white:      #ffffff;
+
+/* Rule: navy bg, white text, red accents only */
+/* Red = CTAs, highlights, accent line in headline */
+/* Light blue = secondary badges, trust bar bg    */
+/* Kill any muted/gray versions of these          */
+Hero section — the biggest fix
+Use the van photo as full-bleed hero bg
+/* In Replit — update hero CSS */
+
+.hero {
+  position: relative;
+  min-height: 540px;
+  background-image: url('/assets/van-hero.jpg');
+  background-size: cover;
+  background-position: center left; /* van is left-heavy */
+  display: flex;
+  align-items: center;
+}
+
+/* Navy overlay — heavier on LEFT where text sits */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(13,45,110,0.88) 0%,
+    rgba(13,45,110,0.55) 50%,
+    rgba(13,45,110,0.10) 100%
+  );
+}
+
+/* Text goes LEFT, van visible on RIGHT */
+/* This is exactly how Preferred does it */
+Replit prompt to send for this change
+"Update the hero section. Remove the 
+floated cutout photo. Instead, set the 
+van image as a full-bleed background-image 
+on the hero div. Add a left-to-right 
+gradient overlay: rgba(13,45,110,0.88) 
+on the left fading to rgba(13,45,110,0.1) 
+on the right. Keep all text on the left 
+side. Set min-height to 540px."
+Logo placement fix
+Use the badge logo — not a snowflake
+/* Nav bar logo */
+.nav-logo img {
+  height: 56px;   /* taller = more presence */
+  width: auto;
+  object-fit: contain;
+}
+
+/* The circular badge logo reads well at this size */
+/* Make sure it's the WHITE version of the logo    */
+/* (white bg logo will look wrong on navy nav)     */
+/* Ask Replit to use logo with transparent bg      */
+Headline fix
+Match the van wrap energy in the type
+/* The van says "SIMPSONVILLE AC REPAIR" in */
+/* massive, condensed, all-caps bold type   */
+/* Your headline needs to match that weight */
+
+.hero h1 {
+  font-size: clamp(44px, 6.5vw, 76px);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  text-transform: uppercase;  /* match van energy */
+}
+
+.hero h1 .geo {
+  color: #CC2229;   /* "in Simpsonville, SC" in red */
+  display: block;
+  font-size: 0.65em;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+Complete Replit prompt — send this all at once
+Copy and paste this directly into Replit agent:
+"Make these changes to the landing page:
+
+1. Hero section: Remove the floated cutout 
+photo on the right. Set van-hero.jpg as 
+full-bleed background-image with 
+background-size: cover. Add overlay: 
+linear-gradient(to right, rgba(13,45,110,0.88),
+rgba(13,45,110,0.1)). Min-height 540px.
+All text stays left-aligned.
+
+2. Logo: Replace the snowflake icon with 
+the circular badge logo (transparent bg 
+PNG). Set height to 56px in the nav.
+
+3. Headline: font-weight 900, font-size 
+clamp(44px,6.5vw,76px), line-height 1.0,
+color white, text-transform uppercase.
+The 'in Simpsonville, SC' line: color #CC2229,
+font-size 0.65em, text-transform none.
+
+4. Colors: Primary navy #0D2D6E. Accent red 
+#CC2229. All CTA buttons: bg #CC2229, 
+color white, font-weight 800.
+
+5. Announcement bar: bg #CC2229, white text,
+font-weight 600, font-size 13px."
+Execution order
+1
+Upload van photo to Replit as /assets/van-hero.jpg
+Crop it so the van body is centered — not the front bumper
+2
+Upload logo as transparent PNG to /assets/logo.png
+If you only have white bg version, remove bg at remove.bg first
+3
+Send the Replit prompt above
+Do it in one message — don't split it into multiple prompts
+4
+Screenshot and compare against Preferred
+Energy should be within 80% after this single pass

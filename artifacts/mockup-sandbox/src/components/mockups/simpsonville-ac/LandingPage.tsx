@@ -185,8 +185,8 @@ function Hero() {
           </a>
 
           <h1 className="hero-h1">
-            AC Repair &amp; HVAC<br/>
-            <span className="hero-h1-red">Services in Simpsonville, SC</span>
+            AC Repair &amp; HVAC Services
+            <span className="hero-h1-geo">in Simpsonville, SC</span>
           </h1>
 
           <p className="hero-sub">
@@ -356,7 +356,7 @@ function Neighborhoods() {
               <div className="nbhd-service-note">
                 <h3>Service Support for Simpsonville Residents</h3>
                 <p>When home systems begin to show signs of wear or simply need professional attention, experienced technicians can help restore reliable operation. Contact us today for prompt, professional service.</p>
-                <a href="#contact" className="cta-navy">Schedule an Inspection →</a>
+                <a href="#contact" className="cta-red">Schedule an Inspection →</a>
               </div>
             </Reveal>
           </div>
@@ -500,7 +500,7 @@ function Testimonials() {
 
         <Reveal delay={150}>
           <div style={{textAlign:"center", marginTop:28}}>
-            <a href="#" className="cta-outline-navy">View All Reviews →</a>
+            <a href="#" className="cta-outline-dark">View All Reviews →</a>
           </div>
         </Reveal>
       </div>
