@@ -195,21 +195,9 @@ function Hero() {
             <span className="hero-h1-geo">in Simpsonville, SC</span>
           </h1>
 
-          <p className="hero-sub">
-            Simpsonville's most trusted heating, cooling, plumbing &amp; electrical experts —
-            locally owned, fully licensed, and ready <strong>24/7</strong>.
-          </p>
-
           <div className="hero-ctas">
             <a href="#contact" className="cta-primary">📅 Schedule Service Today</a>
             <a href="tel:8108106747" className="cta-outline">(810) 998-6747</a>
-          </div>
-
-          {/* Trust badges */}
-          <div className="hero-badges">
-            {["✔ Licensed & Insured", "✔ Same-Day Service", "✔ No Payments Until 2027"].map((b,i) => (
-              <span key={i} className="hero-badge">{b}</span>
-            ))}
           </div>
         </div>
       </div>
