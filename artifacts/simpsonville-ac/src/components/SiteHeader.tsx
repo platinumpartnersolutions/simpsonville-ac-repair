@@ -35,6 +35,9 @@ const NAV_ITEMS: NavItem[] = [
   {
     label: "Services",
     dropdown: [
+      { label: "🚨 Emergency AC Repair", href: "/emergency-ac-repair/" },
+      { label: "🚨 Emergency Furnace Repair", href: "/emergency-furnace-repair/" },
+      { label: "🚨 Emergency Heat Pump Repair", href: "/emergency-heat-pump-repair/" },
       { label: "AC Repair", href: "/ac-repair/" },
       { label: "AC Installation", href: "/ac-installation/" },
       { label: "AC Replacement", href: "/ac-replacement/" },
@@ -43,9 +46,6 @@ const NAV_ITEMS: NavItem[] = [
       { label: "Furnace Repair", href: "/furnace-repair/" },
       { label: "AC Maintenance", href: "/ac-maintenance/" },
       { label: "Ductless Mini Split", href: "/ductless-mini-split/" },
-      { label: "🚨 Emergency AC Repair", href: "/emergency-ac-repair/" },
-      { label: "🚨 Emergency Furnace Repair", href: "/emergency-furnace-repair/" },
-      { label: "🚨 Emergency Heat Pump Repair", href: "/emergency-heat-pump-repair/" },
     ],
   },
   {
@@ -227,11 +227,8 @@ export function SiteHeader() {
                 <a href="tel:8109986747" className="nav-tel-compact" aria-label="Call Simpsonville: (810) 998-6747">
                   📞 (810) 998-6747
                 </a>
-                <Link href="/free-estimate/" className="book-now">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 00-2 2v16a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm0 18H5V8h14v13z" />
-                  </svg>
-                  Get Free Estimate
+                <Link href="/emergency-ac-repair/" className="book-now">
+                  🚨 Emergency Service
                 </Link>
               </div>
             </nav>
