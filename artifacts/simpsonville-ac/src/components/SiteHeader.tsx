@@ -228,7 +228,7 @@ export function SiteHeader() {
                   📞 864-754-7291
                 </a>
                 <Link href="/emergency-ac-repair/" className="book-now">
-                  🚨 Emergency Service
+                  Emergency Service
                 </Link>
               </div>
             </nav>
