@@ -91,6 +91,35 @@ Generated Zod schemas from the OpenAPI spec (e.g. `HealthCheckResponse`). Used b
 
 Generated React Query hooks and fetch client from the OpenAPI spec (e.g. `useHealthCheck`, `healthCheck`).
 
+### `artifacts/simpsonville-ac` (`@workspace/simpsonville-ac`)
+
+React + Vite landing site for **Simpsonville AC Repair**. A full multi-page SEO site with 22 routes.
+
+- **Tech**: React 18, Vite, Wouter (routing), Tailwind v4, custom CSS (`src/pages/landing.css`)
+- **Port**: 23322 · **Preview path**: `/`
+- **Fonts**: Poppins (headings 700–900) + Roboto (body) via Google Fonts
+- **Brand**: navy `#0D2D6E`, red `#CC2229`, light-blue `#1A7AC4`
+- **Images**: `public/logo.png` (transparent badge) · `public/van.jpeg`
+- **Public files**: `public/robots.txt`, `public/sitemap.xml`
+
+**Page routes and files:**
+- `/` → `src/pages/LandingPage.tsx` — full homepage with hero, trust bar, all-services grid, offer card, local factors, areas served, neighborhoods, FAQ, testimonials carousel, lead form
+- `/ac-repair/`, `/hvac-repair/`, `/ac-installation/`, `/ac-replacement/`, `/heat-pump-repair/`, `/furnace-repair/`, `/ac-maintenance/`, `/ductless-mini-split/` → `src/pages/ServicePage.tsx` (data-driven template)
+- `/ac-not-cooling/`, `/ac-not-turning-on/`, `/ac-leaking-water/`, `/ac-making-noise/`, `/high-electric-bill/` → `src/pages/SymptomPage.tsx` (data-driven template)
+- `/simpsonville-sc/`, `/mauldin-sc/`, `/fountain-inn-sc/`, `/greenville-sc/` → `src/pages/LocationPage.tsx` (data-driven template)
+- `/free-estimate/` → `src/pages/FreeEstimate.tsx`
+- `/emergency-ac-repair/` → `src/pages/EmergencyPage.tsx` (phone CTA above fold)
+- `/about/` → `src/pages/AboutPage.tsx`
+- `/contact/` → `src/pages/ContactPage.tsx`
+
+**Shared components** (`src/components/`):
+- `SiteHeader.tsx` — sticky header (TopBar + brand block + phone numbers + nav)
+- `SiteFooter.tsx` — 4-column footer with all service/location links
+- `LeadForm.tsx` — reusable lead capture form (name, phone, service, ZIP)
+- `SEO.tsx` — sets document.title, meta description, canonical URL, JSON-LD schema
+
+**SEO features**: unique H1/title/description per page, LocalBusiness schema on homepage, Service schema on service pages, canonical tags, robots.txt, sitemap.xml
+
 ### `scripts` (`@workspace/scripts`)
 
 Utility scripts package. Each script is a `.ts` file in `src/` with a corresponding npm script in `package.json`. Run scripts via `pnpm --filter @workspace/scripts run <script>`. Scripts can import any workspace package (e.g., `@workspace/db`) by adding it as a dependency in `scripts/package.json`.

@@ -1,0 +1,119 @@
+Build the following page structure for simpsonvilleacrepair.com. Create each page as a separate route. Every page must have a unique H1, unique meta title, unique meta description, and a lead capture form (name, phone, service needed). All pages link back to the homepage and to each other where relevant.
+
+HOMEPAGE — /
+H1: AC Repair & HVAC Services in Simpsonville, SC
+Meta: AC Repair Simpsonville SC | 24/7 HVAC Service | Call Now
+Targets: ac repair simpsonville sc, hvac simpsonville sc
+Content sections: hero with CTA, service cards linking to all service pages, trust badges, area cities served, lead form
+
+CORE SERVICE PAGES
+/ac-repair/
+H1: AC Repair in Simpsonville, SC
+Meta: AC Repair Simpsonville SC | Same-Day Service | Free Estimate
+Targets: ac repair simpsonville sc, ac repair near me simpsonville, emergency ac repair simpsonville sc
+/hvac-repair/
+H1: HVAC Repair in Simpsonville, SC
+Meta: HVAC Repair Simpsonville SC | Licensed Technicians | Call Today
+Targets: hvac repair simpsonville sc, hvac contractor simpsonville sc
+/ac-installation/
+H1: AC Installation in Simpsonville, SC
+Meta: AC Installation Simpsonville SC | New Units | Free Estimate
+Targets: ac installation simpsonville sc, new air conditioner simpsonville sc, central air installation simpsonville sc
+/ac-replacement/
+H1: AC Replacement in Simpsonville, SC
+Meta: AC Replacement Simpsonville SC | Same-Day Quotes | All Brands
+Targets: ac replacement simpsonville sc, replace old ac unit simpsonville sc
+/heat-pump-repair/
+H1: Heat Pump Repair & Installation in Simpsonville, SC
+Meta: Heat Pump Repair Simpsonville SC | Install & Replace | Call Now
+Targets: heat pump repair simpsonville sc, heat pump installation simpsonville sc
+/furnace-repair/
+H1: Furnace Repair in Simpsonville, SC
+Meta: Furnace Repair Simpsonville SC | Same-Day Heat Restored
+Targets: furnace repair simpsonville sc, furnace installation simpsonville sc, no heat in house simpsonville sc
+/ac-maintenance/
+H1: AC Tune-Up & Maintenance in Simpsonville, SC
+Meta: AC Maintenance Simpsonville SC | Tune-Up & Service Plans
+Targets: ac tune up simpsonville sc, ac maintenance simpsonville sc, hvac maintenance simpsonville sc
+/ductless-mini-split/
+H1: Ductless Mini Split Installation in Simpsonville, SC
+Meta: Mini Split Installation Simpsonville SC | Ductless HVAC Experts
+Targets: ductless mini split installation simpsonville sc
+
+SYMPTOM / PROBLEM PAGES
+/ac-not-cooling/
+H1: AC Not Cooling in Simpsonville, SC? We Fix It Fast.
+Meta: AC Not Cooling Simpsonville SC | Emergency Repair | Call Now
+Targets: ac not cooling simpsonville sc, ac blowing warm air simpsonville sc
+/ac-not-turning-on/
+H1: AC Won't Turn On in Simpsonville, SC?
+Meta: AC Not Turning On Simpsonville SC | Same-Day Diagnosis
+Targets: hvac not turning on simpsonville sc, ac stopped working simpsonville sc
+/ac-leaking-water/
+H1: AC Leaking Water in Simpsonville, SC?
+Meta: AC Leaking Water Simpsonville SC | Fast Repair Service
+Targets: ac leaking water simpsonville sc, ac freezing up simpsonville sc
+/ac-making-noise/
+H1: AC Making Loud Noise in Simpsonville, SC?
+Meta: AC Making Noise Simpsonville SC | Diagnose & Fix Today
+Targets: ac making noise simpsonville sc
+/high-electric-bill/
+H1: High Electric Bill from Your HVAC in Simpsonville, SC?
+Meta: HVAC High Electric Bill Simpsonville SC | Tune-Up & Repair
+Targets: high electric bill hvac simpsonville sc
+
+LOCATION PAGES
+/simpsonville-sc/
+H1: HVAC & AC Repair Services in Simpsonville, SC
+Meta: HVAC Simpsonville SC | Local Cooling & Heating Experts
+Targets: hvac simpsonville sc, ac repair simpsonville sc (geo anchor page)
+/mauldin-sc/
+H1: AC Repair & HVAC Services in Mauldin, SC
+Meta: AC Repair Mauldin SC | Serving Mauldin & Surrounding Areas
+Targets: ac repair mauldin sc, hvac mauldin sc
+/fountain-inn-sc/
+H1: AC Repair & HVAC Services in Fountain Inn, SC
+Meta: AC Repair Fountain Inn SC | Fast Local HVAC Service
+Targets: ac repair fountain inn sc, hvac fountain inn sc
+/greenville-sc/
+H1: AC Repair & HVAC Services in Greenville, SC
+Meta: AC Repair Greenville SC | Trusted Local HVAC Technicians
+Targets: hvac greenville sc, ac repair near simpsonville sc
+
+TRUST / CONVERSION PAGES
+/free-estimate/
+H1: Get a Free AC & HVAC Estimate in Simpsonville, SC
+Meta: Free HVAC Estimate Simpsonville SC | No Obligation Quote
+Targets: free hvac estimate simpsonville sc, hvac financing simpsonville sc
+Content: full lead form, trust badges, response time promise
+/emergency-ac-repair/
+H1: Emergency AC Repair in Simpsonville, SC — 24/7
+Meta: Emergency AC Repair Simpsonville SC | Available Now
+Targets: emergency ac repair simpsonville sc, same day hvac repair simpsonville sc
+Note: this page should have the phone number CTA above the fold, no scroll required
+/about/
+H1: Simpsonville's Local AC Repair Experts
+Content: brand story, service area, license info, van photo, trust signals
+/contact/
+H1: Contact Simpsonville AC Repair
+Content: phone, form, service area map embed
+
+INTERNAL LINKING RULES — apply these globally:
+
+Homepage links to every core service page and every location page
+Every service page links to /free-estimate/ and /emergency-ac-repair/
+Every symptom page links to its most relevant service page
+Every location page links to all core service pages
+/emergency-ac-repair/ links to every service page
+Footer contains links to all service pages and all location pages
+
+
+GLOBAL PAGE REQUIREMENTS:
+
+Phone number clickable tel: link in header on every page
+Lead form on every page (name, phone, service needed, zip code)
+Schema markup: LocalBusiness on homepage, Service on each service page
+Canonical tags on every page
+robots.txt allowing all crawlers
+XML sitemap at /sitemap.xml listing all pages
+Page load under 3 seconds — no heavy scripts above the fold
