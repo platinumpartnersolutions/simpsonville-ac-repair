@@ -6,6 +6,8 @@ import LocationPage from "@/pages/LocationPage";
 import SymptomPage from "@/pages/SymptomPage";
 import FreeEstimate from "@/pages/FreeEstimate";
 import EmergencyPage from "@/pages/EmergencyPage";
+import EmergencyFurnacePage from "@/pages/EmergencyFurnacePage";
+import EmergencyHeatPumpPage from "@/pages/EmergencyHeatPumpPage";
 import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
 import NotFound from "@/pages/not-found";
@@ -41,9 +43,13 @@ function Router() {
       <Route path="/fountain-inn-sc/" component={LocationPage} />
       <Route path="/greenville-sc/" component={LocationPage} />
 
+      {/* Emergency Pages */}
+      <Route path="/emergency-ac-repair/" component={EmergencyPage} />
+      <Route path="/emergency-furnace-repair/" component={EmergencyFurnacePage} />
+      <Route path="/emergency-heat-pump-repair/" component={EmergencyHeatPumpPage} />
+
       {/* Trust / Conversion Pages */}
       <Route path="/free-estimate/" component={FreeEstimate} />
-      <Route path="/emergency-ac-repair/" component={EmergencyPage} />
       <Route path="/about/" component={AboutPage} />
       <Route path="/contact/" component={ContactPage} />
 

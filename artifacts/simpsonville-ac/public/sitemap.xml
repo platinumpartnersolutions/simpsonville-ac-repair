@@ -117,15 +117,29 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- TRUST / CONVERSION PAGES -->
+  <!-- EMERGENCY PAGES -->
   <url>
-    <loc>https://simpsonvilleacrepair.com/free-estimate/</loc>
+    <loc>https://simpsonvilleacrepair.com/emergency-ac-repair/</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://simpsonvilleacrepair.com/emergency-furnace-repair/</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://simpsonvilleacrepair.com/emergency-ac-repair/</loc>
+    <loc>https://simpsonvilleacrepair.com/emergency-heat-pump-repair/</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- TRUST / CONVERSION PAGES -->
+  <url>
+    <loc>https://simpsonvilleacrepair.com/free-estimate/</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>

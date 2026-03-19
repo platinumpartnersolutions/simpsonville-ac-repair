@@ -1,0 +1,241 @@
+Here's the prompt:
+
+CREATE EMERGENCY SERVICE PAGES — Simpsonville AC Repair
+Create the following emergency service pages. These pages target 
+high-urgency, ready-to-call searchers. Every page must have the 
+phone number visible without scrolling on any device. No fluff. 
+Answer the emergency immediately in sentence one.
+
+PAGE 1 — /emergency-ac-repair/
+H1: Emergency AC Repair in Simpsonville, SC — Available Now
+Meta Title: Emergency AC Repair Simpsonville SC | Same-Day | Call 864-XXX-XXXX
+Meta Description: AC broke down in Simpsonville? Our emergency AC repair 
+team is available same-day. Licensed, local, and ready. Call 864-XXX-XXXX.
+Canonical: https://simpsonvilleacrepair.com/emergency-ac-repair/
+
+Target keywords:
+- emergency ac repair simpsonville
+- emergency ac repair simpsonville sc
+- 24 hour emergency ac repair simpsonville
+
+Schema: Service + FAQPage
+
+CONTENT STRUCTURE:
+
+H1: Emergency AC Repair in Simpsonville, SC — Available Now
+
+First 2 sentences (answer immediately):
+"If your AC just stopped working in Simpsonville, we offer same-day 
+emergency repair service — most calls are diagnosed and repaired within 
+2-4 hours of your call. Call 864-XXX-XXXX now and we'll dispatch a 
+technician to your home today."
+
+Sticky CTA bar (mobile): 
+[Call Now: 864-XXX-XXXX] [Get Free Estimate]
+
+Body sections (H2s):
+
+H2: What Counts as an AC Emergency in Simpsonville?
+- Complete system failure in 90°F+ SC summer heat
+- AC running but no cold air with indoor temps rising above 80°F
+- Electrical burning smell coming from unit
+- Water actively flooding from unit
+- System short-cycling every few minutes
+Write 100-150 words. First-person contractor voice.
+
+H2: What to Do While You Wait for Our Technician
+- Turn off the system at the thermostat
+- Check and replace air filter if accessible
+- Close blinds on south-facing windows
+- Keep interior doors open for air circulation
+- Don't run the system if you smell burning
+Write 100-150 words.
+
+H2: Our Emergency AC Repair Process in Simpsonville
+Step 1: You call — we confirm same-day availability
+Step 2: Technician dispatched with fully stocked service van
+Step 3: Diagnosis on arrival — we explain the problem before touching anything
+Step 4: Upfront quote — no surprise charges
+Step 5: Repair completed same visit in most cases
+Write 150 words in contractor first-person voice.
+
+H2: Common Emergency AC Problems We Fix Same-Day
+- Capacitor failure (most common in SC summer heat)
+- Refrigerant leak or low charge
+- Contactor failure
+- Frozen evaporator coil
+- Blown fuses or tripped breaker
+- Failed blower motor
+Each item: 1-2 sentence explanation. 
+
+H2: Emergency AC Repair Cost in Simpsonville, SC
+Be honest about ranges. Example:
+"Most emergency AC repairs in Simpsonville run between $150-$600 
+depending on the part needed. Capacitors average $150-$300. 
+Refrigerant recharge runs $200-$500 depending on refrigerant type. 
+We give you an exact quote before any work begins."
+
+H2: Why Simpsonville Homeowners Call Us First
+- Local — we know Simpsonville neighborhoods and housing stock
+- Stocked vans — most repairs completed in one visit
+- Licensed and insured in South Carolina
+- No after-hours upcharge on emergency calls
+- Same technician from diagnosis to repair
+
+FAQ SECTION (H2: Frequently Asked Questions):
+Schema: FAQPage wrapping all Q&A pairs
+
+Q: How fast can you get to my house for emergency AC repair in Simpsonville?
+A: In most cases we dispatch within 1 hour of your call and arrive 
+within 2-3 hours. During peak summer months we recommend calling 
+early in the day to secure same-day service.
+
+Q: Do you charge extra for emergency or after-hours AC repair?
+A: No. Our service call rate is the same regardless of time of day. 
+You pay for the diagnosis and repair — not a premium for urgency.
+
+Q: What if my AC can't be repaired same-day?
+A: If a part needs to be ordered we'll tell you immediately, give you 
+a timeline, and in some cases provide a temporary cooling solution 
+recommendation while you wait.
+
+Q: Is it safe to run my AC during an emergency situation?
+A: If you smell burning or see sparks, turn it off at the breaker 
+immediately. If it's just blowing warm air or not turning on, it's 
+generally safe to attempt a restart — but call us before running it 
+extended periods in a failed state.
+
+Q: Do you service all AC brands in emergency situations?
+A: Yes. We carry parts for Carrier, Trane, Lennox, Rheem, Goodman, 
+York, and most other major brands on every service van.
+
+INTERNAL LINKS (minimum 3):
+- Link to /ac-repair/ — "our standard AC repair service"
+- Link to /ac-not-cooling/ — "AC running but not cooling"  
+- Link to /free-estimate/ — "schedule a free diagnostic"
+- Link to /simpsonville-sc/ — "serving all of Simpsonville SC"
+
+Bottom CTA:
+"Don't wait in the heat. Call 864-XXX-XXXX now for emergency 
+AC repair in Simpsonville — same-day service available."
+
+PAGE 2 — /emergency-furnace-repair/
+H1: Emergency Furnace Repair in Simpsonville, SC — Same-Day Service
+Meta Title: Emergency Furnace Repair Simpsonville SC | Call 864-XXX-XXXX
+Meta Description: Furnace out in Simpsonville? Same-day emergency furnace 
+repair available. Local, licensed, ready now. Call 864-XXX-XXXX.
+Canonical: https://simpsonvilleacrepair.com/emergency-furnace-repair/
+
+Target keywords:
+- emergency furnace repair simpsonville
+- 24 hour emergency furnace repair simpsonville
+
+Schema: Service + FAQPage
+
+CONTENT STRUCTURE — mirror the emergency AC page structure with:
+
+H1: Emergency Furnace Repair in Simpsonville, SC — Same-Day Service
+
+First 2 sentences:
+"If your furnace stopped working in Simpsonville, we provide 
+same-day emergency furnace repair — most homes are restored to 
+heat within 2-4 hours of your call. Call 864-XXX-XXXX now."
+
+H2: Signs Your Furnace Needs Emergency Repair
+- No heat with indoor temps dropping below 60°F
+- Furnace running but blowing cold air
+- Furnace cycling on and off every few minutes
+- Gas smell near the furnace (evacuate and call gas company first)
+- Loud banging or screeching sounds on startup
+
+H2: Common Emergency Furnace Problems We Fix Same-Day
+- Failed ignitor (most common furnace emergency)
+- Bad flame sensor
+- Cracked heat exchanger (safety issue — always treat as urgent)
+- Failed blower motor
+- Tripped high-limit switch
+- Gas valve failure
+
+H2: Emergency Furnace Repair Cost in Simpsonville
+"Most emergency furnace repairs run $150-$700. Ignitor replacement 
+averages $150-$300. Flame sensor cleaning or replacement is $100-$200. 
+We quote before we touch anything."
+
+FAQ SECTION (5 questions mirroring AC page format):
+Q: How quickly can you respond to a furnace emergency in Simpsonville?
+Q: Is a gas smell a furnace emergency?
+Q: What if my furnace needs a part that isn't on your van?
+Q: Should I turn off my furnace if it's making a loud noise?
+Q: Do you repair all furnace brands?
+
+INTERNAL LINKS:
+- Link to /furnace-repair/
+- Link to /emergency-ac-repair/
+- Link to /free-estimate/
+
+PAGE 3 — /emergency-heat-pump-repair/
+H1: Emergency Heat Pump Repair in Simpsonville, SC
+Meta Title: Emergency Heat Pump Repair Simpsonville SC | Same-Day Service
+Meta Description: Heat pump failure in Simpsonville? Same-day emergency 
+repair available. Call 864-XXX-XXXX — local technicians ready now.
+Canonical: https://simpsonvilleacrepair.com/emergency-heat-pump-repair/
+
+Target keywords:
+- emergency heat pump repair simpsonville
+
+Schema: Service + FAQPage
+
+CONTENT STRUCTURE:
+
+First 2 sentences:
+"A heat pump failure in Simpsonville means losing both your heating 
+and cooling in one failure — we provide same-day emergency heat pump 
+repair so you're not stuck without climate control. Call 864-XXX-XXXX."
+
+H2: Common Emergency Heat Pump Failures We Fix
+- Heat pump stuck in one mode (heating in summer, cooling in winter)
+- Outdoor unit iced over (in both summer and winter)
+- Reversing valve failure
+- Complete system lockout
+- Refrigerant leak causing no heating or cooling
+
+H2: Heat Pump vs AC Emergency — What's Different
+Explain that heat pump emergencies can affect year-round comfort, 
+not just summer. 100-150 words, contractor voice.
+
+FAQ SECTION (4-5 questions):
+Q: Why is my heat pump blowing cold air in heat mode?
+Q: Can a heat pump freeze up in summer?
+Q: Is emergency heat pump repair more expensive than AC repair?
+Q: Do you carry heat pump parts on your service vans?
+
+INTERNAL LINKS:
+- Link to /heat-pump-repair/
+- Link to /emergency-ac-repair/
+- Link to /free-estimate/
+
+GLOBAL RULES FOR ALL 3 EMERGENCY PAGES:
+1. Phone number as <a href="tel:864XXXXXXX"> above fold on every page —
+   no scroll required on any screen size including 375px width iPhone.
+
+2. Add all 3 pages to sitemap.xml immediately.
+
+3. Add to navbar under Services dropdown:
+   "Emergency AC Repair" → /emergency-ac-repair/
+   "Emergency Furnace Repair" → /emergency-furnace-repair/
+   "Emergency Heat Pump Repair" → /emergency-heat-pump-repair/
+
+4. Add internal links TO these pages FROM:
+   - Homepage hero section
+   - /ac-repair/ page
+   - /furnace-repair/ page  
+   - /heat-pump-repair/ page
+
+5. Schema on all 3 pages must include:
+   "openingHours": "Mo-Su 00:00-23:59"
+   This signals 24/7 availability to Google.
+
+6. Page speed: emergency pages must load under 1.5s on 4G —
+   these are the highest-intent pages on the site. 
+   No lazy-loading above the fold. Phone number must be 
+   in the initial HTML payload, not JS-injected.

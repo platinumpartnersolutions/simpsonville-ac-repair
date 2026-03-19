@@ -43,6 +43,9 @@ const NAV_ITEMS: NavItem[] = [
       { label: "Furnace Repair", href: "/furnace-repair/" },
       { label: "AC Maintenance", href: "/ac-maintenance/" },
       { label: "Ductless Mini Split", href: "/ductless-mini-split/" },
+      { label: "🚨 Emergency AC Repair", href: "/emergency-ac-repair/" },
+      { label: "🚨 Emergency Furnace Repair", href: "/emergency-furnace-repair/" },
+      { label: "🚨 Emergency Heat Pump Repair", href: "/emergency-heat-pump-repair/" },
     ],
   },
   {

@@ -66,6 +66,11 @@ function Hero() {
             <Link href="/free-estimate/" className="cta-primary">📅 Schedule Service Today</Link>
             <a href="tel:8109986747" className="cta-outline">(810) 998-6747</a>
           </div>
+          <div style={{ marginTop: 14 }}>
+            <Link href="/emergency-ac-repair/" style={{ color: "#fca5a5", fontSize: 13.5, fontWeight: 700, display: "inline-flex", alignItems: "center", gap: 6 }}>
+              🚨 Need emergency service right now?
+            </Link>
+          </div>
         </div>
       </div>
     </section>

@@ -14,6 +14,8 @@ interface ServiceData {
   commonIssues: string[];
   relatedSymptom?: string;
   defaultService: string;
+  emergencyHref?: string;
+  emergencyLabel?: string;
 }
 
 const DATA: Record<string, ServiceData> = {
@@ -39,6 +41,8 @@ const DATA: Record<string, ServiceData> = {
     ],
     relatedSymptom: "/ac-not-cooling/",
     defaultService: "AC Repair",
+    emergencyHref: "/emergency-ac-repair/",
+    emergencyLabel: "Emergency AC Repair",
   },
   "/hvac-repair/": {
     h1: "HVAC Repair in Simpsonville, SC",
@@ -124,6 +128,8 @@ const DATA: Record<string, ServiceData> = {
       "Short-cycling or tripping the breaker",
     ],
     defaultService: "Heat Pump Repair",
+    emergencyHref: "/emergency-heat-pump-repair/",
+    emergencyLabel: "Emergency Heat Pump Repair",
   },
   "/furnace-repair/": {
     h1: "Furnace Repair in Simpsonville, SC",
@@ -146,6 +152,8 @@ const DATA: Record<string, ServiceData> = {
       "Carbon monoxide alarm triggered",
     ],
     defaultService: "Furnace Repair",
+    emergencyHref: "/emergency-furnace-repair/",
+    emergencyLabel: "Emergency Furnace Repair",
   },
   "/ac-maintenance/": {
     h1: "AC Tune-Up & Maintenance in Simpsonville, SC",
@@ -260,8 +268,8 @@ export default function ServicePage() {
                 <Link href="/free-estimate/" className="inner-related-card">
                   <span>📋</span> Get a Free Estimate
                 </Link>
-                <Link href="/emergency-ac-repair/" className="inner-related-card">
-                  <span>🚨</span> Emergency AC Repair
+                <Link href={data.emergencyHref || "/emergency-ac-repair/"} className="inner-related-card">
+                  <span>🚨</span> {data.emergencyLabel || "Emergency AC Repair"}
                 </Link>
                 {data.relatedSymptom && (
                   <Link href={data.relatedSymptom} className="inner-related-card">
@@ -289,7 +297,7 @@ export default function ServicePage() {
             <div className="sidebar-emergency">
               <div style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: 15, color: "#CC2229", marginBottom: 6 }}>🚨 Emergency Service</div>
               <p style={{ fontSize: 13, color: "#555", margin: "0 0 12px" }}>AC out in the heat? We offer rapid-response emergency repairs.</p>
-              <Link href="/emergency-ac-repair/" className="cta-red" style={{ display: "block", textAlign: "center" }}>Emergency Repair →</Link>
+              <Link href={data.emergencyHref || "/emergency-ac-repair/"} className="cta-red" style={{ display: "block", textAlign: "center" }}>{data.emergencyLabel || "Emergency AC Repair"} →</Link>
             </div>
           </aside>
         </div>
