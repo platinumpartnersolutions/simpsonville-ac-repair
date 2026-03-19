@@ -172,7 +172,7 @@ const DATA: Record<string, ServiceData> = {
       { icon: "📋", title: "20-Point Inspection", body: "We check refrigerant levels, inspect coils, test capacitors, clean drain lines, measure airflow, and verify all electrical connections." },
       { icon: "💰", title: "Lower Energy Bills", body: "A well-maintained AC runs more efficiently. Most homeowners see measurable energy savings after a professional tune-up." },
       { icon: "🏥", title: "Prevent Breakdowns", body: "Catching worn capacitors, low refrigerant, and dirty coils before they fail saves you the cost and discomfort of an emergency repair." },
-      { icon: "📅", title: "Service Plans", body: "Join our annual maintenance plan for priority scheduling, discounts on repairs, and peace of mind through every season." },
+      { icon: "📅", title: "Service Plans", body: "Join our annual maintenance plan for priority scheduling, proactive system checks, and peace of mind through every season." },
     ],
     commonIssues: [
       "Dirty evaporator and condenser coils reducing efficiency",

@@ -156,35 +156,10 @@ function ServicesGrid() {
 function ContentOffer() {
   return (
     <section className="co-section">
-      <div className="co-inner">
-        <div className="co-text">
-          <Reveal><p>Simpsonville has become one of the most active residential communities in the Greenville area. Neighborhoods continue expanding across the city while long-established homes remain a central part of the community. With more families moving into the area each year, homes rely heavily on dependable systems that keep everyday life running smoothly.</p></Reveal>
-          <Reveal delay={80}><p>Heating and cooling systems help manage the Upstate's hot summers and cooler winter nights. Plumbing systems support daily water use throughout the home. Electrical systems power everything from lighting to modern appliances and home technology.</p></Reveal>
-          <Reveal delay={160}><p>Simpsonville AC Repair works with homeowners across Simpsonville to support these essential systems. Local licensed technicians in our network regularly assist homes throughout the area, helping ensure the systems behind the walls and ceilings continue operating reliably.</p></Reveal>
-        </div>
-
-        <Reveal dir="left" delay={100}>
-          <div className="offer-card">
-            <div className="offer-header">
-              <div className="offer-amount">$100 OFF</div>
-              <div className="offer-service">AC Tune-Up &amp; Repair</div>
-            </div>
-            <div className="offer-body">
-              <div className="offer-cond">WHEN YOU BOOK A SEASONAL MAINTENANCE VISIT</div>
-              <div className="offer-disclaimer">
-                <span>Disclaimer</span>
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><path d="M5 7L1 3h8z" /></svg>
-              </div>
-              <Link href="/free-estimate/" className="offer-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 00-2 2v16a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm0 18H5V8h14v13z" /></svg>
-                SCHEDULE NOW
-              </Link>
-            </div>
-            <div className="offer-logo-wrap">
-              <img src="/logo.png" alt="" className="offer-logo-img" />
-            </div>
-          </div>
-        </Reveal>
+      <div className="co-text-full">
+        <Reveal><p>Simpsonville has become one of the most active residential communities in the Greenville area. Neighborhoods continue expanding across the city while long-established homes remain a central part of the community. With more families moving into the area each year, homes rely heavily on dependable systems that keep everyday life running smoothly.</p></Reveal>
+        <Reveal delay={80}><p>Heating and cooling systems help manage the Upstate's hot summers and cooler winter nights. Plumbing systems support daily water use throughout the home. Electrical systems power everything from lighting to modern appliances and home technology.</p></Reveal>
+        <Reveal delay={160}><p>Simpsonville AC Repair works with homeowners across Simpsonville to support these essential systems. Local licensed technicians in our network regularly assist homes throughout the area, helping ensure the systems behind the walls and ceilings continue operating reliably.</p></Reveal>
       </div>
     </section>
   );
