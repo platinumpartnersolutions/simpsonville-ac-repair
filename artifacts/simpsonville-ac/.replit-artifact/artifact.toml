@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Simpsonville AC Repair"
+version = "1.0.0"
+id = "artifacts/simpsonville-ac"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23322
+
+[services.development]
+run = "pnpm --filter @workspace/simpsonville-ac run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/simpsonville-ac", "run", "build" ]
+publicDir = "artifacts/simpsonville-ac/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23322"
+BASE_PATH = "/"
