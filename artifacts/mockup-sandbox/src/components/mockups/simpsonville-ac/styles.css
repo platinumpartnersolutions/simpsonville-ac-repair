@@ -36,31 +36,59 @@ ul { list-style:none; margin:0; padding:0 }
 .tb-div { color:rgba(255,255,255,.4) }
 
 /* ─── HEADER ─── */
-.site-header { position:sticky; top:0; z-index:500; background:#fff; box-shadow:0 1px 8px rgba(0,0,0,.12); transition:box-shadow .3s }
-.site-header.stuck { box-shadow:0 4px 28px rgba(0,0,0,.2) }
+.site-header { position:sticky; top:0; z-index:500; background:#fff; box-shadow:0 2px 12px rgba(0,0,0,.15); transition:box-shadow .3s }
+.site-header.stuck { box-shadow:0 4px 32px rgba(0,0,0,.22) }
 
-.hdr-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; align-items:center; gap:16px }
-.hdr-r1 .hdr-inner { height:80px }
+/* Combined wrapper — brand block LEFT, right column flex fills remainder */
+.hdr-combined { display:flex; align-items:stretch; max-width:100% }
 
-/* Logo — circular badge, 56px tall */
-.hdr-logo { display:flex; align-items:center; flex-shrink:0 }
-.hdr-logo-circle {
-  width:64px; height:64px; border-radius:50%;
-  overflow:hidden; flex-shrink:0;
-  box-shadow:0 0 0 2px rgba(13,45,110,.2);
+/* ── BRAND BLOCK — navy, spans full header height ── */
+.brand-block {
+  display:flex; align-items:center; gap:14px;
+  background:var(--navy);
+  padding:10px 22px 10px 20px;
+  flex-shrink:0;
+  text-decoration:none;
+  min-width:220px;
+  transition:background .2s;
 }
-.hdr-logo-img { width:100%; height:100%; object-fit:cover; object-position:center }
+.brand-block:hover { background:var(--navy-dk) }
 
-/* Tagline */
+.brand-block-logo {
+  width:96px; height:96px;
+  object-fit:contain;
+  flex-shrink:0;
+  /* White glow ring to make logo pop against navy */
+  filter:drop-shadow(0 0 6px rgba(255,255,255,.35));
+}
+
+.brand-block-text { display:flex; flex-direction:column; gap:4px }
+.brand-block-name {
+  font-family:'Poppins',sans-serif; font-weight:900; font-size:17px;
+  color:#fff; line-height:1.15; letter-spacing:.3px; text-transform:uppercase;
+}
+.brand-block-services {
+  font-family:'Poppins',sans-serif; font-weight:600; font-size:9.5px;
+  color:rgba(255,255,255,.65); letter-spacing:.5px; text-transform:uppercase;
+}
+
+/* ── RIGHT COLUMN — tagline+phones top, nav bottom ── */
+.hdr-right-col { display:flex; flex-direction:column; flex:1 }
+
+/* Upper row: tagline + phones */
+.hdr-top-row {
+  display:flex; align-items:center; gap:16px;
+  padding:0 24px; height:74px; background:#fff;
+}
 .hdr-tagline { flex:1; text-align:center }
 .hdr-tagline-text {
   font-family:'Poppins',sans-serif; font-weight:700; font-size:12.5px;
   color:var(--navy); letter-spacing:.3px; text-transform:uppercase;
 }
-.hdr-rating { display:flex; align-items:center; justify-content:center; gap:5px; margin-top:3px; font-size:12px; color:#555 }
+.hdr-rating { display:flex; align-items:center; justify-content:center; gap:5px; margin-top:4px; font-size:12px; color:#555 }
 
 /* Phones */
-.hdr-phones { display:flex; gap:12px; flex-shrink:0 }
+.hdr-phones { display:flex; gap:10px; flex-shrink:0 }
 .hdr-phone {
   display:flex; align-items:center; gap:9px;
   padding:8px 14px; border:1.5px solid #d0d9ed; border-radius:8px;
@@ -71,14 +99,13 @@ ul { list-style:none; margin:0; padding:0 }
 .phone-city { font-size:11px; color:#666; line-height:1 }
 .phone-num  { font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; color:var(--navy); line-height:1.2 }
 
-/* ─── NAV BAR — navy brand color ─── */
-.hdr-nav { background:var(--navy) }
-.nav-inner { height:46px; gap:0 }
-.nav-list { display:flex; align-items:stretch; height:100% }
+/* ─── NAV BAR — inside hdr-right-col ─── */
+.hdr-nav { background:var(--navy); display:flex; align-items:stretch; height:46px }
+.nav-list { display:flex; align-items:stretch; height:100%; margin:0; padding:0 8px }
 .nav-list li { display:flex }
 .nav-link {
   display:flex; align-items:center; gap:3px;
-  padding:0 14px; font-family:'Poppins',sans-serif;
+  padding:0 13px; font-family:'Poppins',sans-serif;
   font-size:13px; font-weight:600; color:rgba(255,255,255,.9);
   border-bottom:3px solid transparent;
   transition:background .15s,border-color .15s,color .15s;
@@ -90,7 +117,7 @@ ul { list-style:none; margin:0; padding:0 }
 .nav-search-btn { display:flex; padding:8px; color:rgba(255,255,255,.85); border-radius:4px; transition:background .15s }
 .nav-search-btn:hover { background:rgba(255,255,255,.12); color:#fff }
 
-/* BOOK NOW — red CTA to stand out on navy nav */
+/* BOOK NOW — red CTA caps off the nav */
 .book-now {
   display:flex; align-items:center; gap:7px;
   background:var(--red); color:#fff;

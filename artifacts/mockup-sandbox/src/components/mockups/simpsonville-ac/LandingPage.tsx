@@ -77,86 +77,92 @@ function Header() {
 
   return (
     <header className={`site-header${scrolled ? " stuck" : ""}`}>
-      {/* Row 1 – Logo / Tagline / Phones */}
-      <div className="hdr-r1">
-        <div className="hdr-inner">
+      {/*
+        Combined header: brand block spans FULL HEIGHT (logo row + nav row).
+        Matches Preferred Home Services layout exactly.
+      */}
+      <div className="hdr-combined">
 
-          {/* Logo – actual circular badge, no white bleed */}
-          <a href="#" className="hdr-logo">
-            <div className="hdr-logo-circle">
-              <img
-                src="/__mockup/images/logo.png"
-                alt="Simpsonville AC Repair"
-                className="hdr-logo-img"
-              />
+        {/* ── LEFT: full-height navy brand block ── */}
+        <a href="#" className="brand-block">
+          <img
+            src="/__mockup/images/logo.png"
+            alt="Simpsonville AC Repair"
+            className="brand-block-logo"
+          />
+          <div className="brand-block-text">
+            <div className="brand-block-name">SIMPSONVILLE<br/>AC REPAIR</div>
+            <div className="brand-block-services">COOLING · HEATING · PLUMBING · ELECTRICAL</div>
+          </div>
+        </a>
+
+        {/* ── RIGHT: tagline + phones (top) / nav (bottom) ── */}
+        <div className="hdr-right-col">
+
+          {/* Upper: tagline center, phones right */}
+          <div className="hdr-top-row">
+            <div className="hdr-tagline">
+              <div className="hdr-tagline-text">MOST TRUSTED. MOST CONVENIENT. MOST EXPERIENCED.</div>
+              <div className="hdr-rating">
+                <Stars size={14} />
+                <span>4.8 Google Rating</span>
+              </div>
             </div>
-          </a>
-
-          {/* Center tagline */}
-          <div className="hdr-tagline">
-            <div className="hdr-tagline-text">MOST TRUSTED. MOST CONVENIENT. MOST EXPERIENCED.</div>
-            <div className="hdr-rating">
-              <Stars size={14} />
-              <span>4.8 Google Rating</span>
+            <div className="hdr-phones">
+              <a href="tel:8108106747" className="hdr-phone">
+                <svg className="phone-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+                <div>
+                  <div className="phone-city">Simpsonville</div>
+                  <div className="phone-num">(810) 998-6747</div>
+                </div>
+              </a>
+              <a href="tel:8643809450" className="hdr-phone">
+                <svg className="phone-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+                <div>
+                  <div className="phone-city">Greenville</div>
+                  <div className="phone-num">864-380-9450</div>
+                </div>
+              </a>
             </div>
           </div>
 
-          {/* Phones */}
-          <div className="hdr-phones">
-            <a href="tel:8108106747" className="hdr-phone">
-              <svg className="phone-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-              <div>
-                <div className="phone-city">Simpsonville</div>
-                <div className="phone-num">(810) 998-6747</div>
-              </div>
-            </a>
-            <a href="tel:8643809450" className="hdr-phone">
-              <svg className="phone-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-              <div>
-                <div className="phone-city">Greenville</div>
-                <div className="phone-num">864-380-9450</div>
-              </div>
-            </a>
-          </div>
+          {/* Lower: nav bar */}
+          <nav className="hdr-nav">
+            <ul className="nav-list">
+              {[
+                ["AC & Heating", true], ["Plumbing", true], ["Electrical", true],
+                ["Special Offers", true], ["About", true], ["Contact", false]
+              ].map(([label, hasChevron], i) => (
+                <li key={i}>
+                  <a href="#" className="nav-link">
+                    {label as string}
+                    {hasChevron && (
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" style={{marginLeft:3}}>
+                        <path d="M2 4l4 4 4-4"/>
+                      </svg>
+                    )}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <div className="nav-right">
+              <button className="nav-search-btn" aria-label="Search">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+              </button>
+              <a href="#contact" className="book-now">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 00-2 2v16a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm0 18H5V8h14v13z"/>
+                  <path d="M7 10h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2H7zm4 0h2v2h-2z"/>
+                </svg>
+                BOOK NOW
+              </a>
+            </div>
+          </nav>
         </div>
+
       </div>
-
-      {/* Row 2 – NAV BAR (lime green, exact match to reference nav) */}
-      <nav className="hdr-nav">
-        <div className="hdr-inner nav-inner">
-          <ul className="nav-list">
-            {[
-              ["AC & Heating", true], ["Plumbing", true], ["Electrical", true],
-              ["Special Offers", true], ["About", true], ["Contact", false]
-            ].map(([label, hasChevron], i) => (
-              <li key={i}>
-                <a href="#" className="nav-link">
-                  {label as string}
-                  {hasChevron && (
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" style={{marginLeft:3}}>
-                      <path d="M2 4l4 4 4-4"/>
-                    </svg>
-                  )}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <div className="nav-right">
-            <button className="nav-search-btn" aria-label="Search">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-              </svg>
-            </button>
-            <a href="#contact" className="book-now">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 00-2 2v16a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm0 18H5V8h14v13z"/>
-                <path d="M7 10h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2H7zm4 0h2v2h-2z"/>
-              </svg>
-              BOOK NOW
-            </a>
-          </div>
-        </div>
-      </nav>
     </header>
   );
 }
