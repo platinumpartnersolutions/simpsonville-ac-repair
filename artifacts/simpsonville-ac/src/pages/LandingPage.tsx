@@ -94,7 +94,7 @@ function TrustBadges() {
           { icon: "shield",     label: "Licensed & Insured", sub: "SC Contractor" },
           { icon: "lightning",  label: "Same-Day Service", sub: "Available now" },
           { icon: "dollar",     label: "Free Estimates", sub: "No obligation" },
-          { icon: "financing",  label: "No Payments Until 2027", sub: "Financing available" },
+          { icon: "certificate", label: "SC Licensed", sub: "Verified contractor" },
         ].map((b, i) => (
           <div key={i} className="trust-badge-item">
             <span className="trust-badge-icon">{getHvacIcon(b.icon, 24)}</span>
@@ -418,7 +418,7 @@ function HomeLeadForm() {
                 </div>
               </div>
               <div className="contact-badges">
-                {["✅ Licensed & Insured", "✅ Same-Day Service", "✅ No Payments Until 2027", "✅ Est. 2023"].map((b, i) => (
+                {["✅ Licensed & Insured", "✅ Same-Day Service", "✅ Free Estimates", "✅ Est. 2023"].map((b, i) => (
                   <span key={i} className="contact-badge">{b}</span>
                 ))}
               </div>

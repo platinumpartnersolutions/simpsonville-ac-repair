@@ -140,7 +140,7 @@ export default function LocationPage() {
               subtitle="We serve your area. Get a free estimate today."
             />
             <div className="sidebar-trust">
-              {["✅ Licensed & Insured", "✅ Same-Day Service", "✅ Free Estimates", "✅ No Payments Until 2027", "✅ 4.8★ Google Rating"].map((b, i) => (
+              {["✅ Licensed & Insured", "✅ Same-Day Service", "✅ Free Estimates", "✅ SC Contractor Licensed", "✅ 4.8★ Google Rating"].map((b, i) => (
                 <div key={i} className="sidebar-trust-item">{b}</div>
               ))}
             </div>
@@ -159,7 +159,7 @@ function TopBar() {
       <div className="tb-inner">
         <span>📍 Serving Simpsonville, Greenville &amp; Surrounding Areas</span>
         <span className="tb-div">|</span>
-        <span>🎉 No Payments Until 2027!</span>
+        <span>📞 Call 864-754-7291 for Same-Day Service</span>
       </div>
     </div>
   );

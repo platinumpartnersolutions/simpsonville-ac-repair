@@ -82,7 +82,7 @@ const DATA: Record<string, ServiceData> = {
     benefits: [
       { icon: "📐", title: "Proper Load Calculation", body: "We size your new system correctly using Manual J load calculations — not guesswork. Correct sizing means lower bills and fewer breakdowns." },
       { icon: "🏆", title: "Top Brand Equipment", body: "We install Carrier, Trane, Lennox, Goodman, Daikin, and other leading brands. We'll help you choose the right unit for your home and budget." },
-      { icon: "💳", title: "Financing Available", body: "New system installations qualify for flexible financing. No payments until 2027 on qualifying purchases — ask for details." },
+      { icon: "💳", title: "Financing Available", body: "New system installations may qualify for flexible financing options. Ask about available plans when you request your free estimate." },
       { icon: "📦", title: "Full Turnkey Install", body: "We handle equipment delivery, old unit removal, refrigerant disposal, electrical hookups, and system testing — everything included." },
     ],
     commonIssues: [
@@ -298,7 +298,7 @@ export default function ServicePage() {
               defaultService={data.defaultService}
             />
             <div className="sidebar-trust">
-              {["✅ Licensed & Insured", "✅ Same-Day Service", "✅ Free Estimates", "✅ No Payments Until 2027", "✅ 4.8★ Google Rating"].map((b, i) => (
+              {["✅ Licensed & Insured", "✅ Same-Day Service", "✅ Free Estimates", "✅ SC Contractor Licensed", "✅ 4.8★ Google Rating"].map((b, i) => (
                 <div key={i} className="sidebar-trust-item">{b}</div>
               ))}
             </div>
@@ -322,7 +322,7 @@ function TopBar() {
       <div className="tb-inner">
         <span>📍 Serving Simpsonville &amp; Greenville Areas</span>
         <span className="tb-div">|</span>
-        <span>🎉 No Payments Until 2027!</span>
+        <span>📞 Call 864-754-7291 for Same-Day Service</span>
       </div>
     </div>
   );
