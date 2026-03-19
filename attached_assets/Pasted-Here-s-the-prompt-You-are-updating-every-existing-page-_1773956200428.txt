@@ -1,0 +1,327 @@
+Here's the prompt:
+
+You are updating every existing page on simpsonvilleacrepair.com with 
+more robust, authoritative content. The goal is not to add words for 
+word count — the goal is to fully satisfy the visitor's search intent 
+so completely that they have no reason to go back to Google.
+
+Every page update must follow ALL of these standards:
+
+CORE CONTENT PHILOSOPHY — apply to every single page
+SEARCH INTENT FIRST RULE:
+The first 1-2 sentences of every page must answer the primary 
+search query directly and completely. No warm-up sentences. 
+No "welcome to our website." No "if you're reading this..."
+
+The test: if someone reads only the first 2 sentences and 
+leaves, did they get a useful answer? If no, rewrite them.
+
+EXAMPLES:
+
+/ac-repair/
+WRONG: "When your air conditioner breaks down in the Simpsonville 
+heat, you need a company you can trust."
+RIGHT: "AC repair in Simpsonville typically costs $150-$600 and 
+can be completed same-day — the most common failures we see are 
+capacitors, refrigerant leaks, and contactor issues, all of which 
+our licensed technicians carry parts for on every service van."
+
+/ac-not-cooling/
+WRONG: "A hot home in Simpsonville summer is no joke..."
+RIGHT: "If your AC is running but not cooling, the three most 
+likely causes in Simpsonville homes are a dirty air filter 
+restricting airflow, low refrigerant from a slow leak, or a 
+failing capacitor causing the compressor to underperform — 
+all diagnosable in under 30 minutes."
+
+/emergency-ac-repair/
+WRONG: "We know how stressful it is when your AC breaks..."
+RIGHT: "If your AC stopped working in Simpsonville, we dispatch 
+a licensed technician same-day — most emergency repairs are 
+diagnosed and completed within 2-4 hours of your call to 
+864-XXX-XXXX."
+
+PAGE-BY-PAGE CONTENT STRUCTURE
+Apply this exact structure to every service page and symptom page.
+Adjust H2s and specifics per page topic but keep the skeleton identical.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 1: INTENT ANSWER (above fold)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- 2 sentences max
+- Answers the core search query immediately
+- Includes primary keyword naturally
+- Includes a local signal (Simpsonville, SC climate, housing type)
+- Includes a trust signal (licensed, same-day, years experience)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 2: TRUST BAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4 badges inline:
+- 4.8 Stars | 7,445+ Reviews
+- Licensed & Insured in SC
+- Same-Day Service Available  
+- Free Estimates
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 3: CORE CONTENT BODY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Target: 1,000-1,500 words for service pages
+Target: 700-1,000 words for symptom pages
+Target: 800-1,200 words for location pages
+
+Write in first-person contractor voice throughout.
+Use "we", "our team", "in our experience."
+Reference Simpsonville SC context naturally:
+- SC summer heat (avg 92°F in July, high humidity)
+- Common housing stock (newer subdivisions built 2000s-2020s,
+  slab foundations, attic air handlers)
+- Common system types in area (Carrier, Trane, Lennox, Goodman)
+
+H2 STRUCTURE FOR SERVICE PAGES:
+H2: How Much Does [Service] Cost in Simpsonville, SC?
+  → Give honest price ranges. Never vague.
+  → Example: "Capacitor replacement: $150-$300. 
+     Refrigerant recharge: $200-$500 depending on 
+     refrigerant type (R-410A vs R-22)."
+  → 150-200 words
+
+H2: Common [Service] Problems We See in Simpsonville Homes
+  → List 5-7 specific failure types
+  → Each item: name + 2 sentence explanation of cause and fix
+  → Reference local context where relevant
+  → 200-250 words
+
+H2: Our [Service] Process — What to Expect
+  → Step-by-step numbered list (5-7 steps)
+  → Each step: 2-3 sentences
+  → Be specific — what does the technician actually do?
+  → "We arrive in a fully stocked service van, introduce 
+     ourselves, and walk through what we found before 
+     touching anything."
+  → 150-200 words
+
+H2: How to Know If You Need [Service] vs [Related Service]
+  → This is the topical authority section
+  → Helps visitor make the right decision
+  → Includes internal links to related pages
+  → Example on /ac-repair/: 
+     "Repair vs Replace — if your unit is over 12 years old 
+     and repair cost exceeds 50% of replacement cost, we 
+     recommend [AC replacement] instead."
+  → 150-200 words
+
+H2: [Service] in Simpsonville SC — What Makes Our Area Different
+  → SC-specific content: humidity, heat load, common brands,
+     attic installations, slab vs crawlspace considerations
+  → This section is what separates you from generic national 
+     sites — make it hyper-local
+  → 150-200 words
+
+H2: Frequently Asked Questions About [Service] in Simpsonville
+  → 6-8 questions minimum
+  → Questions sourced from People Also Ask for that keyword
+  → Each answer: 3-5 sentences, direct, no fluff
+  → Wrap entire section in FAQPage JSON-LD schema
+  → 300-400 words total
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 4: RELATED SERVICES CLUSTER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Add a "Related Services" section near the bottom of every page.
+This is your internal linking cluster — critical for topical authority.
+
+Display as cards with icon, title, 1-sentence description, link.
+
+For /ac-repair/ the cluster links to:
+→ Emergency AC Repair
+→ AC Replacement
+→ AC Maintenance
+→ AC Not Cooling (symptom page)
+→ HVAC Repair
+
+For /emergency-ac-repair/ the cluster links to:
+→ AC Repair
+→ AC Not Cooling
+→ AC Won't Turn On
+→ Emergency Furnace Repair
+→ Free Estimate
+
+Map every page's cluster so no page is an island.
+Every page must link TO at least 4 other pages.
+Every page must RECEIVE links FROM at least 3 other pages.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 5: BOTTOM CTA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Full-width section, navy background, white text.
+
+Headline: "Ready to Get Your [Service] Fixed Today?"
+Subtext: "Call 864-XXX-XXXX for same-day service in 
+Simpsonville — or fill out the form for a free estimate."
+Buttons: [Call Now] [Get Free Estimate]
+
+LLM & AI OVERVIEW OPTIMIZATION
+Google AI Overviews and LLM crawlers pull content differently 
+than traditional Google. Optimize every page for both.
+
+STRUCTURE FOR AI EXTRACTION:
+
+1. Every H2 must be a complete question or a clear declarative 
+   statement — not a vague label.
+   
+   WRONG H2: "Our Services"
+   RIGHT H2: "What Does AC Repair Cost in Simpsonville, SC?"
+
+   WRONG H2: "About Us"  
+   RIGHT H2: "Why Simpsonville Homeowners Choose Us for AC Repair"
+
+2. Every answer that follows an H2 must start with a direct 
+   response to the H2 — as if someone asked the H2 as a question.
+   Google AI Overviews pull the first sentence after a heading.
+
+   H2: "How Long Does AC Repair Take in Simpsonville?"
+   FIRST SENTENCE: "Most AC repairs in Simpsonville take 
+   1-3 hours from diagnosis to completion, with same-day 
+   service available on most standard repairs."
+   ← AI Overview will pull exactly this sentence.
+
+3. Add a "Quick Answer" box at the top of every page 
+   immediately after the first paragraph:
+
+   <div class="quick-answer">
+     <strong>Quick Answer:</strong> [2-3 sentence direct 
+     answer to the primary search query with the most 
+     important facts a visitor needs]
+   </div>
+
+   Style it with a subtle left border in red (#CC2229).
+   This box is what AI Overviews and featured snippets pull.
+   It should read as a standalone answer with no context needed.
+
+4. Use definition-style sentences for key concepts:
+   "A capacitor is the component that gives your AC compressor 
+   the electrical boost to start — when it fails, the 
+   compressor can't turn on even though the unit appears 
+   to have power."
+   These get pulled into AI knowledge panels.
+
+5. Include a data table on every service page:
+   
+   | Repair Type | Average Cost | Time to Complete |
+   |-------------|-------------|-----------------|
+   | Capacitor replacement | $150-$300 | 1 hour |
+   | Refrigerant recharge | $200-$500 | 1-2 hours |
+   | Contactor replacement | $150-$350 | 1 hour |
+   | Blower motor | $300-$700 | 2-3 hours |
+   | Compressor replacement | $800-$2,500 | 4-6 hours |
+   
+   Tables get pulled directly into AI Overviews.
+   Add this table to every service and cost page.
+
+6. Add llms.txt at root — update it with every new page:
+   # Simpsonville AC Repair
+   > Lead generation site connecting Simpsonville SC 
+     homeowners with licensed HVAC contractors.
+   
+   ## Pages
+   / — Homepage. AC repair and HVAC services overview.
+   /ac-repair/ — AC repair costs, process, common failures.
+   /emergency-ac-repair/ — Same-day emergency AC repair.
+   [list every page with a one-line description]
+   
+   This file tells LLM crawlers exactly what each page covers.
+
+TOPICAL AUTHORITY CLUSTER MAP
+Build content so these keyword clusters are fully covered 
+and interlinked. Every cluster must have a pillar page 
+and at least 2-3 supporting pages linking to it.
+
+CLUSTER 1: AC REPAIR (pillar: /ac-repair/)
+Supporting pages that link to pillar:
+→ /ac-not-cooling/
+→ /ac-wont-turn-on/
+→ /ac-leaking-water/
+→ /ac-making-noise/
+→ /high-electric-bill/
+→ /emergency-ac-repair/
+
+CLUSTER 2: AC INSTALLATION (pillar: /ac-installation/)
+Supporting pages:
+→ /ac-replacement/
+→ /ductless-mini-split/
+→ /heat-pump-installation/ (create if not exists)
+→ /hvac-financing/ (create if not exists)
+
+CLUSTER 3: HEATING (pillar: /furnace-repair/)
+Supporting pages:
+→ /emergency-furnace-repair/
+→ /heat-pump-repair/
+→ /emergency-heat-pump-repair/
+→ /no-heat-in-house/ (create if not exists)
+
+CLUSTER 4: LOCATION (pillar: /simpsonville-sc/)
+Supporting pages:
+→ /mauldin-sc/
+→ /fountain-inn-sc/
+→ /greenville-sc/
+Each location page links back to all service pillar pages.
+
+INTERNAL LINK ANCHOR TEXT RULES:
+- Never use "click here" or "learn more"
+- Always use descriptive keyword-rich anchor text
+- Example: "our AC repair service in Simpsonville" 
+  not "our services"
+- Vary anchor text slightly across pages — don't 
+  use identical anchors site-wide
+
+SCHEMA MARKUP — ADD TO EVERY PAGE
+Every page needs ALL of the following that apply:
+
+1. LocalBusiness (homepage only):
+   Include: name, url, telephone, address, areaServed,
+   openingHours, priceRange, image, aggregateRating
+
+2. Service (every service page):
+   Include: serviceType, provider, areaServed, description,
+   offers (with price range)
+
+3. FAQPage (every page with FAQ section):
+   Every Q&A pair wrapped in Question/acceptedAnswer.
+   Minimum 6 pairs per page.
+
+4. BreadcrumbList (every page):
+   Home > Services > AC Repair > [Page Name]
+   Renders in Google SERP as breadcrumb trail.
+
+5. HowTo (process pages and "what to expect" sections):
+   Wrap step-by-step repair process sections in HowTo schema.
+   Google pulls these into rich results.
+
+6. Review / AggregateRating:
+   Add to homepage and service pages.
+   Use: ratingValue 4.8, reviewCount 7445
+
+All schema as JSON-LD in <head>. Never inline.
+Validate every page at schema.org/validator before deploying.
+
+CONTENT QUALITY CHECKLIST — run before publishing each page
+□ First 2 sentences answer the search query directly
+□ Primary keyword in H1, first sentence, at least 2 H2s
+□ "Simpsonville" appears in H1, meta, first sentence, 3+ body
+□ Price ranges included (never vague "call for pricing")
+□ Step-by-step process section present
+□ FAQ section with minimum 6 questions
+□ FAQPage schema applied to FAQ section
+□ Quick Answer box present after first paragraph
+□ Data table present (costs, timeframes, or comparisons)
+□ Related Services cluster section present with 4+ links
+□ Bottom CTA section present
+□ Internal links to minimum 4 other pages
+□ All internal link anchors are descriptive (no "click here")
+□ Meta title includes primary keyword + Simpsonville SC
+□ Meta description 150-160 chars, starts with keyword
+□ Canonical tag present
+□ Page loads under 2 seconds on mobile (test after update)
+□ Schema validated at schema.org/validator
+□ llms.txt updated with new/updated page entry

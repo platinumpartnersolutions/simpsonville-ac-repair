@@ -486,3 +486,62 @@ ul { list-style:none; margin:0; padding:0 }
   .hero-ctas { flex-direction:column; gap:10px }
   .cta-primary, .cta-outline { width:100%; justify-content:center; text-align:center }
 }
+
+/* ─── QUICK ANSWER BOX ─── */
+.quick-answer { background:#fff8f8; border-left:4px solid var(--red); border-radius:0 8px 8px 0; padding:16px 20px; margin:24px 0 32px; font-size:14.5px; color:#374151; line-height:1.8 }
+.quick-answer strong { color:var(--red); font-family:'Poppins',sans-serif }
+
+/* ─── COST TABLE ─── */
+.cost-table-section { margin:36px 0 }
+.cost-table-wrap { overflow-x:auto; border-radius:10px; border:1.5px solid #dde5f3; box-shadow:0 2px 12px rgba(13,45,110,.06) }
+.cost-table { width:100%; border-collapse:collapse; font-size:14px }
+.cost-table thead { background:var(--navy) }
+.cost-table th { color:#fff; font-family:'Poppins',sans-serif; font-weight:700; font-size:12.5px; padding:12px 16px; text-align:left; letter-spacing:.4px; text-transform:uppercase }
+.cost-table td { padding:12px 16px; border-bottom:1px solid #eef0f6; color:#374151; line-height:1.5 }
+.cost-table tr:last-child td { border-bottom:none }
+.cost-table tr:nth-child(even) { background:#f8fafd }
+.cost-table td strong { color:var(--navy) }
+.cost-table-note { font-size:13px; color:#6b7280; margin:12px 0 0; font-style:italic; line-height:1.7 }
+
+/* ─── PROCESS STEPS ─── */
+.process-steps { margin:36px 0 }
+.process-list { list-style:none; padding:0; margin:18px 0 0; display:flex; flex-direction:column; gap:16px }
+.process-item { display:flex; gap:16px; align-items:flex-start }
+.process-num { flex-shrink:0; width:36px; height:36px; border-radius:50%; background:var(--navy); color:#fff; font-family:'Poppins',sans-serif; font-weight:800; font-size:15px; display:flex; align-items:center; justify-content:center; margin-top:2px }
+.process-content { flex:1 }
+.process-title { font-family:'Poppins',sans-serif; font-weight:700; font-size:14.5px; color:var(--navy); margin:0 0 5px }
+.process-body { font-size:14px; color:#555; margin:0; line-height:1.75 }
+
+/* ─── LOCAL SECTION ─── */
+.local-section { margin:36px 0; padding:24px; background:#f8fafd; border-radius:10px; border:1.5px solid #dde5f3 }
+.local-section .inner-h2 { margin-bottom:14px }
+.local-section p { font-size:14.5px; color:#374151; line-height:1.82; margin:0 }
+
+/* ─── FAQ INNER (inside main content, not full-page) ─── */
+.faq-section-inner { margin:36px 0 }
+
+/* ─── RELATED CLUSTER ─── */
+.related-cluster { margin:36px 0 }
+.related-cluster-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px }
+.related-cluster-card { display:flex; align-items:flex-start; gap:14px; background:#fff; border:1.5px solid #dde5f3; border-radius:10px; padding:16px; text-decoration:none; transition:border-color .2s,box-shadow .2s; color:inherit }
+.related-cluster-card:hover { border-color:var(--navy); box-shadow:0 4px 16px rgba(13,45,110,.1) }
+.related-cluster-icon { font-size:24px; flex-shrink:0; margin-top:1px }
+.related-cluster-title { font-family:'Poppins',sans-serif; font-weight:700; font-size:13.5px; color:var(--navy); margin-bottom:4px }
+.related-cluster-desc { font-size:12.5px; color:#6b7280; line-height:1.55 }
+
+/* ─── PAGE BOTTOM CTA ─── */
+.page-bottom-cta { background:var(--navy); padding:60px 24px }
+.page-bottom-cta-inner { max-width:740px; margin:0 auto; text-align:center }
+.page-bottom-cta-h2 { font-family:'Poppins',sans-serif; font-weight:900; font-size:clamp(1.4rem,2.8vw,2rem); color:#fff; margin-bottom:14px }
+.page-bottom-cta-sub { color:rgba(255,255,255,.82); font-size:15.5px; line-height:1.75; margin-bottom:28px }
+.page-bottom-cta-sub strong { color:#fff }
+.page-bottom-cta-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap }
+.cta-outline-light { display:inline-flex; align-items:center; gap:8px; border:2px solid rgba(255,255,255,.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; padding:13px 26px; border-radius:8px; text-decoration:none; transition:border-color .2s,background .2s }
+.cta-outline-light:hover { border-color:#fff; background:rgba(255,255,255,.1); color:#fff }
+
+@media (max-width:640px) {
+  .related-cluster-grid { grid-template-columns:1fr }
+  .cost-table th, .cost-table td { padding:10px 12px; font-size:13px }
+  .page-bottom-cta { padding:40px 20px }
+  .page-bottom-cta-btns { flex-direction:column; align-items:center }
+}
