@@ -56,7 +56,7 @@ function Hero() {
         <div className="hero-content" style={{ opacity: rdy ? 1 : 0, transform: rdy ? "none" : "translateY(28px)", transition: "all .75s ease .15s" }}>
           <a href="#reviews" className="hero-pill">
             <Stars size={14} color="#FFD700" />
-            <span>Trusted Provider</span>
+            <span>Trusted Providers</span>
             <svg width="18" height="18" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
               <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
               <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
@@ -90,11 +90,11 @@ function TrustBadges() {
     <div className="trust-bar">
       <div className="trust-bar-inner">
         {[
-          { icon: "star",       label: "4.8 Google Rating", sub: "Trusted Provider" },
-          { icon: "shield",     label: "Licensed & Insured", sub: "SC Contractor" },
+          { icon: "star",       label: "4.8 Google Rating", sub: "Trusted Providers" },
+          { icon: "shield",     label: "Licensed & Insured", sub: "SC Contractors" },
           { icon: "lightning",  label: "Same-Day Service", sub: "Available now" },
           { icon: "dollar",     label: "Free Estimates", sub: "No obligation" },
-          { icon: "certificate", label: "SC Licensed", sub: "Verified contractor" },
+          { icon: "certificate", label: "SC Licensed", sub: "Verified contractors" },
         ].map((b, i) => (
           <div key={i} className="trust-badge-item">
             <span className="trust-badge-icon">{getHvacIcon(b.icon, 24)}</span>

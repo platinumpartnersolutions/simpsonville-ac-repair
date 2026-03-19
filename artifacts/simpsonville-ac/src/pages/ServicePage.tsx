@@ -724,7 +724,7 @@ export default function ServicePage() {
               defaultService={data.defaultService}
             />
             <div className="sidebar-trust">
-              {["✅ Licensed & Insured", "✅ Same-Day Service", "✅ Free Estimates", "✅ SC Contractor Licensed", "✅ 4.8★ Google Rating"].map((b, i) => (
+              {["✅ Licensed & Insured", "✅ Same-Day Service", "✅ Free Estimates", "✅ SC Licensed Contractors", "✅ 4.8★ Google Rating"].map((b, i) => (
                 <div key={i} className="sidebar-trust-item">{b}</div>
               ))}
             </div>

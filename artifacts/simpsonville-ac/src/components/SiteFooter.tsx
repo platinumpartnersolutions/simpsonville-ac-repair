@@ -46,7 +46,7 @@ export function SiteFooter() {
             <div>📍 Simpsonville, SC 29681</div>
           </div>
           <div className="footer-badges">
-            {["✅ Licensed & Insured", "✅ Est. 2023", "✅ SC Contractor Licensed"].map((b, i) => (
+            {["✅ Licensed & Insured", "✅ Est. 2023", "✅ SC Licensed Contractors"].map((b, i) => (
               <span key={i} className="fbadge">{b}</span>
             ))}
           </div>

@@ -61,7 +61,7 @@ export default function AboutPage() {
             <h2 className="inner-h2">License &amp; Insurance</h2>
             <div className="inner-benefits-grid">
               {[
-                { icon: "📋", title: "SC Contractor Licensed", body: "All work is performed by South Carolina licensed HVAC and electrical contractors. License #12345." },
+                { icon: "📋", title: "SC Licensed Contractors", body: "All work is performed by South Carolina licensed HVAC and electrical contractors in our network. License numbers verified prior to dispatch." },
                 { icon: "🛡️", title: "Fully Insured", body: "Every contractor in our network carries full general liability and workers' compensation insurance — protecting you and the technicians on the job." },
                 { icon: "🌡️", title: "EPA Certified", body: "Network technicians hold EPA Section 608 certification for proper refrigerant handling and recovery." },
                 { icon: "🏅", title: "NATE Certified", body: "Lead technicians in our network hold North American Technician Excellence (NATE) certification — the industry's highest credential." },

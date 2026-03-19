@@ -84,7 +84,7 @@ export default function FreeEstimate() {
             </div>
 
             <div className="inner-trust-row" style={{ marginTop: 28 }}>
-              {["Licensed & Insured", "Est. 2023", "4.8★ Google Rating", "Free Estimates", "SC Contractor Licensed"].map((t, i) => (
+              {["Licensed & Insured", "Est. 2023", "4.8★ Google Rating", "Free Estimates", "SC Licensed Contractors"].map((t, i) => (
                 <div key={i} className="inner-trust-badge">✅ {t}</div>
               ))}
             </div>
