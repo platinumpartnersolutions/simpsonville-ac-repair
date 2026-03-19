@@ -18,10 +18,6 @@ export function TopBar() {
     <div className="topbar">
       <div className="tb-inner">
         <span>📍 Serving Simpsonville &amp; Greenville Areas</span>
-        <span className="tb-div">|</span>
-        <span>💼 Careers</span>
-        <span className="tb-div">|</span>
-        <span>🎉 Buy a New HVAC System. <strong>No Payments Until 2027!</strong></span>
       </div>
     </div>
   );
