@@ -23,9 +23,9 @@ const DATA: Record<string, ServiceData> = {
     h1: "AC Repair in Simpsonville, SC",
     metaTitle: "AC Repair Simpsonville SC | Same-Day Service | Free Estimate",
     metaDesc: "Fast, reliable AC repair in Simpsonville, SC. Licensed technicians, same-day service, free estimates. Call (810) 998-6747 now.",
-    intro: "When your air conditioner stops working or struggles to keep your home cool during Simpsonville's hot summers, you need fast, dependable repair service. Our licensed technicians diagnose and fix all makes and models of central air conditioning systems — from refrigerant leaks and frozen coils to faulty compressors and electrical failures. We offer same-day appointments and transparent pricing with no surprise fees.",
+    intro: "When your air conditioner stops working or struggles to keep your home cool during Simpsonville's hot summers, you need fast, dependable repair service. Licensed technicians in our network diagnose and fix all makes and models of central air conditioning systems — from refrigerant leaks and frozen coils to faulty compressors and electrical failures. We connect you with same-day service and transparent pricing with no surprise fees.",
     benefits: [
-      { icon: "⚡", title: "Same-Day Service", body: "We dispatch technicians quickly so you're not stuck in the heat. Most repairs are completed on the first visit." },
+      { icon: "⚡", title: "Same-Day Service", body: "Local licensed contractors are dispatched quickly so you're not stuck in the heat. Most repairs are completed on the first visit." },
       { icon: "🔧", title: "All Makes & Models", body: "We repair Carrier, Trane, Lennox, Goodman, Rheem, and every other major brand of central AC and heat pump systems." },
       { icon: "💰", title: "Upfront Pricing", body: "You'll know the cost before we start. No hidden fees, no surprises — just honest quotes from certified technicians." },
       { icon: "🛡️", title: "Licensed & Insured", body: "All work is performed by SC-licensed HVAC technicians. Every repair is backed by our workmanship warranty." },
@@ -70,7 +70,7 @@ const DATA: Record<string, ServiceData> = {
     h1: "AC Installation in Simpsonville, SC",
     metaTitle: "AC Installation Simpsonville SC | New Units | Free Estimate",
     metaDesc: "Expert AC installation in Simpsonville, SC. All major brands, free estimates, financing available. Call (810) 998-6747.",
-    intro: "Installing a new air conditioning system in your Simpsonville home is one of the most impactful comfort upgrades you can make. A properly sized and installed central AC unit delivers consistent, efficient cooling through the Upstate's long, hot summers. Our certified installation teams handle everything from equipment selection and load calculations to refrigerant charging and system commissioning — leaving your home cool and your new system running correctly from day one.",
+    intro: "Installing a new air conditioning system in your Simpsonville home is one of the most impactful comfort upgrades you can make. A properly sized and installed central AC unit delivers consistent, efficient cooling through the Upstate's long, hot summers. Licensed installation teams handle everything from equipment selection and load calculations to refrigerant charging and system commissioning — leaving your home cool and your new system running correctly from day one.",
     benefits: [
       { icon: "📐", title: "Proper Load Calculation", body: "We size your new system correctly using Manual J load calculations — not guesswork. Correct sizing means lower bills and fewer breakdowns." },
       { icon: "🏆", title: "Top Brand Equipment", body: "We install Carrier, Trane, Lennox, Goodman, Daikin, and other leading brands. We'll help you choose the right unit for your home and budget." },
@@ -91,7 +91,7 @@ const DATA: Record<string, ServiceData> = {
     h1: "AC Replacement in Simpsonville, SC",
     metaTitle: "AC Replacement Simpsonville SC | Same-Day Quotes | All Brands",
     metaDesc: "Fast AC replacement in Simpsonville, SC. Same-day quotes, all brands, financing available. Call (810) 998-6747.",
-    intro: "When repairing your existing air conditioner no longer makes financial sense, replacing it with a modern high-efficiency unit is the smarter investment. Our team helps Simpsonville homeowners navigate the replacement process — from selecting the right capacity and efficiency rating to professional removal of the old system and complete installation of the new one. We offer competitive pricing and same-day quotes so you can make an informed decision quickly.",
+    intro: "When repairing your existing air conditioner no longer makes financial sense, replacing it with a modern high-efficiency unit is the smarter investment. Our network of licensed contractors helps Simpsonville homeowners navigate the replacement process — from selecting the right capacity and efficiency rating to professional removal of the old system and complete installation of the new one. We connect you with competitive pricing and same-day quotes so you can make an informed decision quickly.",
     benefits: [
       { icon: "💡", title: "Energy Savings", body: "Modern SEER2-rated systems use significantly less electricity than units from 10+ years ago. Most homeowners see monthly savings immediately." },
       { icon: "🔄", title: "Old Unit Removal", body: "We properly remove and dispose of your old system, including refrigerant recovery per EPA regulations — all included in your quote." },
@@ -112,7 +112,7 @@ const DATA: Record<string, ServiceData> = {
     h1: "Heat Pump Repair & Installation in Simpsonville, SC",
     metaTitle: "Heat Pump Repair Simpsonville SC | Install & Replace | Call Now",
     metaDesc: "Expert heat pump repair and installation in Simpsonville, SC. All brands serviced. Call (810) 998-6747 for same-day service.",
-    intro: "Heat pumps are the most energy-efficient way to heat and cool homes in Simpsonville's moderate climate — moving heat rather than generating it. When your heat pump struggles in either cooling or heating mode, our technicians can diagnose the issue quickly, from reversing valve failures and defrost cycle problems to refrigerant leaks and compressor issues. We also handle full heat pump installations and replacements for homeowners upgrading from gas or older systems.",
+    intro: "Heat pumps are the most energy-efficient way to heat and cool homes in Simpsonville's moderate climate — moving heat rather than generating it. When your heat pump struggles in either cooling or heating mode, local licensed technicians can diagnose the issue quickly, from reversing valve failures and defrost cycle problems to refrigerant leaks and compressor issues. We also connect you with full heat pump installations and replacements for homeowners upgrading from gas or older systems.",
     benefits: [
       { icon: "♻️", title: "Dual-Mode Expertise", body: "We service heat pumps in both cooling and heating modes — understanding the full refrigerant cycle and reversing valve operation." },
       { icon: "🌿", title: "Energy Efficiency", body: "Modern heat pumps achieve COPs of 3.0+, making them 2–3x more efficient than electric resistance heating. We help you maximize performance." },
@@ -135,7 +135,7 @@ const DATA: Record<string, ServiceData> = {
     h1: "Furnace Repair in Simpsonville, SC",
     metaTitle: "Furnace Repair Simpsonville SC | Same-Day Heat Restored",
     metaDesc: "Fast furnace repair in Simpsonville, SC. Same-day service, gas and electric furnaces, licensed technicians. Call (810) 998-6747.",
-    intro: "When your furnace stops working during a Simpsonville winter, our technicians respond quickly to restore heat to your home. We repair all types of residential furnaces including gas, electric, and oil systems — diagnosing ignition failures, heat exchanger cracks, blower motor issues, and control board faults. Most furnace repairs are completed on the same day, and we carry common repair parts on our service vehicles.",
+    intro: "When your furnace stops working during a Simpsonville winter, licensed technicians in our network respond quickly to restore heat to your home. We connect you with repair service for all types of residential furnaces including gas, electric, and oil systems — diagnosing ignition failures, heat exchanger cracks, blower motor issues, and control board faults. Most furnace repairs are completed on the same day, and contractor service vehicles carry common repair parts.",
     benefits: [
       { icon: "🔥", title: "Same-Day Heat Restoration", body: "We prioritize furnace calls during cold weather, dispatching technicians quickly to get your heat working again as fast as possible." },
       { icon: "🛡️", title: "Safety Inspections", body: "Every furnace service includes a heat exchanger inspection and carbon monoxide check — critical safety steps we never skip." },
@@ -180,7 +180,7 @@ const DATA: Record<string, ServiceData> = {
     h1: "Ductless Mini Split Installation in Simpsonville, SC",
     metaTitle: "Mini Split Installation Simpsonville SC | Ductless HVAC Experts",
     metaDesc: "Professional ductless mini split installation in Simpsonville, SC. Multi-zone systems, all brands. Call (810) 998-6747 for a free estimate.",
-    intro: "Ductless mini split systems are the ideal solution for Simpsonville homes without existing ductwork, room additions, garages, sunrooms, and spaces where traditional ducted systems can't reach. These systems provide precise zone-by-zone temperature control with exceptional energy efficiency. Our certified technicians handle design, installation, and commissioning of single-zone and multi-zone mini split systems from all major manufacturers.",
+    intro: "Ductless mini split systems are the ideal solution for Simpsonville homes without existing ductwork, room additions, garages, sunrooms, and spaces where traditional ducted systems can't reach. These systems provide precise zone-by-zone temperature control with exceptional energy efficiency. Licensed technicians in our network handle design, installation, and commissioning of single-zone and multi-zone mini split systems from all major manufacturers.",
     benefits: [
       { icon: "🎯", title: "Zone Control", body: "Each indoor unit controls a specific zone independently. No more heating or cooling unoccupied rooms — saving energy and money." },
       { icon: "🔇", title: "Ultra Quiet Operation", body: "Mini split systems operate at whisper-quiet levels — often below 20dB for indoor units — making them ideal for bedrooms and offices." },
@@ -254,7 +254,7 @@ export default function ServicePage() {
 
             <div className="inner-cta-strip">
               <div>
-                <strong>Need service now?</strong> Our team is standing by.
+                <strong>Need service now?</strong> Licensed contractors are standing by.
               </div>
               <div className="inner-cta-strip-btns">
                 <a href="tel:8109986747" className="cta-primary">📞 (810) 998-6747</a>

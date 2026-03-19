@@ -53,7 +53,7 @@ const config: EmergencyPageConfig = {
             <li><span className="issue-check">✅</span> Use electric space heaters safely in occupied rooms while you wait</li>
           </ul>
           <p className="inner-intro" style={{ marginTop: 16 }}>
-            Do not repeatedly attempt to restart a furnace that isn't igniting — each failed start dumps unburned gas into the heat exchanger. If the furnace is short-cycling (starting and stopping every few minutes), turn it off at the thermostat and wait for our technician to diagnose the root cause safely.
+            Do not repeatedly attempt to restart a furnace that isn't igniting — each failed start dumps unburned gas into the heat exchanger. If the furnace is short-cycling (starting and stopping every few minutes), turn it off at the thermostat and wait for the technician to diagnose the root cause safely.
           </p>
         </>
       ),
@@ -64,7 +64,7 @@ const config: EmergencyPageConfig = {
         <div className="emergency-steps">
           {[
             { n: "1", title: "You call — we confirm same-day availability", body: "Call (810) 998-6747 and we confirm a technician can get to your Simpsonville home today. Most emergency furnace calls are dispatched within the hour." },
-            { n: "2", title: "Technician arrives with fully stocked service van", body: "Our vans carry ignitors, flame sensors, capacitors, contactors, and other commonly failed furnace components for all major brands." },
+            { n: "2", title: "Technician arrives with fully stocked service van", body: "Contractor service vans carry ignitors, flame sensors, capacitors, contactors, and other commonly failed furnace components for all major brands." },
             { n: "3", title: "Safety check before diagnosis", body: "We test for gas leaks and carbon monoxide before beginning diagnostic work. Safety is step one on every furnace call." },
             { n: "4", title: "Diagnosis explained clearly before any repair", body: "We show you exactly what failed and why. You'll understand the problem before we quote the repair." },
             { n: "5", title: "Upfront quote, same-visit repair in most cases", body: "You approve the price before we touch anything. Most emergency furnace repairs are completed in a single visit." },
@@ -127,7 +127,7 @@ const config: EmergencyPageConfig = {
       a: "Yes — if you smell gas near your furnace, leave the property immediately, call your gas utility's emergency line, and do not use any electrical switches or open flames. Once the utility has confirmed safety, call us to inspect and repair the furnace.",
     },
     {
-      q: "What if my furnace needs a part that isn't on your van?",
+      q: "What if my furnace needs a part that isn't on the service van?",
       a: "We stock the most common replacement parts on every van. If your system needs a specialty part, we'll give you a firm delivery timeline and discuss temporary heating options while you wait.",
     },
     {
@@ -136,7 +136,7 @@ const config: EmergencyPageConfig = {
     },
     {
       q: "Do you repair all furnace brands?",
-      a: "Yes. We service Carrier, Trane, Lennox, Rheem, Goodman, York, American Standard, Bryant, and other major brands. Our vans are stocked with components for the most common models in Simpsonville homes.",
+      a: "Yes. We connect you with technicians who service Carrier, Trane, Lennox, Rheem, Goodman, York, American Standard, Bryant, and other major brands. Contractor service vans carry components for the most common models in Simpsonville homes.",
     },
   ],
   internalLinks: [

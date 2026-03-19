@@ -52,7 +52,7 @@ export default function AboutPage() {
               Simpsonville AC Repair is a locally owned heating, cooling, plumbing, and electrical company based in Simpsonville, South Carolina. Founded in 2023, we set out with a straightforward mission: provide honest, skilled, and fast home service to the families and homeowners in our community.
             </p>
             <p style={{ color: "#555", lineHeight: 1.85, marginBottom: 16 }}>
-              Our team is made up of licensed SC contractors who grew up in the Upstate and understand the unique demands that the region's climate places on residential systems. From the long stretches of summer heat that push AC units to their limits, to the occasional winter cold snaps that test heating equipment — we've seen it all, and we know how to fix it.
+              Our network consists of licensed SC contractors who grew up in the Upstate and understand the unique demands that the region's climate places on residential systems. From the long stretches of summer heat that push AC units to their limits, to the occasional winter cold snaps that test heating equipment — we've seen it all, and we know how to fix it.
             </p>
             <p style={{ color: "#555", lineHeight: 1.85, marginBottom: 32 }}>
               We believe in transparent pricing, same-day service when possible, and treating every home we enter with the respect it deserves. When you call Simpsonville AC Repair, you'll speak with a real local person who can help.
@@ -62,9 +62,9 @@ export default function AboutPage() {
             <div className="inner-benefits-grid">
               {[
                 { icon: "📋", title: "SC Contractor Licensed", body: "All work is performed by South Carolina licensed HVAC and electrical contractors. License #12345." },
-                { icon: "🛡️", title: "Fully Insured", body: "We carry full general liability and workers' compensation insurance on every job — protecting you and our team." },
-                { icon: "🌡️", title: "EPA Certified", body: "Our technicians hold EPA Section 608 certification for proper refrigerant handling and recovery." },
-                { icon: "🏅", title: "NATE Certified", body: "Our lead technicians hold North American Technician Excellence (NATE) certification — the industry's highest credential." },
+                { icon: "🛡️", title: "Fully Insured", body: "Every contractor in our network carries full general liability and workers' compensation insurance — protecting you and the technicians on the job." },
+                { icon: "🌡️", title: "EPA Certified", body: "Network technicians hold EPA Section 608 certification for proper refrigerant handling and recovery." },
+                { icon: "🏅", title: "NATE Certified", body: "Lead technicians in our network hold North American Technician Excellence (NATE) certification — the industry's highest credential." },
               ].map((b, i) => (
                 <div key={i} className="inner-benefit-card">
                   <div className="inner-benefit-icon">{b.icon}</div>

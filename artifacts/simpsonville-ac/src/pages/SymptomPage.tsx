@@ -21,7 +21,7 @@ const DATA: Record<string, SymptomData> = {
     h1: "AC Not Cooling in Simpsonville, SC? We Fix It Fast.",
     metaTitle: "AC Not Cooling Simpsonville SC | Emergency Repair | Call Now",
     metaDesc: "AC blowing warm air in Simpsonville? Get fast diagnosis and repair. Same-day service available. Call (810) 998-6747 now.",
-    intro: "If your air conditioner is running but not cooling your Simpsonville home, several issues could be responsible — ranging from a simple refrigerant shortage to a failing compressor. The longer you wait, the hotter your home gets and the more stress is placed on the system. Our technicians diagnose the exact cause quickly and restore cooling, usually on the same visit.",
+    intro: "If your air conditioner is running but not cooling your Simpsonville home, several issues could be responsible — ranging from a simple refrigerant shortage to a failing compressor. The longer you wait, the hotter your home gets and the more stress is placed on the system. Local licensed technicians diagnose the exact cause quickly and restore cooling, usually on the same visit.",
     causes: [
       { icon: "🧊", cause: "Low or No Refrigerant", detail: "Refrigerant doesn't get used up — if levels are low, your system has a leak. We locate and repair the leak, then recharge to the correct level." },
       { icon: "🔌", cause: "Failed Compressor", detail: "The compressor is the heart of your AC. If it fails, the system runs but can't cool. Compressor replacement or full system upgrade may be needed." },
@@ -38,7 +38,7 @@ const DATA: Record<string, SymptomData> = {
     h1: "AC Won't Turn On in Simpsonville, SC?",
     metaTitle: "AC Not Turning On Simpsonville SC | Same-Day Diagnosis",
     metaDesc: "AC won't start in Simpsonville? Get same-day diagnosis and repair. Call (810) 998-6747 for fast service.",
-    intro: "An air conditioner that won't start or respond to the thermostat is one of the most urgent AC problems during Simpsonville's summer heat. The cause can be as simple as a tripped breaker or as involved as a failed control board. Our technicians work through the diagnostic process systematically to find the exact cause and restore your system as quickly as possible.",
+    intro: "An air conditioner that won't start or respond to the thermostat is one of the most urgent AC problems during Simpsonville's summer heat. The cause can be as simple as a tripped breaker or as involved as a failed control board. Local licensed technicians work through the diagnostic process systematically to find the exact cause and restore your system as quickly as possible.",
     causes: [
       { icon: "⚡", cause: "Tripped Circuit Breaker", detail: "AC units draw high current on startup. A tripped breaker — often caused by a power surge or an overloaded circuit — is the first thing to check." },
       { icon: "🔋", cause: "Failed Run/Start Capacitor", detail: "Capacitors give the motors the startup boost they need. When they fail (very common in summer heat), the motors can't start and the unit won't run." },
@@ -55,7 +55,7 @@ const DATA: Record<string, SymptomData> = {
     h1: "AC Leaking Water in Simpsonville, SC?",
     metaTitle: "AC Leaking Water Simpsonville SC | Fast Repair Service",
     metaDesc: "AC leaking water in Simpsonville? We diagnose and repair drain clogs, frozen coils, and more. Call (810) 998-6747.",
-    intro: "Water leaking from your air conditioner — whether dripping from the indoor air handler or pooling on the floor — needs to be addressed quickly to prevent water damage, mold growth, and structural issues. In Simpsonville's humid climate, condensate drainage is critical to system performance and home health. Our technicians diagnose the cause and fix it during the same visit in most cases.",
+    intro: "Water leaking from your air conditioner — whether dripping from the indoor air handler or pooling on the floor — needs to be addressed quickly to prevent water damage, mold growth, and structural issues. In Simpsonville's humid climate, condensate drainage is critical to system performance and home health. Local licensed technicians diagnose the cause and fix it during the same visit in most cases.",
     causes: [
       { icon: "🚿", cause: "Clogged Condensate Drain Line", detail: "The most common cause. Algae, debris, and dirt build up in the drain line over time. We clear the blockage and treat the line to prevent regrowth." },
       { icon: "❄️", cause: "Frozen Evaporator Coil Thawing", detail: "When a frozen coil melts, excess water can overwhelm the drain pan. The freeze itself needs to be diagnosed and addressed." },
@@ -71,7 +71,7 @@ const DATA: Record<string, SymptomData> = {
     h1: "AC Making Loud Noise in Simpsonville, SC?",
     metaTitle: "AC Making Noise Simpsonville SC | Diagnose & Fix Today",
     metaDesc: "Strange AC noises in Simpsonville? We diagnose banging, squealing, clicking, and rattling. Call (810) 998-6747 for same-day service.",
-    intro: "Your air conditioner should operate with a steady, low hum. Any new or unusual noise — banging, squealing, grinding, clicking, rattling, or hissing — is a signal that something is wrong inside the system. Catching and addressing these sounds early usually prevents more serious and expensive failures. Our technicians can identify exactly what's causing the noise and repair it the same day.",
+    intro: "Your air conditioner should operate with a steady, low hum. Any new or unusual noise — banging, squealing, grinding, clicking, rattling, or hissing — is a signal that something is wrong inside the system. Catching and addressing these sounds early usually prevents more serious and expensive failures. Local licensed technicians can identify exactly what's causing the noise and repair it the same day.",
     causes: [
       { icon: "💥", cause: "Banging or Clanking", detail: "A loose or broken part — like a connecting rod, piston, or fan blade — hitting the housing or other components. Shut the system off and call us immediately." },
       { icon: "🎵", cause: "Squealing or Screeching", detail: "Typically a worn blower belt (older systems) or failing blower motor bearings. This often gets worse over time until the motor seizes." },
@@ -88,7 +88,7 @@ const DATA: Record<string, SymptomData> = {
     h1: "High Electric Bill from Your HVAC in Simpsonville, SC?",
     metaTitle: "HVAC High Electric Bill Simpsonville SC | Tune-Up & Repair",
     metaDesc: "High electric bills from your HVAC in Simpsonville? A tune-up or repair could cut your costs. Call (810) 998-6747.",
-    intro: "If your electric bill has risen noticeably while your usage habits haven't changed, your HVAC system is often the culprit. Cooling and heating account for the largest portion of residential energy use in the Upstate, and an inefficient or struggling system can add hundreds of dollars to your annual utility costs. Our technicians diagnose the specific cause of your system's energy waste and restore efficient operation.",
+    intro: "If your electric bill has risen noticeably while your usage habits haven't changed, your HVAC system is often the culprit. Cooling and heating account for the largest portion of residential energy use in the Upstate, and an inefficient or struggling system can add hundreds of dollars to your annual utility costs. Local licensed technicians diagnose the specific cause of your system's energy waste and restore efficient operation.",
     causes: [
       { icon: "🌡️", cause: "Low Refrigerant", detail: "An AC with low refrigerant runs continuously trying to reach the setpoint — consuming electricity without effective cooling." },
       { icon: "🧹", cause: "Dirty Coils", detail: "Dirty evaporator or condenser coils can reduce efficiency by 20–30%, forcing the system to run longer to move the same amount of heat." },
@@ -157,7 +157,7 @@ export default function SymptomPage() {
             <div className="symptom-cta-box">
               <div>
                 <strong>Stop guessing — get a professional diagnosis today.</strong>
-                <p>Our technicians will identify the exact cause and provide a written repair quote.</p>
+                <p>Local licensed technicians will identify the exact cause and provide a written repair quote.</p>
               </div>
               <div className="inner-cta-strip-btns">
                 <a href="tel:8109986747" className="cta-primary">📞 Call Now</a>

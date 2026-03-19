@@ -121,7 +121,7 @@ function ServicesGrid() {
         <Reveal>
           <div className="sec-eyebrow">WHAT WE DO</div>
           <h2 className="sec-h2">Complete HVAC Services in Simpsonville, SC</h2>
-          <p className="sec-lead">From emergency AC repair to full system replacement, our licensed technicians handle every aspect of residential heating and cooling.</p>
+          <p className="sec-lead">From emergency AC repair to full system replacement, local licensed technicians in our network handle every aspect of residential heating and cooling.</p>
         </Reveal>
         <div className="all-services-grid">
           {ALL_SERVICES.map((s, i) => (
@@ -153,7 +153,7 @@ function ContentOffer() {
         <div className="co-text">
           <Reveal><p>Simpsonville has become one of the most active residential communities in the Greenville area. Neighborhoods continue expanding across the city while long-established homes remain a central part of the community. With more families moving into the area each year, homes rely heavily on dependable systems that keep everyday life running smoothly.</p></Reveal>
           <Reveal delay={80}><p>Heating and cooling systems help manage the Upstate's hot summers and cooler winter nights. Plumbing systems support daily water use throughout the home. Electrical systems power everything from lighting to modern appliances and home technology.</p></Reveal>
-          <Reveal delay={160}><p>Simpsonville AC Repair works with homeowners across Simpsonville to support these essential systems. Our technicians regularly assist homes throughout the area, helping ensure the systems behind the walls and ceilings continue operating reliably.</p></Reveal>
+          <Reveal delay={160}><p>Simpsonville AC Repair works with homeowners across Simpsonville to support these essential systems. Local licensed technicians in our network regularly assist homes throughout the area, helping ensure the systems behind the walls and ceilings continue operating reliably.</p></Reveal>
         </div>
 
         <Reveal dir="left" delay={100}>
@@ -262,7 +262,7 @@ function Neighborhoods() {
         <div className="nbhd-grid">
           <div className="nbhd-text">
             <Reveal><h2 className="sec-h2">Working in Neighborhoods Across Simpsonville</h2></Reveal>
-            <Reveal delay={80}><p>Simpsonville AC Repair regularly assists homeowners throughout Simpsonville and nearby parts of the Greenville area. Our technicians travel local roads and residential communities daily, helping maintain the systems that homes depend on.</p></Reveal>
+            <Reveal delay={80}><p>Simpsonville AC Repair regularly assists homeowners throughout Simpsonville and nearby parts of the Greenville area. Local licensed technicians travel local roads and residential communities daily, helping maintain the systems that homes depend on.</p></Reveal>
             <Reveal delay={160}><p>From neighborhoods near downtown Simpsonville to growing developments along the city's main corridors, homes throughout the area rely on heating, plumbing, and electrical systems year-round.</p></Reveal>
             <Reveal delay={240}><p>As the Simpsonville community continues to grow, Simpsonville AC Repair remains a dependable resource for homeowners maintaining the essential systems inside their homes.</p></Reveal>
             <Reveal delay={300}>
@@ -349,7 +349,7 @@ function FAQ() {
 const TESTIMONIALS = [
   { name: "Timothy Fuller", time: "1 day ago", stars: 5, text: "Replacement of faulty products done flawlessly. Outstanding and professional service." },
   { name: "Grace Salem", time: "2 days ago", stars: 5, text: "From the beginning of the service call to the end it was an awesome experience! Dee was great, very knowledgeable and did a great job fixing our toilet." },
-  { name: "Lois Cox", time: "2 days ago", stars: 5, text: "Chris Crawford was our technician today and he went above and beyond for us." },
+  { name: "Lois Cox", time: "2 days ago", stars: 5, text: "Chris Crawford was the technician today and he went above and beyond for us." },
   { name: "S. Barber", time: "2 days ago", stars: 5, text: "Freddie was wonderful. Very knowledgeable and professional." },
   { name: "Brendan Clark", time: "2 days ago", stars: 5, text: "Corey was a pleasure to work with! Great company all around." },
   { name: "Kate Stark", time: "2 days ago", stars: 5, text: "Nick provided excellent plumbing service from start to finish. He communicated clearly, showed up on time, and quickly resolved our clogged kitchen drain." },

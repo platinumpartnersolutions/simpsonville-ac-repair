@@ -3,8 +3,8 @@ import { EmergencyPageTemplate, IssueList, type EmergencyPageConfig } from "@/co
 
 const STEPS = [
   { n: "1", title: "You call — we confirm same-day availability", body: "Call (810) 998-6747 and we'll confirm we can get a technician to your Simpsonville home today. During peak summer months, calling early in the day secures the fastest slot." },
-  { n: "2", title: "Technician dispatched with fully stocked service van", body: "We dispatch the nearest available tech immediately. Our vans are stocked with the most common replacement parts for Carrier, Trane, Lennox, Rheem, Goodman, York, and other major brands." },
-  { n: "3", title: "Diagnosis on arrival — we explain before touching anything", body: "When we arrive, our technician performs a thorough diagnostic and walks you through exactly what failed and why. You'll never be surprised by a repair you didn't understand." },
+  { n: "2", title: "Technician dispatched with fully stocked service van", body: "A local contractor is dispatched immediately. Contractor service vans are stocked with the most common replacement parts for Carrier, Trane, Lennox, Rheem, Goodman, York, and other major brands." },
+  { n: "3", title: "Diagnosis on arrival — explained before touching anything", body: "When the technician arrives, they perform a thorough diagnostic and walk you through exactly what failed and why. You'll never be surprised by a repair you didn't understand." },
   { n: "4", title: "Upfront quote — no surprise charges", body: "Before any work begins, we give you a written quote. The price you approve is the price you pay. No after-hours upcharge, no hidden fees." },
   { n: "5", title: "Repair completed same visit in most cases", body: "The majority of emergency AC repairs in Simpsonville are completed in a single visit. If a specialty part needs to be ordered, we'll give you a firm timeline and temporary cooling recommendations." },
 ];
@@ -14,7 +14,7 @@ const PROBLEMS = [
   { name: "Refrigerant leak or low charge", desc: "Refrigerant absorbs heat from your home's air. A leak or undercharge means the system can't cool effectively. We locate the leak, repair it, and recharge the system. Refrigerant service typically runs $200–$500 depending on the type." },
   { name: "Contactor failure", desc: "The contactor switches power to your compressor and condenser fan. A burned contactor is a common emergency repair, usually running $150–$250." },
   { name: "Frozen evaporator coil", desc: "Restricted airflow or low refrigerant causes ice to form on your indoor coil, blocking all cooling. We thaw the system, identify the root cause, and fix it same-day." },
-  { name: "Blown fuses or tripped breaker", desc: "Electrical faults are one of the most common causes of sudden AC shutdowns. Our technicians trace the fault to its source rather than just resetting the breaker." },
+  { name: "Blown fuses or tripped breaker", desc: "Electrical faults are one of the most common causes of sudden AC shutdowns. Local licensed technicians trace the fault to its source rather than just resetting the breaker." },
   { name: "Failed blower motor", desc: "Without the blower motor, conditioned air can't circulate through your home. Blower motor replacement typically runs $300–$600 and is done same-visit in most cases." },
 ];
 

@@ -52,7 +52,7 @@ export default function FreeEstimate() {
           <main className="inner-main">
             <h2 className="inner-h2">What to Expect</h2>
             <p style={{ color: "#555", lineHeight: 1.8, marginBottom: 28 }}>
-              Whether you need AC repair, a new system installation, or a seasonal tune-up, we make getting a quote simple and stress-free. Fill out the form, and a member of our team will contact you within the hour to discuss your system and schedule a convenient time to visit your Simpsonville home.
+              Whether you need AC repair, a new system installation, or a seasonal tune-up, we make getting a quote simple and stress-free. Fill out the form, and a licensed contractor in our network will contact you within the hour to discuss your system and schedule a convenient time to visit your Simpsonville home.
             </p>
 
             <div className="inner-benefits-grid">

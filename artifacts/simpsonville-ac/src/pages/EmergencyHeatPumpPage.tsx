@@ -4,8 +4,8 @@ import { EmergencyPageTemplate, IssueList, type EmergencyPageConfig } from "@/co
 const PROBLEMS = [
   { name: "Heat pump stuck in one mode", desc: "If your heat pump is heating when you need cooling (or vice versa), the reversing valve is likely stuck or failed. The reversing valve shifts refrigerant flow direction — when it fails, the system locks into one mode. Most reversing valve repairs run $400–$700." },
   { name: "Outdoor unit iced over", desc: "Heat pumps can ice up in both winter (normal, but excessive icing is a problem) and summer (abnormal — usually indicates low refrigerant or airflow restriction). We diagnose the cause and restore normal operation, typically in one visit." },
-  { name: "Reversing valve failure", desc: "The reversing valve is unique to heat pumps and has no equivalent in standard AC systems. A failed reversing valve means complete loss of either heating or cooling mode. We stock reversing valves for the most common brands on our service vans." },
-  { name: "Complete system lockout", desc: "Most modern heat pumps have protection lockouts that trigger when the system detects a fault. A locked-out system won't operate at all. Our technicians diagnose the fault code, identify the underlying cause, and restore operation." },
+  { name: "Reversing valve failure", desc: "The reversing valve is unique to heat pumps and has no equivalent in standard AC systems. A failed reversing valve means complete loss of either heating or cooling mode. Contractor service vans carry reversing valves for the most common brands." },
+  { name: "Complete system lockout", desc: "Most modern heat pumps have protection lockouts that trigger when the system detects a fault. A locked-out system won't operate at all. Local licensed technicians diagnose the fault code, identify the underlying cause, and restore operation." },
   { name: "Refrigerant leak causing no heating or cooling", desc: "Heat pumps use refrigerant to move heat in both directions. A leak affects both heating and cooling performance equally. We locate the leak, repair it, and recharge the system — refrigerant service typically runs $200–$500." },
 ];
 
@@ -116,8 +116,8 @@ const config: EmergencyPageConfig = {
       a: "Heat pump repairs are generally in the same price range as AC repairs. Some heat pump-specific components like reversing valves cost more than equivalent AC parts, but routine components like capacitors and refrigerant are priced the same.",
     },
     {
-      q: "Do you carry heat pump parts on your service vans?",
-      a: "Yes. Our vans carry reversing valves, capacitors, contactors, refrigerant, and control boards for the most common heat pump brands and models we see in Simpsonville homes.",
+      q: "Do contractors carry heat pump parts on their service vans?",
+      a: "Yes. Contractor service vans carry reversing valves, capacitors, contactors, refrigerant, and control boards for the most common heat pump brands and models we see in Simpsonville homes.",
     },
     {
       q: "My heat pump works in one season but not the other — is that an emergency?",

@@ -22,7 +22,7 @@ const DATA: Record<string, LocationData> = {
     metaDesc: "Trusted HVAC and AC repair in Simpsonville, SC. Licensed local technicians, same-day service. Call (810) 998-6747 for a free estimate.",
     city: "Simpsonville",
     intro: "Simpsonville is one of the fastest-growing communities in Upstate South Carolina, with thousands of homes across established neighborhoods and new developments depending on reliable heating, cooling, and plumbing systems. Simpsonville AC Repair is a locally based team serving homeowners throughout the city — from neighborhoods near downtown and Five Forks to expanding subdivisions along Highway 14 and Fairview Road.",
-    context: "Simpsonville's climate presents real challenges for home systems. Summers bring extended stretches of hot, humid weather that keep cooling systems running for months. Winters are moderate but require reliable heating. Our technicians understand the local infrastructure, common equipment found in Simpsonville homes, and the seasonal demands that homeowners face throughout the year.",
+    context: "Simpsonville's climate presents real challenges for home systems. Summers bring extended stretches of hot, humid weather that keep cooling systems running for months. Winters are moderate but require reliable heating. Local licensed technicians in our network understand the local infrastructure, common equipment found in Simpsonville homes, and the seasonal demands that homeowners face throughout the year.",
     services: ["AC Repair", "AC Installation", "HVAC Repair", "Furnace Repair", "Heat Pump Repair", "AC Maintenance", "Ductless Mini Split"],
   },
   "/mauldin-sc/": {
@@ -31,7 +31,7 @@ const DATA: Record<string, LocationData> = {
     metaDesc: "Fast AC repair and HVAC service in Mauldin, SC. Same-day service, licensed technicians. Call (810) 998-6747.",
     city: "Mauldin",
     intro: "Mauldin is a thriving Greenville County community located just minutes from Simpsonville and Greenville. Homeowners in Mauldin rely on their HVAC systems year-round to manage the Upstate's warm summers and variable winters. Simpsonville AC Repair provides fast, reliable HVAC and AC repair service to homes throughout Mauldin and the surrounding area.",
-    context: "From established neighborhoods near Butler Road to newer developments throughout the city, Mauldin homes face the same HVAC challenges common to Greenville County — high summer humidity that stresses cooling systems, occasional cold snaps that test heating equipment, and the general wear that comes from systems running most of the year. Our technicians serve Mauldin regularly and are familiar with the area's residential HVAC landscape.",
+    context: "From established neighborhoods near Butler Road to newer developments throughout the city, Mauldin homes face the same HVAC challenges common to Greenville County — high summer humidity that stresses cooling systems, occasional cold snaps that test heating equipment, and the general wear that comes from systems running most of the year. Licensed technicians in our network serve Mauldin regularly and are familiar with the area's residential HVAC landscape.",
     services: ["AC Repair", "AC Installation", "HVAC Repair", "Furnace Repair", "Heat Pump Repair", "AC Maintenance"],
   },
   "/fountain-inn-sc/": {
@@ -40,7 +40,7 @@ const DATA: Record<string, LocationData> = {
     metaDesc: "Reliable AC repair and HVAC service in Fountain Inn, SC. Same-day appointments, free estimates. Call (810) 998-6747.",
     city: "Fountain Inn",
     intro: "Fountain Inn is a growing community on the southern edge of the Greenville area, where residential development continues to expand alongside its established historic core. Homeowners in Fountain Inn depend on dependable HVAC systems through the Upstate's hot summers and cooler winter months. Simpsonville AC Repair extends its service area to include Fountain Inn and surrounding neighborhoods.",
-    context: "Many Fountain Inn homes are newer construction with modern HVAC equipment, while others feature older systems that require expert diagnosis and repair. Our technicians are experienced with the full range of residential HVAC equipment — from current high-efficiency systems to older units that may need parts sourced from specialty suppliers. We're committed to fast response times that minimize discomfort for Fountain Inn families.",
+    context: "Many Fountain Inn homes are newer construction with modern HVAC equipment, while others feature older systems that require expert diagnosis and repair. Licensed technicians in our network are experienced with the full range of residential HVAC equipment — from current high-efficiency systems to older units that may need parts sourced from specialty suppliers. We're committed to fast response times that minimize discomfort for Fountain Inn families.",
     services: ["AC Repair", "AC Installation", "HVAC Repair", "Heat Pump Repair", "AC Maintenance", "Ductless Mini Split"],
   },
   "/greenville-sc/": {
@@ -49,7 +49,7 @@ const DATA: Record<string, LocationData> = {
     metaDesc: "Professional AC repair and HVAC service in Greenville, SC. Licensed technicians, same-day service. Call (810) 998-6747.",
     city: "Greenville",
     intro: "Greenville is the hub of Upstate South Carolina's growing metro area, home to thousands of residential properties ranging from historic homes near downtown to sprawling newer subdivisions on the city's outskirts. Simpsonville AC Repair serves homeowners throughout the Greenville area, providing AC repair, heating service, and HVAC maintenance from a locally based team that understands the regional climate and common residential systems.",
-    context: "Greenville County's combination of hot, humid summers and variable winters places steady demand on residential HVAC systems throughout the year. Whether you're in an established neighborhood near Parkins Mill, a newer subdivision in the northern parts of the county, or anywhere in between, our technicians can diagnose and repair your system quickly. We're based in Simpsonville and serve Greenville as part of our core service area.",
+    context: "Greenville County's combination of hot, humid summers and variable winters places steady demand on residential HVAC systems throughout the year. Whether you're in an established neighborhood near Parkins Mill, a newer subdivision in the northern parts of the county, or anywhere in between, local licensed technicians can diagnose and repair your system quickly. We're based in Simpsonville and serve Greenville as part of our core service area.",
     services: ["AC Repair", "AC Installation", "AC Replacement", "HVAC Repair", "Heat Pump Repair", "Furnace Repair", "AC Maintenance", "Ductless Mini Split"],
   },
 };
