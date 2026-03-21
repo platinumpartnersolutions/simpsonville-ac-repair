@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&family=Roboto:wght@400;500;700&display=swap');
+/* Google Fonts loaded non-blocking in index.html — no @import here */
 
 :root {
   --navy:       #0D2D6E;
@@ -21,7 +21,7 @@
 
 *,*::before,*::after { box-sizing:border-box }
 html { scroll-behavior:smooth }
-.page-root { font-family:'Roboto',sans-serif; font-size:15px; color:var(--text); background:#fff; line-height:1.6 }
+.page-root { font-family:'Roboto',sans-serif; font-size:15px; color:#333; background:#fff; line-height:1.6 }
 a { text-decoration:none; transition:color .2s,opacity .2s }
 p { margin:0 0 14px; line-height:1.78 }
 h1,h2,h3,h4 { font-family:'Poppins',sans-serif; margin:0 }
@@ -60,13 +60,13 @@ ul { list-style:none; margin:0; padding:0 }
 .hdr-top-row { display:flex; align-items:center; gap:16px; padding:0 24px; height:74px; background:#fff }
 .hdr-tagline { flex:1; text-align:center }
 .hdr-tagline-text { font-family:'Poppins',sans-serif; font-weight:700; font-size:12.5px; color:var(--navy); letter-spacing:.3px; text-transform:uppercase }
-.hdr-rating { display:flex; align-items:center; justify-content:center; gap:5px; margin-top:4px; font-size:12px; color:#555 }
+.hdr-rating { display:flex; align-items:center; justify-content:center; gap:5px; margin-top:4px; font-size:12px; color:#444 }
 
 .hdr-phones { display:flex; gap:10px; flex-shrink:0 }
 .hdr-phone { display:flex; align-items:center; gap:9px; padding:8px 14px; border:1.5px solid #d0d9ed; border-radius:8px; color:var(--navy); transition:border-color .2s,box-shadow .2s }
 .hdr-phone:hover { border-color:var(--navy); box-shadow:0 2px 10px rgba(13,45,110,.15) }
 .phone-svg { width:22px; height:22px; color:var(--red); flex-shrink:0 }
-.phone-city { font-size:11px; color:#666; line-height:1 }
+.phone-city { font-size:11px; color:#555; line-height:1 }
 .phone-num { font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; color:var(--navy); line-height:1.2 }
 
 /* NAV BAR */
@@ -544,4 +544,29 @@ ul { list-style:none; margin:0; padding:0 }
   .cost-table th, .cost-table td { padding:10px 12px; font-size:13px }
   .page-bottom-cta { padding:40px 20px }
   .page-bottom-cta-btns { flex-direction:column; align-items:center }
+}
+
+/* ─── FIX 7: TOUCH TARGETS — 48px minimum on mobile ─── */
+@media (max-width:768px) {
+  .cta-primary, .cta-red, .cta-outline, .cta-outline-light,
+  .mobile-call-btn, .mobile-estimate-btn, .book-now,
+  .nav-tel-compact { min-height:48px }
+
+  input, select, textarea {
+    min-height:48px;
+    font-size:16px !important;
+  }
+  ::placeholder { color:#666 }
+
+  .mobile-nav-link, .mobile-nav-group-btn, .mobile-nav-sublink {
+    min-height:48px;
+    padding-top:12px;
+    padding-bottom:12px;
+  }
+  .hamburger-btn { min-height:48px; min-width:48px }
+
+  /* Fix 6: muted text contrast on mobile */
+  .trust-badge-sub, .service-card-desc, .process-body,
+  .local-section p, .cost-table-note { color:#555 }
+  .related-cluster-desc { color:#555 }
 }
