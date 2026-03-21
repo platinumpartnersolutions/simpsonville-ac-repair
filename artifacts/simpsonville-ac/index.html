@@ -2,18 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Fix 8: dns-prefetch immediately after charset -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="//cdn.callrail.com" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
 
-    <title>AC Repair Simpsonville SC | 24/7 HVAC Service | (810) 998-6747</title>
-    <meta name="description" content="AC repair Simpsonville SC — same-day HVAC service, licensed technicians, free estimates. Serving Simpsonville, Greenville & Mauldin. Call (810) 998-6747." />
+    <title>AC Repair Simpsonville SC | 24/7 HVAC Service | 864-754-7291</title>
+    <meta name="description" content="AC repair Simpsonville SC — same-day HVAC service, licensed technicians, free estimates. Serving Simpsonville, Greenville & Mauldin. Call 864-754-7291." />
     <link rel="canonical" href="https://simpsonvilleacrepair.com/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Simpsonville AC Repair" />
-    <meta property="og:title" content="AC Repair Simpsonville SC | 24/7 HVAC Service | (810) 998-6747" />
-    <meta property="og:description" content="AC repair Simpsonville SC — same-day HVAC service, licensed technicians, free estimates. Call (810) 998-6747." />
+    <meta property="og:title" content="AC Repair Simpsonville SC | 24/7 HVAC Service | 864-754-7291" />
+    <meta property="og:description" content="AC repair Simpsonville SC — same-day HVAC service, licensed technicians, free estimates. Call 864-754-7291." />
     <meta property="og:url" content="https://simpsonvilleacrepair.com/" />
     <meta property="og:image" content="https://simpsonvilleacrepair.com/og-default.jpg" />
     <meta property="og:image:width" content="1200" />
@@ -21,25 +26,39 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="AC Repair Simpsonville SC | 24/7 HVAC Service | (810) 998-6747" />
-    <meta name="twitter:description" content="AC repair Simpsonville SC — same-day HVAC service, licensed technicians, free estimates. Call (810) 998-6747." />
+    <meta name="twitter:title" content="AC Repair Simpsonville SC | 24/7 HVAC Service | 864-754-7291" />
+    <meta name="twitter:description" content="AC repair Simpsonville SC — same-day HVAC service, licensed technicians, free estimates. Call 864-754-7291." />
     <meta name="twitter:image" content="https://simpsonvilleacrepair.com/og-default.jpg" />
 
     <link rel="icon" type="image/png" href="/logo.png" />
 
-    <!-- Preload hero image for LCP -->
-    <link rel="preload" as="image" href="/van.jpeg" />
+    <!-- Fix 1: Preload hero WebP with responsive srcset -->
+    <link
+      rel="preload"
+      as="image"
+      href="/van-hero.webp"
+      imagesrcset="/van-hero-mobile.webp 768w, /van-hero.webp 1440w"
+      imagesizes="(max-width: 768px) 100vw, 1440px"
+    />
 
-    <!-- Fonts -->
+    <!-- Fix 2: Fonts — preconnect + non-blocking load -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+    </noscript>
 
-    <!-- Critical above-fold CSS inlined -->
+    <!-- Critical above-fold CSS inlined — Fix 2 + Fix 6 + Fix 7 -->
     <style>
       *,*::before,*::after{box-sizing:border-box}
       html{scroll-behavior:smooth}
-      body{margin:0;font-family:'Roboto',system-ui,-apple-system,sans-serif;background:#fff;color:#1a2a4a}
+      body{margin:0;font-family:'Roboto',system-ui,-apple-system,sans-serif;background:#fff;color:#333}
       .topbar{background:#CC2229;color:#fff;font-size:13px;font-weight:600;padding:7px 0;text-align:center}
       .site-header{position:sticky;top:0;z-index:500;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.15)}
       .hdr-combined{display:flex;align-items:stretch}
@@ -50,11 +69,20 @@
       .hero{position:relative;min-height:340px;overflow:hidden;background:#091d4d;display:flex;align-items:center}
       .hero-bg{position:absolute;inset:0}
       .hero-h1{font-family:'Poppins',sans-serif;font-size:clamp(36px,5.5vw,64px);font-weight:900;color:#fff;text-transform:uppercase;margin:0 0 20px}
+      /* Fix 6: contrast — muted text minimum #555 */
+      .phone-city,.hdr-rating,.trust-badge-sub{color:#555}
+      /* Fix 7: touch targets mobile */
+      @media(max-width:768px){
+        a,button{min-height:48px;display:inline-flex;align-items:center}
+        input,select,textarea{min-height:48px;font-size:16px!important}
+        ::placeholder{color:#666}
+      }
     </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script type="text/javascript" src="//cdn.callrail.com/companies/712304613/09f45d063cc53d7fae4b/12/swap.js"></script>
+    <!-- Fix 2: defer CallRail so it doesn't block render -->
+    <script defer type="text/javascript" src="//cdn.callrail.com/companies/712304613/09f45d063cc53d7fae4b/12/swap.js"></script>
   </body>
 </html>
