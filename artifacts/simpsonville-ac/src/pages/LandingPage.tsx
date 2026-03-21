@@ -43,17 +43,25 @@ function Reveal({ children, delay = 0, dir = "up", className = "" }: {
 
 /* ─── HERO ─── */
 function Hero() {
-  const [rdy, setRdy] = useState(false);
-  useEffect(() => { const t = setTimeout(() => setRdy(true), 80); return () => clearTimeout(t); }, []);
-
   return (
     <section className="hero">
       <div className="hero-bg">
-        <img src="/van.jpeg" alt="Simpsonville AC Repair service van in Simpsonville, SC" className="hero-bg-img" width={1200} height={800} fetchPriority="high" />
+        <img
+          src="/van-hero.webp"
+          srcSet="/van-hero-mobile.webp 768w, /van-hero.webp 1440w"
+          sizes="(max-width: 768px) 100vw, 1440px"
+          alt="Simpsonville AC Repair service van in Simpsonville, SC"
+          className="hero-bg-img"
+          width={1440}
+          height={966}
+          fetchPriority="high"
+          loading="eager"
+          decoding="sync"
+        />
         <div className="hero-bg-overlay" />
       </div>
       <div className="hero-inner">
-        <div className="hero-content" style={{ opacity: rdy ? 1 : 0, transform: rdy ? "none" : "translateY(28px)", transition: "all .75s ease .15s" }}>
+        <div className="hero-content">
           <a href="#reviews" className="hero-pill">
             <Stars size={14} color="#FFD700" />
             <span>Trusted Providers</span>
