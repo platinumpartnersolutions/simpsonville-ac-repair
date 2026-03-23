@@ -1,35 +1,19 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from './BaseLayout.astro';
 import { SiteHeader } from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter.astro';
 import { LeadForm } from '../components/LeadForm';
-import { SERVICE_DATA } from '../data/services';
-import { SYMPTOM_DATA } from '../data/symptoms';
-import { LOCATION_DATA } from '../data/locations';
+import type { ServiceData } from '../data/services';
+import type { SymptomData } from '../data/symptoms';
+import type { LocationData } from '../data/locations';
 
-export function getStaticPaths() {
-  const paths = [];
-
-  for (const [slugPath, data] of Object.entries(SERVICE_DATA)) {
-    const slug = slugPath.replace(/\//g, '');
-    paths.push({ params: { slug }, props: { type: 'service' as const, data, slugPath } });
-  }
-
-  for (const [slugPath, data] of Object.entries(SYMPTOM_DATA)) {
-    const slug = slugPath.replace(/\//g, '');
-    paths.push({ params: { slug }, props: { type: 'symptom' as const, data, slugPath } });
-  }
-
-  for (const [slugPath, data] of Object.entries(LOCATION_DATA)) {
-    const slug = slugPath.replace(/\//g, '');
-    paths.push({ params: { slug }, props: { type: 'location' as const, data, slugPath } });
-  }
-
-  return paths;
+interface Props {
+  type: 'service' | 'symptom' | 'location';
+  data: ServiceData | SymptomData | LocationData;
+  slugPath: string;
 }
 
 const { type, data, slugPath } = Astro.props;
-const canonical = slugPath;
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -68,7 +52,7 @@ const faqSchema = faqItems.length > 0 ? {
 const schemas = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
 ---
 
-<BaseLayout title={data.metaTitle} description={data.metaDesc} canonical={canonical} schema={schemas}>
+<BaseLayout title={data.metaTitle} description={data.metaDesc} canonical={slugPath} schema={schemas}>
   <div class="page-root">
     <div class="topbar">
       <div class="tb-inner">
@@ -99,16 +83,13 @@ const schemas = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
 
         <main class="inner-main">
 
-          {/* Intro */}
           <p class="inner-intro">{data.intro}</p>
 
-          {/* Quick Answer Box */}
           <div class="quick-answer-box">
             <div class="qa-label">⚡ Quick Answer</div>
             <p>{'quickAnswer' in data ? data.quickAnswer : ''}</p>
           </div>
 
-          {/* Benefits / Causes / Services Grid */}
           {type === 'service' && 'benefits' in data && (
             <div class="benefits-grid">
               {data.benefits.map(b => (
@@ -136,7 +117,7 @@ const schemas = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
             </>
           )}
 
-          {type === 'location' && 'services' in data && (
+          {type === 'location' && 'services' in data && 'cityName' in data && (
             <>
               <h2 class="inner-h2">HVAC Services in {data.cityName}, SC</h2>
               <div class="services-grid-inner">
@@ -151,7 +132,6 @@ const schemas = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
             </>
           )}
 
-          {/* Cost Table */}
           {'costRows' in data && data.costRows.length > 0 && (
             <>
               <h2 class="inner-h2">{'costHeading' in data ? data.costHeading : 'Typical Repair Costs'}</h2>
@@ -179,7 +159,6 @@ const schemas = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
             </>
           )}
 
-          {/* Common Issues */}
           {type === 'service' && 'commonIssues' in data && data.commonIssues.length > 0 && (
             <>
               <h2 class="inner-h2">Common Issues We Fix</h2>
@@ -191,7 +170,6 @@ const schemas = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
             </>
           )}
 
-          {/* DIY Steps (symptom pages) */}
           {type === 'symptom' && 'diySteps' in data && data.diySteps.length > 0 && (
             <>
               <h2 class="inner-h2">What to Check Before Calling</h2>
@@ -209,7 +187,6 @@ const schemas = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
             </>
           )}
 
-          {/* Process Steps (service pages) */}
           {type === 'service' && 'processSteps' in data && data.processSteps.length > 0 && (
             <>
               <h2 class="inner-h2">Our Process</h2>
@@ -227,8 +204,7 @@ const schemas = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
             </>
           )}
 
-          {/* Local Facts (location pages) */}
-          {type === 'location' && 'localFacts' in data && data.localFacts.length > 0 && (
+          {type === 'location' && 'localFacts' in data && data.localFacts.length > 0 && 'cityName' in data && (
             <>
               <h2 class="inner-h2">Why {data.cityName} Homeowners Choose Us</h2>
               <div class="benefits-grid">
@@ -243,7 +219,6 @@ const schemas = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
             </>
           )}
 
-          {/* Local Context Section */}
           {'localSection' in data && data.localSection && (
             <>
               <h2 class="inner-h2">Local HVAC Context for Simpsonville</h2>
@@ -251,7 +226,6 @@ const schemas = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
             </>
           )}
 
-          {/* CTA Strip */}
           <div class="inner-cta-strip">
             <div class="ics-text">
               <strong>Ready to schedule service?</strong>
@@ -260,7 +234,6 @@ const schemas = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
             <a href="tel:8647547291" class="cta-primary">📞 Call 864-754-7291</a>
           </div>
 
-          {/* FAQ */}
           {faqItems.length > 0 && (
             <>
               <h2 class="inner-h2">Frequently Asked Questions</h2>
@@ -280,7 +253,6 @@ const schemas = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
             </>
           )}
 
-          {/* Related Services */}
           {'relatedServices' in data && data.relatedServices.length > 0 && (
             <>
               <h2 class="inner-h2">Related Services</h2>
