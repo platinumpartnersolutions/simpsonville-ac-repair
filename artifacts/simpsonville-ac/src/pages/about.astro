@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SiteHeader } from '../components/SiteHeader';
+import SiteFooter from '../components/SiteFooter.astro';
+import { LeadForm } from '../components/LeadForm';
+---
+
+<BaseLayout
+  title="About Simpsonville AC Repair | Licensed HVAC Referral Service"
+  description="Simpsonville AC Repair connects homeowners with pre-screened, licensed HVAC contractors in Simpsonville, Greenville, Mauldin & Fountain Inn, SC."
+  canonical="/about/"
+>
+  <div class="page-root">
+    <div class="topbar">
+      <div class="tb-inner">
+        <span>📍 Serving Simpsonville &amp; Greenville Areas</span>
+        <span class="tb-div">|</span>
+        <span>📞 <a href="tel:8647547291" style="color:#fff;font-weight:700">864-754-7291</a></span>
+      </div>
+    </div>
+
+    <SiteHeader client:load />
+
+    <div class="inner-hero">
+      <div class="inner-hero-inner">
+        <nav class="inner-hero-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span> › </span>
+          <span>About Us</span>
+        </nav>
+        <h1 class="inner-h1">About Simpsonville AC Repair</h1>
+        <a href="tel:8647547291" class="inner-cta-phone">
+          📞 <strong>864-754-7291</strong> — Call Us Today
+        </a>
+      </div>
+    </div>
+
+    <div class="inner-body">
+      <div class="inner-content-grid">
+        <main class="inner-main">
+          <h2 class="inner-h2">Who We Are</h2>
+          <p style="font-size:1.05rem;line-height:1.8;color:#444;margin-bottom:20px">
+            Simpsonville AC Repair is a local lead generation and referral service connecting homeowners in the Simpsonville, Greenville, Mauldin, and Fountain Inn areas with pre-screened, licensed, and insured HVAC contractors. We are not an HVAC contractor ourselves — we are the bridge between homeowners who need service and the local licensed professionals who provide it.
+          </p>
+          <p style="line-height:1.8;color:#555;margin-bottom:28px">
+            When you call 864-754-7291, we connect you with a local licensed contractor who is familiar with Simpsonville's climate, housing stock, and the specific HVAC systems common in the area. All contractors in our network are SC-licensed, insured, and have been vetted for quality and reliability.
+          </p>
+
+          <h2 class="inner-h2">Our Mission</h2>
+          <p style="line-height:1.8;color:#555;margin-bottom:28px">
+            We exist to solve a specific problem: homeowners in Simpsonville and surrounding areas often don't know who to call when their AC breaks down, and online searches return a confusing mix of national call centers and local companies. We provide a single, trustworthy point of contact that dispatches qualified local contractors — with upfront pricing, no after-hours upcharges, and a commitment to honest service.
+          </p>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:28px">
+            {[
+              { icon: "🏠", title: "Local First", body: "All contractors in our network are based in or near Simpsonville. No national franchises, no out-of-area crews." },
+              { icon: "📜", title: "Licensed & Insured", body: "Every contractor is verified SC-licensed and properly insured before being added to our network." },
+              { icon: "💰", title: "Upfront Pricing", body: "Contractors in our network commit to providing written quotes before any work begins — no surprise charges." },
+              { icon: "⭐", title: "Quality Standards", body: "We maintain standards for contractor performance. Contractors in our network are vetted for quality and follow-through." },
+            ].map(card => (
+              <div style="background:#fff;border:1.5px solid #d8e2f3;border-radius:12px;padding:18px">
+                <div style="font-size:2rem;margin-bottom:8px">{card.icon}</div>
+                <h3 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:0.95rem;color:#0D2D6E;margin:0 0 6px">{card.title}</h3>
+                <p style="font-size:0.87rem;color:#555;line-height:1.6;margin:0">{card.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <h2 class="inner-h2">Service Area</h2>
+          <p style="line-height:1.8;color:#555;margin-bottom:20px">We primarily serve southern Greenville County, SC:</p>
+          <ul style="list-style:none;padding:0;margin:0 0 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px">
+            {["Simpsonville, SC (29680, 29681)", "Mauldin, SC (29662)", "Fountain Inn, SC (29644)", "Greenville, SC (29601, 29607, 29615)", "Pelzer, SC (29669)", "Greer, SC (29650)"].map(area => (
+              <li style="background:#f7f9fd;border-radius:8px;padding:10px 14px;font-size:0.9rem;color:#333">📍 {area}</li>
+            ))}
+          </ul>
+
+          <div style="background:#EEF4FF;border-left:4px solid #0D2D6E;border-radius:8px;padding:18px 22px;margin-bottom:28px">
+            <p style="margin:0;color:#2c3e6b;line-height:1.75;font-size:0.95rem">
+              <strong>Disclaimer:</strong> Simpsonville AC Repair is a lead generation and referral service. We connect homeowners with pre-screened licensed HVAC contractors. All work is performed by third-party licensed contractors. By submitting your information, you consent to be contacted by one or more licensed HVAC contractors in your area. We may receive compensation for referrals.
+            </p>
+          </div>
+
+          <div class="inner-related-links">
+            <h3>Learn More</h3>
+            <div class="inner-related-grid">
+              <a href="/contact/" class="inner-related-card"><span>📞</span> Contact Us</a>
+              <a href="/free-estimate/" class="inner-related-card"><span>📋</span> Free Estimate</a>
+              <a href="/ac-repair/" class="inner-related-card"><span>❄️</span> AC Repair Service</a>
+              <a href="/simpsonville-sc/" class="inner-related-card"><span>📍</span> Simpsonville Service Area</a>
+            </div>
+          </div>
+        </main>
+
+        <aside class="inner-sidebar">
+          <LeadForm client:load title="Request Service" subtitle="We'll connect you with a licensed contractor within 60 minutes." dark />
+          <div style="background:#f7f9fd;border:1.5px solid #d8e2f3;border-radius:12px;padding:16px;margin-top:16px">
+            <h4 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:0.9rem;color:#0D2D6E;margin:0 0 10px">Quick Facts</h4>
+            <div style="font-size:0.85rem;color:#333;padding:4px 0;border-bottom:1px solid #e8eef8">📍 Simpsonville, SC 29681</div>
+            <div style="font-size:0.85rem;color:#333;padding:4px 0;border-bottom:1px solid #e8eef8">📞 864-754-7291</div>
+            <div style="font-size:0.85rem;color:#333;padding:4px 0;border-bottom:1px solid #e8eef8">✅ SC-Licensed Contractors</div>
+            <div style="font-size:0.85rem;color:#333;padding:4px 0;border-bottom:1px solid #e8eef8">⭐ 4.8 Google Rating</div>
+            <div style="font-size:0.85rem;color:#333;padding:4px 0">🗓️ Est. 2023</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <SiteFooter />
+  </div>
+</BaseLayout>

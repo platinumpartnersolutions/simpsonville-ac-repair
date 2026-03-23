@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SiteHeader } from '../components/SiteHeader';
+import SiteFooter from '../components/SiteFooter.astro';
+import { LeadForm } from '../components/LeadForm';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Emergency Furnace Repair Simpsonville SC",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Simpsonville AC Repair",
+    "telephone": "864-754-7291",
+    "address": { "@type": "PostalAddress", "addressLocality": "Simpsonville", "addressRegion": "SC", "postalCode": "29681" }
+  },
+  "areaServed": "Simpsonville, SC"
+};
+---
+
+<BaseLayout
+  title="Emergency Furnace Repair Simpsonville SC | Same-Day | 864-754-7291"
+  description="Emergency furnace repair in Simpsonville, SC — same-day service, no extra charge. Restore heat fast. Call 864-754-7291."
+  canonical="/emergency-furnace-repair/"
+  schema={schema}
+>
+  <div class="page-root">
+    <div class="topbar">
+      <div class="tb-inner">
+        <span>📍 Serving Simpsonville &amp; Greenville Areas</span>
+        <span class="tb-div">|</span>
+        <span>📞 <a href="tel:8647547291" style="color:#fff;font-weight:700">864-754-7291</a></span>
+      </div>
+    </div>
+
+    <SiteHeader client:load />
+
+    <div class="inner-hero">
+      <div class="inner-hero-inner">
+        <nav class="inner-hero-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span> › </span>
+          <span>Emergency Furnace Repair</span>
+        </nav>
+        <h1 class="inner-h1">Emergency Furnace Repair in Simpsonville, SC</h1>
+        <a href="tel:8647547291" class="inner-cta-phone">
+          📞 <strong>864-754-7291</strong> — Restore Heat Today
+        </a>
+      </div>
+    </div>
+
+    <div class="inner-body">
+      <div class="inner-content-grid">
+        <main class="inner-main">
+          <p style="font-size:1.05rem;line-height:1.8;color:#444;margin-bottom:28px">Emergency furnace repair in Simpsonville is available same-day with no after-hours upcharge — when your furnace stops working in cold weather, a licensed technician can typically arrive within 1–2 hours of your call. The most common furnace emergencies — ignitor failure, flame sensor issues, and limit switch trips — are all addressed same-day in most cases. Call 864-754-7291 now and we'll dispatch immediately.</p>
+
+          <div style="background:#fff5f5;border:2px solid #CC2229;border-radius:12px;padding:20px 24px;margin-bottom:28px;display:flex;gap:16px;align-items:flex-start">
+            <div style="font-size:2.5rem;flex-shrink:0">🔥</div>
+            <div>
+              <strong style="font-family:'Poppins',sans-serif;font-weight:800;font-size:1.1rem;color:#CC2229">Furnace Out?</strong>
+              <p style="margin:6px 0 0;color:#555;font-size:0.9rem">Call now for same-day heat restoration — no after-hours upcharge.</p>
+              <a href="tel:8647547291" class="cta-primary" style="margin-top:8px;display:inline-flex">📞 864-754-7291</a>
+            </div>
+          </div>
+
+          <h2 class="inner-h2">Common Emergency Furnace Failures</h2>
+          <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:28px">
+            {[
+              { title: "Ignitor Failure — No Heat at All", body: "The most common furnace emergency. The ignitor glows to ignite the gas burner — when it fails, no flame, no heat. Replacement costs $150–$300 and takes under an hour in most cases." },
+              { title: "Flame Sensor Fault — Lights Then Shuts Off", body: "A dirty or failed flame sensor shuts the furnace down after each ignition attempt as a safety measure. The furnace tries to light, runs briefly, then shuts off repeatedly. Cleaning or replacement costs $100–$200." },
+              { title: "Limit Switch Trip — Overheating Safety Shutdown", body: "The limit switch cuts power to the burner if the furnace overheats. Usually caused by a clogged air filter or blocked return air register. Check your filter first — if it's severely dirty, replace it and restart the furnace." },
+              { title: "Gas Valve Failure — Pilot Won't Stay Lit", body: "A failed gas valve prevents gas from reaching the burner. The ignitor works but there's no flame. Gas valve replacement costs $300–$600." },
+            ].map(step => (
+              <div style="background:#f7f9fd;border:1.5px solid #d8e2f3;border-radius:10px;padding:16px 20px">
+                <h3 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:0.95rem;color:#0D2D6E;margin:0 0 6px">{step.title}</h3>
+                <p style="font-size:0.88rem;color:#555;line-height:1.65;margin:0">{step.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <h2 class="inner-h2">Safety First — Furnace Emergency Checklist</h2>
+          <ul style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:8px">
+            {[
+              "If you smell gas — evacuate the home immediately and call your gas utility before calling for HVAC service",
+              "If the CO detector is alarming — evacuate and call 911 before HVAC service",
+              "If the furnace clicks but doesn't light — this is likely an ignitor or flame sensor issue, safe to call for service",
+              "Check the air filter before calling — a clogged filter triggers safety shutdowns",
+              "Check the thermostat batteries and confirm it's set to HEAT mode with setpoint above current temperature",
+            ].map(item => (
+              <li style="background:#f7f9fd;border-radius:8px;padding:10px 14px;font-size:0.9rem;color:#333">✓ {item}</li>
+            ))}
+          </ul>
+
+          <div style="display:flex;flex-direction:row;gap:20px;flex-wrap:wrap;margin-bottom:28px">
+            <div style="flex:1;min-width:200px;text-align:center;background:#0D2D6E;border-radius:12px;padding:20px">
+              <div style="font-size:2rem;margin-bottom:8px">$150–$300</div>
+              <div style="font-family:'Poppins',sans-serif;font-weight:700;color:#fff;font-size:0.9rem">Ignitor Replacement</div>
+              <div style="color:rgba(255,255,255,.75);font-size:0.82rem;margin-top:4px">Most common repair</div>
+            </div>
+            <div style="flex:1;min-width:200px;text-align:center;background:#1A7AC4;border-radius:12px;padding:20px">
+              <div style="font-size:2rem;margin-bottom:8px">1–2 hrs</div>
+              <div style="font-family:'Poppins',sans-serif;font-weight:700;color:#fff;font-size:0.9rem">Typical Repair Time</div>
+              <div style="color:rgba(255,255,255,.75);font-size:0.82rem;margin-top:4px">Same-day completion</div>
+            </div>
+            <div style="flex:1;min-width:200px;text-align:center;background:#CC2229;border-radius:12px;padding:20px">
+              <div style="font-size:2rem;margin-bottom:8px">$0</div>
+              <div style="font-family:'Poppins',sans-serif;font-weight:700;color:#fff;font-size:0.9rem">After-Hours Upcharge</div>
+              <div style="color:rgba(255,255,255,.75);font-size:0.82rem;margin-top:4px">Same price any time</div>
+            </div>
+          </div>
+
+          <div class="inner-related-links">
+            <h3>Related Services</h3>
+            <div class="inner-related-grid">
+              <a href="/furnace-repair/" class="inner-related-card"><span>🔥</span> Furnace Repair</a>
+              <a href="/heat-pump-repair/" class="inner-related-card"><span>♻️</span> Heat Pump Repair</a>
+              <a href="/emergency-ac-repair/" class="inner-related-card"><span>🚨</span> Emergency AC Repair</a>
+              <a href="/hvac-repair/" class="inner-related-card"><span>🌡️</span> HVAC Repair</a>
+            </div>
+          </div>
+        </main>
+
+        <aside class="inner-sidebar">
+          <LeadForm client:load title="Emergency Furnace Request" subtitle="We'll call immediately." dark defaultService="Furnace Repair" />
+          <div class="sidebar-emergency">
+            <div class="se-title">🔥 Call Directly for Fastest Response</div>
+            <a href="tel:8647547291" class="cta-primary" style="display:block;text-align:center;margin-top:10px">📞 864-754-7291</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <SiteFooter />
+  </div>
+
+  <style>
+    .sidebar-emergency { background: #fff5f5; border: 2px solid #CC2229; border-radius: 12px; padding: 16px; margin-top: 16px; }
+    .se-title { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 0.95rem; color: #CC2229; margin-bottom: 6px; }
+  </style>
+</BaseLayout>

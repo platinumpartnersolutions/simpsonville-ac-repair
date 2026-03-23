@@ -1,0 +1,402 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SiteHeader } from '../components/SiteHeader';
+import SiteFooter from '../components/SiteFooter.astro';
+import { LeadForm } from '../components/LeadForm';
+import { SERVICE_DATA } from '../data/services';
+import { SYMPTOM_DATA } from '../data/symptoms';
+import { LOCATION_DATA } from '../data/locations';
+
+export function getStaticPaths() {
+  const paths = [];
+
+  for (const [slugPath, data] of Object.entries(SERVICE_DATA)) {
+    const slug = slugPath.replace(/\//g, '');
+    paths.push({ params: { slug }, props: { type: 'service' as const, data, slugPath } });
+  }
+
+  for (const [slugPath, data] of Object.entries(SYMPTOM_DATA)) {
+    const slug = slugPath.replace(/\//g, '');
+    paths.push({ params: { slug }, props: { type: 'symptom' as const, data, slugPath } });
+  }
+
+  for (const [slugPath, data] of Object.entries(LOCATION_DATA)) {
+    const slug = slugPath.replace(/\//g, '');
+    paths.push({ params: { slug }, props: { type: 'location' as const, data, slugPath } });
+  }
+
+  return paths;
+}
+
+const { type, data, slugPath } = Astro.props;
+const canonical = slugPath;
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": data.h1,
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Simpsonville AC Repair",
+    "telephone": "864-754-7291",
+    "address": { "@type": "PostalAddress", "addressLocality": "Simpsonville", "addressRegion": "SC", "postalCode": "29681" }
+  },
+  "areaServed": { "@type": "City", "name": "Simpsonville", "containedInPlace": { "@type": "State", "name": "South Carolina" } },
+  "url": `https://simpsonvilleacrepair.com${slugPath}`
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://simpsonvilleacrepair.com/" },
+    { "@type": "ListItem", "position": 2, "name": data.h1, "item": `https://simpsonvilleacrepair.com${slugPath}` }
+  ]
+};
+
+const faqItems = 'faqItems' in data ? data.faqItems : [];
+const faqSchema = faqItems.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+} : null;
+
+const schemas = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
+---
+
+<BaseLayout title={data.metaTitle} description={data.metaDesc} canonical={canonical} schema={schemas}>
+  <div class="page-root">
+    <div class="topbar">
+      <div class="tb-inner">
+        <span>📍 Serving Simpsonville &amp; Greenville Areas</span>
+        <span class="tb-div">|</span>
+        <span>📞 <a href="tel:8647547291" style="color:#fff;font-weight:700">864-754-7291</a></span>
+      </div>
+    </div>
+
+    <SiteHeader client:load />
+
+    <div class="inner-hero">
+      <div class="inner-hero-inner">
+        <nav class="inner-hero-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true"> › </span>
+          <span aria-current="page">{data.h1}</span>
+        </nav>
+        <h1 class="inner-h1">{data.h1}</h1>
+        <a href="tel:8647547291" class="inner-cta-phone">
+          📞 <strong>864-754-7291</strong> — Call for Same-Day Service
+        </a>
+      </div>
+    </div>
+
+    <div class="inner-body">
+      <div class="inner-content-grid">
+
+        <main class="inner-main">
+
+          {/* Intro */}
+          <p class="inner-intro">{data.intro}</p>
+
+          {/* Quick Answer Box */}
+          <div class="quick-answer-box">
+            <div class="qa-label">⚡ Quick Answer</div>
+            <p>{'quickAnswer' in data ? data.quickAnswer : ''}</p>
+          </div>
+
+          {/* Benefits / Causes / Services Grid */}
+          {type === 'service' && 'benefits' in data && (
+            <div class="benefits-grid">
+              {data.benefits.map(b => (
+                <div class="benefit-card">
+                  <div class="benefit-icon">{b.icon}</div>
+                  <h3 class="benefit-title">{b.title}</h3>
+                  <p class="benefit-body">{b.body}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {type === 'symptom' && 'causes' in data && (
+            <>
+              <h2 class="inner-h2">Common Causes</h2>
+              <div class="benefits-grid">
+                {data.causes.map(c => (
+                  <div class="benefit-card">
+                    <div class="benefit-icon">{c.icon}</div>
+                    <h3 class="benefit-title">{c.title}</h3>
+                    <p class="benefit-body">{c.body}</p>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+
+          {type === 'location' && 'services' in data && (
+            <>
+              <h2 class="inner-h2">HVAC Services in {data.cityName}, SC</h2>
+              <div class="services-grid-inner">
+                {data.services.map(s => (
+                  <a href={s.href} class="service-card-inner">
+                    <span class="sci-icon">{s.icon}</span>
+                    <span class="sci-title">{s.title}</span>
+                    <span class="sci-desc">{s.desc}</span>
+                  </a>
+                ))}
+              </div>
+            </>
+          )}
+
+          {/* Cost Table */}
+          {'costRows' in data && data.costRows.length > 0 && (
+            <>
+              <h2 class="inner-h2">{'costHeading' in data ? data.costHeading : 'Typical Repair Costs'}</h2>
+              <div class="cost-table-wrap">
+                <table class="cost-table">
+                  <thead>
+                    <tr>
+                      <th>Service / Repair</th>
+                      <th>Typical Cost</th>
+                      <th>Time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.costRows.map(row => (
+                      <tr>
+                        <td>{row.label}</td>
+                        <td class="cost-col">{row.cost}</td>
+                        <td class="time-col">{row.time}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              {'costNote' in data && <p class="cost-note">ℹ️ {data.costNote}</p>}
+            </>
+          )}
+
+          {/* Common Issues */}
+          {type === 'service' && 'commonIssues' in data && data.commonIssues.length > 0 && (
+            <>
+              <h2 class="inner-h2">Common Issues We Fix</h2>
+              <ul class="issues-list">
+                {data.commonIssues.map(issue => (
+                  <li>✓ {issue}</li>
+                ))}
+              </ul>
+            </>
+          )}
+
+          {/* DIY Steps (symptom pages) */}
+          {type === 'symptom' && 'diySteps' in data && data.diySteps.length > 0 && (
+            <>
+              <h2 class="inner-h2">What to Check Before Calling</h2>
+              <div class="process-steps">
+                {data.diySteps.map((step, i) => (
+                  <div class="process-step">
+                    <div class="ps-num">{i + 1}</div>
+                    <div class="ps-content">
+                      <h3 class="ps-title">{step.step}</h3>
+                      <p class="ps-body">{step.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+
+          {/* Process Steps (service pages) */}
+          {type === 'service' && 'processSteps' in data && data.processSteps.length > 0 && (
+            <>
+              <h2 class="inner-h2">Our Process</h2>
+              <div class="process-steps">
+                {data.processSteps.map((step, i) => (
+                  <div class="process-step">
+                    <div class="ps-num">{i + 1}</div>
+                    <div class="ps-content">
+                      <h3 class="ps-title">{step.title}</h3>
+                      <p class="ps-body">{step.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+
+          {/* Local Facts (location pages) */}
+          {type === 'location' && 'localFacts' in data && data.localFacts.length > 0 && (
+            <>
+              <h2 class="inner-h2">Why {data.cityName} Homeowners Choose Us</h2>
+              <div class="benefits-grid">
+                {data.localFacts.map(f => (
+                  <div class="benefit-card">
+                    <div class="benefit-icon">{f.icon}</div>
+                    <h3 class="benefit-title">{f.title}</h3>
+                    <p class="benefit-body">{f.body}</p>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+
+          {/* Local Context Section */}
+          {'localSection' in data && data.localSection && (
+            <>
+              <h2 class="inner-h2">Local HVAC Context for Simpsonville</h2>
+              <p class="local-section-text">{data.localSection}</p>
+            </>
+          )}
+
+          {/* CTA Strip */}
+          <div class="inner-cta-strip">
+            <div class="ics-text">
+              <strong>Ready to schedule service?</strong>
+              <span>Same-day service · Upfront pricing · Licensed &amp; insured</span>
+            </div>
+            <a href="tel:8647547291" class="cta-primary">📞 Call 864-754-7291</a>
+          </div>
+
+          {/* FAQ */}
+          {faqItems.length > 0 && (
+            <>
+              <h2 class="inner-h2">Frequently Asked Questions</h2>
+              <div class="faq-list">
+                {faqItems.map((item, i) => (
+                  <details class="faq-item" open={i === 0}>
+                    <summary class="faq-summary">
+                      <span>{item.q}</span>
+                      <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M5 8l5 5 5-5"/>
+                      </svg>
+                    </summary>
+                    <div class="faq-body"><p>{item.a}</p></div>
+                  </details>
+                ))}
+              </div>
+            </>
+          )}
+
+          {/* Related Services */}
+          {'relatedServices' in data && data.relatedServices.length > 0 && (
+            <>
+              <h2 class="inner-h2">Related Services</h2>
+              <div class="related-grid">
+                {data.relatedServices.map(r => (
+                  <a href={r.href} class="related-card">
+                    <span class="rc-icon">{r.icon}</span>
+                    <span class="rc-title">{r.title}</span>
+                    <span class="rc-desc">{r.desc}</span>
+                  </a>
+                ))}
+              </div>
+            </>
+          )}
+
+        </main>
+
+        <aside class="inner-sidebar">
+          <LeadForm
+            client:load
+            title="Request Service"
+            subtitle="We'll call within 60 minutes."
+            dark
+            defaultService={'defaultService' in data ? data.defaultService : ''}
+          />
+
+          {'emergencyHref' in data && data.emergencyHref && (
+            <div class="sidebar-emergency">
+              <div class="se-title">🚨 Emergency Service</div>
+              <p class="se-body">AC out right now? Call us directly for fastest response.</p>
+              <a href="tel:8647547291" class="cta-primary" style="display:block;text-align:center">📞 864-754-7291</a>
+              <a href={data.emergencyHref} class="se-link">Go to emergency page →</a>
+            </div>
+          )}
+
+          <div class="sidebar-trust">
+            <h4 class="sidebar-trust-h">Why Choose Us</h4>
+            <div class="sidebar-trust-item">✅ SC-Licensed HVAC Contractors</div>
+            <div class="sidebar-trust-item">✅ Same-Day Service Available</div>
+            <div class="sidebar-trust-item">✅ No After-Hours Upcharge</div>
+            <div class="sidebar-trust-item">✅ Upfront Written Quotes</div>
+            <div class="sidebar-trust-item">⭐ 4.8 Google Rating (127+ reviews)</div>
+          </div>
+
+          <div class="sidebar-cta-block">
+            <a href="tel:8647547291" class="sidebar-call-btn">📞 864-754-7291</a>
+            <a href="/free-estimate/" class="sidebar-estimate-btn">📅 Free Estimate</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+
+    <SiteFooter />
+  </div>
+
+  <style>
+    .inner-intro { font-size: 1.05rem; line-height: 1.8; color: #444; margin-bottom: 28px; }
+    .quick-answer-box { background: #EEF4FF; border-left: 4px solid #0D2D6E; border-radius: 8px; padding: 18px 22px; margin-bottom: 28px; }
+    .qa-label { font-family: 'Poppins', sans-serif; font-weight: 800; color: #0D2D6E; font-size: 0.85rem; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .quick-answer-box p { margin: 0; color: #2c3e6b; line-height: 1.75; font-size: 0.97rem; }
+    .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 28px; }
+    .benefit-card { background: #fff; border: 1.5px solid #d8e2f3; border-radius: 12px; padding: 18px; }
+    .benefit-icon { font-size: 2rem; margin-bottom: 8px; }
+    .benefit-title { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.95rem; color: #0D2D6E; margin: 0 0 6px; }
+    .benefit-body { font-size: 0.87rem; color: #555; line-height: 1.6; margin: 0; }
+    .services-grid-inner { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 28px; }
+    .service-card-inner { display: flex; flex-direction: column; gap: 4px; background: #fff; border: 1.5px solid #d8e2f3; border-radius: 10px; padding: 14px 16px; text-decoration: none; color: inherit; transition: border-color .2s; }
+    .service-card-inner:hover { border-color: #0D2D6E; }
+    .sci-icon { font-size: 1.5rem; }
+    .sci-title { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.9rem; color: #0D2D6E; }
+    .sci-desc { font-size: 0.82rem; color: #666; line-height: 1.5; }
+    .cost-table-wrap { overflow-x: auto; margin-bottom: 8px; }
+    .cost-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .cost-table th { background: #0D2D6E; color: #fff; padding: 10px 14px; text-align: left; font-family: 'Poppins', sans-serif; font-size: 0.82rem; font-weight: 600; }
+    .cost-table td { padding: 10px 14px; border-bottom: 1px solid #e8eef8; color: #333; }
+    .cost-table tr:nth-child(even) td { background: #f7f9fd; }
+    .cost-col { font-weight: 700; color: #0D2D6E; white-space: nowrap; }
+    .time-col { color: #666; white-space: nowrap; }
+    .cost-note { font-size: 0.84rem; color: #666; background: #f7f9fd; border-radius: 6px; padding: 12px 14px; margin-bottom: 28px; line-height: 1.6; }
+    .issues-list { list-style: none; padding: 0; margin: 0 0 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 8px; }
+    .issues-list li { background: #f7f9fd; border-radius: 8px; padding: 10px 14px; color: #333; font-size: 0.9rem; }
+    .process-steps { display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
+    .process-step { display: flex; gap: 16px; align-items: flex-start; }
+    .ps-num { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: #0D2D6E; color: #fff; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; }
+    .ps-content { flex: 1; }
+    .ps-title { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.95rem; color: #0D2D6E; margin: 0 0 6px; }
+    .ps-body { font-size: 0.88rem; color: #555; line-height: 1.65; margin: 0; }
+    .local-section-text { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 28px; }
+    .inner-cta-strip { background: linear-gradient(90deg, #0D2D6E, #1A7AC4); border-radius: 12px; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 32px; }
+    .ics-text { display: flex; flex-direction: column; gap: 4px; color: #fff; }
+    .ics-text strong { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1rem; }
+    .ics-text span { font-size: 0.85rem; opacity: 0.9; }
+    .faq-item { border: 1.5px solid #d8e2f3; border-radius: 10px; margin-bottom: 10px; overflow: hidden; background: #fff; }
+    .faq-summary { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.95rem; color: #0D2D6E; list-style: none; user-select: none; }
+    .faq-summary::-webkit-details-marker { display: none; }
+    .faq-chevron { flex-shrink: 0; transition: transform 0.2s; color: #0D2D6E; }
+    details[open] .faq-chevron { transform: rotate(180deg); }
+    .faq-body { padding: 0 20px 16px; color: #444; line-height: 1.75; font-size: 0.92rem; }
+    .faq-body p { margin: 0; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 28px; }
+    .related-card { display: flex; flex-direction: column; gap: 4px; background: #f7f9fd; border: 1.5px solid #d8e2f3; border-radius: 10px; padding: 14px 16px; text-decoration: none; color: inherit; transition: border-color .2s; }
+    .related-card:hover { border-color: #0D2D6E; }
+    .rc-icon { font-size: 1.5rem; }
+    .rc-title { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.9rem; color: #0D2D6E; }
+    .rc-desc { font-size: 0.82rem; color: #666; line-height: 1.5; }
+    .sidebar-emergency { background: #fff5f5; border: 2px solid #CC2229; border-radius: 12px; padding: 16px; margin-top: 16px; }
+    .se-title { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 0.95rem; color: #CC2229; margin-bottom: 6px; }
+    .se-body { font-size: 0.85rem; color: #555; margin: 0 0 12px; line-height: 1.5; }
+    .se-link { display: block; text-align: center; font-size: 0.82rem; color: #CC2229; text-decoration: underline; margin-top: 10px; }
+    .sidebar-trust { background: #f7f9fd; border: 1.5px solid #d8e2f3; border-radius: 12px; padding: 16px; margin-top: 16px; }
+    .sidebar-trust-h { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.9rem; color: #0D2D6E; margin: 0 0 10px; }
+    .sidebar-trust-item { font-size: 0.85rem; color: #333; padding: 4px 0; border-bottom: 1px solid #e8eef8; }
+    .sidebar-trust-item:last-child { border-bottom: none; }
+    .sidebar-cta-block { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+    .sidebar-call-btn { display: block; text-align: center; background: #CC2229; color: #fff; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1rem; padding: 14px; border-radius: 10px; text-decoration: none; }
+    .sidebar-estimate-btn { display: block; text-align: center; background: #0D2D6E; color: #fff; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.9rem; padding: 12px; border-radius: 10px; text-decoration: none; }
+  </style>
+</BaseLayout>

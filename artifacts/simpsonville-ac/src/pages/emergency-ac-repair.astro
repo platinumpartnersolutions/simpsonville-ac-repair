@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SiteHeader } from '../components/SiteHeader';
+import SiteFooter from '../components/SiteFooter.astro';
+import { LeadForm } from '../components/LeadForm';
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Emergency AC Repair Simpsonville SC",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Simpsonville AC Repair",
+      "telephone": "864-754-7291",
+      "address": { "@type": "PostalAddress", "addressLocality": "Simpsonville", "addressRegion": "SC", "postalCode": "29681" }
+    },
+    "areaServed": "Simpsonville, SC"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Is there an emergency AC repair service in Simpsonville?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — same-day emergency AC repair is available in Simpsonville, SC. Call 864-754-7291 for immediate dispatch." } },
+      { "@type": "Question", "name": "Is there an extra charge for emergency AC repair?", "acceptedAnswer": { "@type": "Answer", "text": "No — there is no after-hours or emergency upcharge. The quoted repair price is the same any time of day or night." } }
+    ]
+  }
+];
+
+const FAQ_ITEMS = [
+  { q: "Is there an emergency AC repair service in Simpsonville?", a: "Yes — same-day emergency AC repair is available in Simpsonville, SC. Call 864-754-7291 to confirm current availability and dispatch a licensed technician. Most Simpsonville addresses receive service within 1–2 hours during business hours." },
+  { q: "Is there an extra charge for emergency AC repair?", a: "No. There is no after-hours or emergency upcharge applied to emergency calls. The quoted repair price is the same whether the call comes in at 9am or 9pm, Monday or Sunday. The price you approve is the price you pay." },
+  { q: "What are the most common emergency AC failures in Simpsonville?", a: "In summer, the most common emergency calls are capacitor failure (unit runs but doesn't cool), refrigerant leaks (gradual loss of cooling suddenly becoming severe), and compressor failures. Simpsonville's 90°F+ summer heat accelerates these failures and makes them feel more urgent. Most can be repaired same-day." },
+  { q: "How do I know if my AC failure is an emergency?", a: "An AC failure becomes a genuine emergency when: indoor temperatures exceed 85°F and someone in the home has a medical condition sensitive to heat, when there are infants or elderly individuals in the home, or when pets are present. Most failures can wait until the next morning — but if health or safety is a concern, call immediately." },
+  { q: "My AC tripped the breaker — is that an emergency?", a: "A single breaker trip is usually not an emergency. Reset the breaker once. If it holds, the system likely tripped from a power surge. If it trips again immediately, stop resetting it — a repeatedly tripping breaker indicates an electrical fault (usually a failing compressor or short) and the system should stay off until serviced." },
+];
+---
+
+<BaseLayout
+  title="Emergency AC Repair Simpsonville SC | Same-Day | 864-754-7291"
+  description="Emergency AC repair in Simpsonville, SC — same-day dispatch, no after-hours upcharge. Call 864-754-7291 now for immediate response."
+  canonical="/emergency-ac-repair/"
+  schema={schema}
+>
+  <div class="page-root">
+    <div class="topbar">
+      <div class="tb-inner">
+        <span>📍 Serving Simpsonville &amp; Greenville Areas</span>
+        <span class="tb-div">|</span>
+        <span>📞 <a href="tel:8647547291" style="color:#fff;font-weight:700">864-754-7291</a></span>
+      </div>
+    </div>
+
+    <SiteHeader client:load />
+
+    <div class="inner-hero inner-hero--red">
+      <div class="inner-hero-inner">
+        <nav class="inner-hero-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span> › </span>
+          <span>Emergency AC Repair</span>
+        </nav>
+        <h1 class="inner-h1">Emergency AC Repair in Simpsonville, SC</h1>
+        <a href="tel:8647547291" class="inner-cta-phone inner-cta-phone--red">
+          📞 <strong>864-754-7291</strong> — Call Now for Same-Day Service
+        </a>
+      </div>
+    </div>
+
+    <div class="inner-body">
+      <div class="inner-content-grid">
+        <main class="inner-main">
+          <p class="inner-intro">Emergency AC repair in Simpsonville is available same-day with no after-hours upcharge — when your air conditioner fails completely on a 95°F day, a licensed technician can be at your home within 1–2 hours in most cases. The most common summer emergencies — capacitor failure, refrigerant leaks, and compressor issues — are all addressed on the first visit when parts are available. Call 864-754-7291 immediately and we'll dispatch the nearest available contractor to your Simpsonville home.</p>
+
+          <div class="emergency-banner">
+            <div class="eb-icon">🚨</div>
+            <div>
+              <strong>AC Emergency?</strong>
+              <p>Call now — no hold music, no scheduling, immediate dispatch.</p>
+              <a href="tel:8647547291" class="cta-primary" style="margin-top:8px;display:inline-flex">📞 864-754-7291</a>
+            </div>
+          </div>
+
+          <h2 class="inner-h2">What Makes an AC Failure an Emergency?</h2>
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">🌡️</div>
+              <h3 class="benefit-title">Extreme Indoor Heat</h3>
+              <p class="benefit-body">When indoor temperatures exceed 85°F and there are infants, elderly residents, or people with medical conditions in the home, AC failure becomes a health emergency requiring immediate response.</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">🐾</div>
+              <h3 class="benefit-title">Pets in the Home</h3>
+              <p class="benefit-body">Pets cannot regulate body temperature like adults can. A home reaching 90°F+ is dangerous for most pets within hours. Priority dispatch is warranted when animals are present.</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">👶</div>
+              <h3 class="benefit-title">Vulnerable Household Members</h3>
+              <p class="benefit-body">Infants, elderly adults, and people on certain medications are highly susceptible to heat illness. An AC failure during a Simpsonville summer can escalate quickly in these situations.</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">⚡</div>
+              <h3 class="benefit-title">No After-Hours Upcharge</h3>
+              <p class="benefit-body">Emergency calls receive the same pricing as regular calls. The quoted repair price is identical whether you call at 9am or 9pm — no surprise fees for after-hours service.</p>
+            </div>
+          </div>
+
+          <h2 class="inner-h2">Most Common AC Emergencies in Simpsonville</h2>
+          <div class="process-steps">
+            {[
+              { num: "1", title: "Capacitor Failure — Unit Runs But Won't Cool", body: "The most common summer emergency in Simpsonville. The capacitor fails, the compressor can't start, and the system runs but produces no cold air. Replacement costs $150–$300 and is completed in under an hour." },
+              { num: "2", title: "Refrigerant Leak — Sudden Loss of Cooling", body: "A slow refrigerant leak becomes a sudden emergency when the charge drops below a critical threshold and the coil freezes. The system shuts down on the safety switch. Leak repair and recharge runs $200–$600." },
+              { num: "3", title: "Compressor Failure — Complete System Shutdown", body: "Compressor failure is the most serious emergency. The system completely stops producing cold air. Depending on the unit's age, repair ($800–$2,500) or full replacement is recommended. Licensed technicians can diagnose and provide options same-day." },
+              { num: "4", title: "Control Board Failure — System Won't Respond", body: "The control board manages communication between the thermostat and the system components. A failed board causes the system to not respond to commands at all. Replacement costs $300–$700." },
+            ].map(step => (
+              <div class="process-step">
+                <div class="ps-num">{step.num}</div>
+                <div class="ps-content">
+                  <h3 class="ps-title">{step.title}</h3>
+                  <p class="ps-body">{step.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <h2 class="inner-h2">Frequently Asked Questions</h2>
+          <div class="faq-list">
+            {FAQ_ITEMS.map((item, i) => (
+              <details class="faq-item" open={i === 0}>
+                <summary class="faq-summary">
+                  <span>{item.q}</span>
+                  <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 8l5 5 5-5"/>
+                  </svg>
+                </summary>
+                <div class="faq-body"><p>{item.a}</p></div>
+              </details>
+            ))}
+          </div>
+
+          <div class="inner-related-links">
+            <h3>Related Services</h3>
+            <div class="inner-related-grid">
+              <a href="/ac-repair/" class="inner-related-card"><span>❄️</span> AC Repair</a>
+              <a href="/ac-not-cooling/" class="inner-related-card"><span>🌡️</span> AC Not Cooling</a>
+              <a href="/ac-not-turning-on/" class="inner-related-card"><span>⚡</span> AC Won't Turn On</a>
+              <a href="/emergency-furnace-repair/" class="inner-related-card"><span>🔥</span> Emergency Furnace Repair</a>
+            </div>
+          </div>
+        </main>
+
+        <aside class="inner-sidebar">
+          <LeadForm client:load title="Emergency Request" subtitle="We'll call immediately." dark defaultService="Emergency AC Repair" />
+          <div class="sidebar-emergency">
+            <div class="se-title">🚨 Call Now — Direct Line</div>
+            <p class="se-body">Skip the form for fastest response. Call directly:</p>
+            <a href="tel:8647547291" class="cta-primary" style="display:block;text-align:center;font-size:1.1rem">📞 864-754-7291</a>
+          </div>
+          <div class="sidebar-trust">
+            <h4 class="sidebar-trust-h">Emergency Guarantees</h4>
+            <div class="sidebar-trust-item">✅ No after-hours upcharge</div>
+            <div class="sidebar-trust-item">✅ Same-day service</div>
+            <div class="sidebar-trust-item">✅ SC-licensed technicians</div>
+            <div class="sidebar-trust-item">✅ Upfront pricing before work</div>
+            <div class="sidebar-trust-item">⭐ 4.8 Google Rating</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <SiteFooter />
+  </div>
+
+  <style>
+    .inner-hero--red { background: linear-gradient(135deg, #8B0000, #CC2229 60%, #0D2D6E); }
+    .inner-cta-phone--red { border-color: rgba(255,255,255,.4); }
+    .emergency-banner { display: flex; gap: 16px; background: #fff5f5; border: 2px solid #CC2229; border-radius: 12px; padding: 20px 24px; margin-bottom: 28px; align-items: flex-start; }
+    .eb-icon { font-size: 2.5rem; flex-shrink: 0; }
+    .emergency-banner strong { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.1rem; color: #CC2229; }
+    .emergency-banner p { margin: 6px 0 0; color: #555; font-size: 0.9rem; }
+    .inner-intro { font-size: 1.05rem; line-height: 1.8; color: #444; margin-bottom: 28px; }
+    .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 28px; }
+    .benefit-card { background: #fff; border: 1.5px solid #d8e2f3; border-radius: 12px; padding: 18px; }
+    .benefit-icon { font-size: 2rem; margin-bottom: 8px; }
+    .benefit-title { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.95rem; color: #0D2D6E; margin: 0 0 6px; }
+    .benefit-body { font-size: 0.87rem; color: #555; line-height: 1.6; margin: 0; }
+    .process-steps { display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
+    .process-step { display: flex; gap: 16px; align-items: flex-start; }
+    .ps-num { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: #CC2229; color: #fff; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; }
+    .ps-content { flex: 1; }
+    .ps-title { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.95rem; color: #0D2D6E; margin: 0 0 6px; }
+    .ps-body { font-size: 0.88rem; color: #555; line-height: 1.65; margin: 0; }
+    .faq-item { border: 1.5px solid #d8e2f3; border-radius: 10px; margin-bottom: 10px; overflow: hidden; background: #fff; }
+    .faq-summary { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.95rem; color: #0D2D6E; list-style: none; user-select: none; }
+    .faq-summary::-webkit-details-marker { display: none; }
+    .faq-chevron { flex-shrink: 0; transition: transform 0.2s; color: #0D2D6E; }
+    details[open] .faq-chevron { transform: rotate(180deg); }
+    .faq-body { padding: 0 20px 16px; color: #444; line-height: 1.75; font-size: 0.92rem; }
+    .faq-body p { margin: 0; }
+    .sidebar-emergency { background: #fff5f5; border: 2px solid #CC2229; border-radius: 12px; padding: 16px; margin-top: 16px; }
+    .se-title { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 0.95rem; color: #CC2229; margin-bottom: 6px; }
+    .se-body { font-size: 0.85rem; color: #555; margin: 0 0 12px; line-height: 1.5; }
+    .sidebar-trust { background: #f7f9fd; border: 1.5px solid #d8e2f3; border-radius: 12px; padding: 16px; margin-top: 16px; }
+    .sidebar-trust-h { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.9rem; color: #0D2D6E; margin: 0 0 10px; }
+    .sidebar-trust-item { font-size: 0.85rem; color: #333; padding: 4px 0; border-bottom: 1px solid #e8eef8; }
+    .sidebar-trust-item:last-child { border-bottom: none; }
+  </style>
+</BaseLayout>

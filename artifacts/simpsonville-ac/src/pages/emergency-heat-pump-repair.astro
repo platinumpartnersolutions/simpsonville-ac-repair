@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SiteHeader } from '../components/SiteHeader';
+import SiteFooter from '../components/SiteFooter.astro';
+import { LeadForm } from '../components/LeadForm';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Emergency Heat Pump Repair Simpsonville SC",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Simpsonville AC Repair",
+    "telephone": "864-754-7291",
+    "address": { "@type": "PostalAddress", "addressLocality": "Simpsonville", "addressRegion": "SC", "postalCode": "29681" }
+  },
+  "areaServed": "Simpsonville, SC"
+};
+---
+
+<BaseLayout
+  title="Emergency Heat Pump Repair Simpsonville SC | 864-754-7291"
+  description="Emergency heat pump repair in Simpsonville, SC — same-day service for cooling and heating failures. No upcharge. Call 864-754-7291."
+  canonical="/emergency-heat-pump-repair/"
+  schema={schema}
+>
+  <div class="page-root">
+    <div class="topbar">
+      <div class="tb-inner">
+        <span>📍 Serving Simpsonville &amp; Greenville Areas</span>
+        <span class="tb-div">|</span>
+        <span>📞 <a href="tel:8647547291" style="color:#fff;font-weight:700">864-754-7291</a></span>
+      </div>
+    </div>
+
+    <SiteHeader client:load />
+
+    <div class="inner-hero">
+      <div class="inner-hero-inner">
+        <nav class="inner-hero-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span> › </span>
+          <span>Emergency Heat Pump Repair</span>
+        </nav>
+        <h1 class="inner-h1">Emergency Heat Pump Repair in Simpsonville, SC</h1>
+        <a href="tel:8647547291" class="inner-cta-phone">
+          📞 <strong>864-754-7291</strong> — Same-Day Service
+        </a>
+      </div>
+    </div>
+
+    <div class="inner-body">
+      <div class="inner-content-grid">
+        <main class="inner-main">
+          <p style="font-size:1.05rem;line-height:1.8;color:#444;margin-bottom:28px">Emergency heat pump repair in Simpsonville is available same-day — heat pumps fail in both heating and cooling mode, and local licensed technicians in our network are experienced with the specific diagnostics required for heat pump-only failures like reversing valve issues and defrost cycle problems. Call 864-754-7291 for immediate dispatch.</p>
+
+          <div style="background:#fff5f5;border:2px solid #CC2229;border-radius:12px;padding:20px 24px;margin-bottom:28px;display:flex;gap:16px;align-items:flex-start">
+            <div style="font-size:2.5rem;flex-shrink:0">🚨</div>
+            <div>
+              <strong style="font-family:'Poppins',sans-serif;font-weight:800;font-size:1.1rem;color:#CC2229">Heat Pump Out?</strong>
+              <p style="margin:6px 0 0;color:#555;font-size:0.9rem">Same-day service for both heating and cooling failures. No after-hours upcharge.</p>
+              <a href="tel:8647547291" class="cta-primary" style="margin-top:8px;display:inline-flex">📞 864-754-7291</a>
+            </div>
+          </div>
+
+          <h2 class="inner-h2">Common Heat Pump Emergencies</h2>
+          <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:28px">
+            {[
+              { icon: "♻️", title: "Reversing Valve Failure — Stuck in One Mode", body: "The reversing valve switches the heat pump between heating and cooling mode. When it fails, the system is stuck — usually in cooling mode, blowing cold air during winter. Replacement is a specialized repair costing $400–$700." },
+              { icon: "❄️", title: "System Iced Over — Continuous Freeze, No Defrost", body: "Heat pumps can ice up in cold weather — normal defrost cycles clear this every 60–90 minutes. If the outdoor unit is continuously iced over and not defrosting, the defrost board or defrost sensor has failed. Switch to emergency heat mode and call for service." },
+              { icon: "⚡", title: "Capacitor Failure — Unit Won't Start", body: "Same as with AC systems — a failed capacitor prevents the compressor from starting. The outdoor unit may hum but not run. Replacement costs $150–$300 and is completed in under an hour." },
+              { icon: "🌡️", title: "Not Heating Efficiently — Low Refrigerant", body: "A heat pump with low refrigerant loses significant heating capacity at lower ambient temperatures. The system runs constantly but can't maintain temperature. Leak repair and recharge typically costs $200–$600." },
+            ].map(step => (
+              <div style="background:#f7f9fd;border:1.5px solid #d8e2f3;border-radius:10px;padding:16px 20px;display:flex;gap:14px;align-items:flex-start">
+                <div style="font-size:1.8rem;flex-shrink:0">{step.icon}</div>
+                <div>
+                  <h3 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:0.95rem;color:#0D2D6E;margin:0 0 6px">{step.title}</h3>
+                  <p style="font-size:0.88rem;color:#555;line-height:1.65;margin:0">{step.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <h2 class="inner-h2">Emergency Action — Heat Pump Stopped Heating</h2>
+          <div style="background:#EEF4FF;border-left:4px solid #0D2D6E;border-radius:8px;padding:18px 22px;margin-bottom:28px">
+            <p style="margin:0 0 10px;font-weight:600;color:#0D2D6E">Immediate steps while waiting for service:</p>
+            <ol style="margin:0;padding-left:18px;color:#333;font-size:0.9rem;line-height:2">
+              <li>Switch thermostat to <strong>Emergency Heat (EM HEAT)</strong> if available — this bypasses the heat pump and uses backup electric resistance heat</li>
+              <li>Do not repeatedly turn the system off and on — this can stress a struggling compressor</li>
+              <li>If the outdoor unit is encased in ice, do NOT attempt to chip it — call for service</li>
+              <li>Call 864-754-7291 for same-day dispatch</li>
+            </ol>
+          </div>
+
+          <div class="inner-related-links">
+            <h3>Related Services</h3>
+            <div class="inner-related-grid">
+              <a href="/heat-pump-repair/" class="inner-related-card"><span>♻️</span> Heat Pump Repair</a>
+              <a href="/furnace-repair/" class="inner-related-card"><span>🔥</span> Furnace Repair</a>
+              <a href="/emergency-ac-repair/" class="inner-related-card"><span>🚨</span> Emergency AC Repair</a>
+              <a href="/ac-replacement/" class="inner-related-card"><span>🔄</span> Heat Pump Replacement</a>
+            </div>
+          </div>
+        </main>
+
+        <aside class="inner-sidebar">
+          <LeadForm client:load title="Emergency Heat Pump Request" subtitle="We'll call immediately." dark defaultService="Heat Pump Repair" />
+          <div class="sidebar-emergency">
+            <div class="se-title">🚨 Call for Fastest Response</div>
+            <a href="tel:8647547291" class="cta-primary" style="display:block;text-align:center;margin-top:10px">📞 864-754-7291</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <SiteFooter />
+  </div>
+
+  <style>
+    .sidebar-emergency { background: #fff5f5; border: 2px solid #CC2229; border-radius: 12px; padding: 16px; margin-top: 16px; }
+    .se-title { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 0.95rem; color: #CC2229; margin-bottom: 6px; }
+  </style>
+</BaseLayout>

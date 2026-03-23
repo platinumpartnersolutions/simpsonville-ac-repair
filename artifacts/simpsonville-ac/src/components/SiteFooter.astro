@@ -1,0 +1,96 @@
+---
+const SERVICES = [
+  ["AC Repair", "/ac-repair/"],
+  ["AC Installation", "/ac-installation/"],
+  ["AC Replacement", "/ac-replacement/"],
+  ["HVAC Repair", "/hvac-repair/"],
+  ["Heat Pump Repair", "/heat-pump-repair/"],
+  ["Furnace Repair", "/furnace-repair/"],
+  ["AC Maintenance", "/ac-maintenance/"],
+  ["Ductless Mini Split", "/ductless-mini-split/"],
+  ["Emergency AC Repair", "/emergency-ac-repair/"],
+];
+
+const LOCATIONS = [
+  ["Simpsonville, SC", "/simpsonville-sc/"],
+  ["Greenville, SC", "/greenville-sc/"],
+  ["Mauldin, SC", "/mauldin-sc/"],
+  ["Fountain Inn, SC", "/fountain-inn-sc/"],
+];
+
+const COMPANY = [
+  ["About Us", "/about/"],
+  ["Free Estimate", "/free-estimate/"],
+  ["Emergency Service", "/emergency-ac-repair/"],
+  ["Contact Us", "/contact/"],
+];
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo-wrap">
+        <img src="/logo.png" alt="Simpsonville AC Repair" class="footer-logo" />
+        <div class="footer-brand-name">
+          <div class="footer-bn-1">SIMPSONVILLE</div>
+          <div class="footer-bn-2">AC REPAIR</div>
+        </div>
+      </div>
+      <p class="footer-desc">Simpsonville's most trusted HVAC, plumbing, and electrical company. Serving our community with pride since 2023.</p>
+      <div class="footer-contact-info">
+        <div>📞 <a href="tel:8647547291" style="color:inherit">864-754-7291</a></div>
+        <div>📞 <a href="tel:8647547291" style="color:inherit">864-754-7291</a></div>
+        <div>🌐 simpsonvilleacrepair.com</div>
+        <div>📍 Simpsonville, SC 29681</div>
+      </div>
+      <div class="footer-badges">
+        <span class="fbadge">✅ Licensed &amp; Insured</span>
+        <span class="fbadge">✅ Est. 2023</span>
+        <span class="fbadge">✅ SC Licensed Contractors</span>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-col-h">Services</h4>
+      {SERVICES.map(([label, href]) => (
+        <a href={href} class="footer-col-link">{label}</a>
+      ))}
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-col-h">Service Areas</h4>
+      {LOCATIONS.map(([label, href]) => (
+        <a href={href} class="footer-col-link">{label}</a>
+      ))}
+      <div style="margin-top:12px">
+        <div class="footer-col-link" style="cursor:default">Pelzer, SC</div>
+        <div class="footer-col-link" style="cursor:default">Greer, SC</div>
+        <div class="footer-col-link" style="cursor:default">Duncan, SC</div>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-col-h">Company</h4>
+      {COMPANY.map(([label, href]) => (
+        <a href={href} class="footer-col-link">{label}</a>
+      ))}
+      <div class="footer-cta-block">
+        <a href="tel:8647547291" class="footer-cta-btn">864-754-7291</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-disclaimer">
+    <p><strong>DISCLAIMER:</strong> Simpsonville AC Repair is a local lead generation and referral service, not a licensed HVAC contractor. We connect homeowners in the Simpsonville, SC area with pre-screened, licensed, and insured HVAC service providers. All service inquiries submitted through this website are forwarded to third-party contractors who will contact you directly. We do not perform HVAC services ourselves. By submitting your information, you consent to be contacted by one or more licensed HVAC contractors in your area. We may receive compensation from service providers for referrals made through this site.</p>
+  </div>
+
+  <div class="footer-bottom">
+    <div>© 2026 Simpsonville AC Repair. All Rights Reserved.</div>
+    <div class="footer-bottom-links">
+      <a href="#" class="fbl">Privacy Policy</a>
+      <a href="#" class="fbl">Terms of Service</a>
+      <a href="#" class="fbl">Sitemap</a>
+    </div>
+  </div>
+  <div class="footer-flag-stripe"></div>
+</footer>

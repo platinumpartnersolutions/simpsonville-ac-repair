@@ -1,0 +1,373 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SiteHeader } from '../components/SiteHeader';
+import SiteFooter from '../components/SiteFooter.astro';
+import { LeadForm } from '../components/LeadForm';
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Simpsonville AC Repair",
+    "telephone": "864-754-7291",
+    "url": "https://simpsonvilleacrepair.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Simpsonville", "addressRegion": "SC", "postalCode": "29681", "addressCountry": "US" },
+    "geo": { "@type": "GeoCoordinates", "latitude": 34.7376, "longitude": -82.2532 },
+    "areaServed": ["Simpsonville", "Greenville", "Mauldin", "Fountain Inn"],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "127" },
+    "openingHours": "Mo-Fr 07:00-19:00",
+    "priceRange": "$$",
+    "image": "https://simpsonvilleacrepair.com/van-hero.webp"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How much does AC repair cost in Simpsonville, SC?", "acceptedAnswer": { "@type": "Answer", "text": "Most AC repairs in Simpsonville run $150–$600. Capacitor replacement (the most common repair) costs $150–$300. Refrigerant recharge runs $200–$500. All quotes are provided upfront before work begins." } },
+      { "@type": "Question", "name": "Is same-day AC repair available in Simpsonville?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — same-day service is available 7 days a week. Call 864-754-7291 early for fastest dispatch during peak summer months." } },
+      { "@type": "Question", "name": "What areas do you serve?", "acceptedAnswer": { "@type": "Answer", "text": "We serve Simpsonville, Mauldin, Fountain Inn, and Greenville, SC." } }
+    ]
+  }
+];
+
+const SERVICES = [
+  { href: "/emergency-ac-repair/", icon: "🚨", title: "Emergency AC Repair", desc: "Same-day emergency dispatch — no after-hours upcharge." },
+  { href: "/ac-repair/", icon: "❄️", title: "AC Repair", desc: "$150–$600. Same-day. All brands and all failures." },
+  { href: "/hvac-repair/", icon: "🌡️", title: "HVAC Repair", desc: "Heating and cooling diagnostics and repair, 7 days." },
+  { href: "/ac-installation/", icon: "📦", title: "AC Installation", desc: "New systems, properly sized. Free estimates." },
+  { href: "/ac-replacement/", icon: "🔄", title: "AC Replacement", desc: "Same-week replacement when it's time for a new system." },
+  { href: "/heat-pump-repair/", icon: "♻️", title: "Heat Pump Repair", desc: "Heat pump specialists for all brands, heating & cooling modes." },
+  { href: "/furnace-repair/", icon: "🔥", title: "Furnace Repair", desc: "Gas and electric furnace repair — same-day winter service." },
+  { href: "/ac-maintenance/", icon: "🛠️", title: "AC Maintenance", desc: "$89 tune-up that prevents summer breakdowns." },
+];
+
+const TRUST_BADGES = [
+  { icon: "⚡", label: "Same-Day Service", sub: "7 days a week" },
+  { icon: "🛡️", label: "Licensed & Insured", sub: "SC certified" },
+  { icon: "💰", label: "Upfront Pricing", sub: "No hidden fees" },
+  { icon: "🔧", label: "All Brands", sub: "Carrier, Trane, Lennox & more" },
+  { icon: "⏱️", label: "No Overtime Fees", sub: "Same price any time" },
+  { icon: "🏆", label: "4.8★ Google Rating", sub: "127+ reviews" },
+];
+
+const LOCAL_FACTORS = [
+  { icon: "☀️", title: "90°F+ Summers", body: "Simpsonville's July–August heat puts extreme stress on AC capacitors and compressors. Local technicians know these failure patterns and come stocked with common parts." },
+  { icon: "🏠", title: "Slab-Foundation Homes", body: "Most Simpsonville subdivisions built 2000s–2020s have attic air handlers — the hottest possible location. This creates specific maintenance needs local contractors understand." },
+  { icon: "💲", title: "Cost-First Approach", body: "Simpsonville homeowners get written quotes before any work begins. No surprise charges, no upselling. The quote you approve is the bill you receive." },
+  { icon: "👨‍👩‍👧", title: "Homeowner Focus", body: "Every service is explained in plain language. You'll understand exactly what failed, why it failed, and what the repair will do — before you authorize anything." },
+];
+
+const TESTIMONIALS = [
+  { name: "Sarah M.", loc: "Five Forks, Simpsonville", rating: 5, text: "Called at 9am on a Saturday when our AC quit. Technician was here by noon. Capacitor replaced, cold air by 1pm. Price was exactly what they quoted over the phone. Will use every time." },
+  { name: "James R.", loc: "Neely Farm", rating: 5, text: "Had three quotes for AC replacement. Simpsonville AC was $400 lower and arrived to install within 3 days. New Carrier unit is running great. Very professional crew." },
+  { name: "Lisa T.", loc: "Mauldin, SC", rating: 5, text: "Furnace wouldn't ignite in January. Called at 7pm, technician was out by 8:30. Ignitor replaced, heat back on within an hour. No emergency upcharge. Outstanding service." },
+  { name: "David K.", loc: "Woodruff Estates", rating: 5, text: "Annual maintenance visit was thorough — they found a near-failed capacitor during the tune-up and replaced it proactively. That's how you prevent a summer emergency. $89 well spent." },
+  { name: "Amanda P.", loc: "Simpsonville, SC", rating: 5, text: "Refrigerant leak found and repaired on the same visit. Technician showed me the leak location and explained the repair clearly. No vague 'your unit needs work' — actual details." },
+  { name: "Mark H.", loc: "Fountain Inn, SC", rating: 5, text: "Mini split installation for our bonus room. Quoted and installed within a week. Now the room is actually comfortable in July. Installer was clean, professional, and done ahead of schedule." },
+  { name: "Jennifer C.", loc: "Heritage Hills", rating: 5, text: "Water leaking from the air handler — turns out the condensate drain was completely clogged. Cleared and treated in 30 minutes. Also caught a failing capacitor while they were there. Glad I called." },
+  { name: "Robert N.", loc: "Mauldin, SC", rating: 5, text: "Emergency AC call on the hottest day of the year. They came out the same day and fixed the contactor. The dispatcher was upfront about timing and the technician showed up exactly when promised." },
+  { name: "Michelle W.", loc: "Greenville, SC", rating: 5, text: "Replaced a 16-year-old Goodman system. The new Trane install was completed in one day and included all the permit work. Running cooler and quieter than anything we've had before." },
+];
+
+const FAQ_ITEMS = [
+  { q: "How much does AC repair cost in Simpsonville, SC?", a: "Most AC repairs in Simpsonville run $150–$600. The most common repair — capacitor replacement — costs $150–$300 and takes under an hour. Refrigerant recharge runs $200–$500. More complex repairs like blower motors ($300–$600) or control boards ($300–$700) cost more. All quotes are provided upfront before any work begins." },
+  { q: "Is same-day AC repair available in Simpsonville?", a: "Yes — same-day service is standard for most Simpsonville addresses. Call 864-754-7291 to confirm availability. During peak summer months (July–August), calling early secures the fastest arrival window. Emergency calls are prioritized." },
+  { q: "What's the difference between repair and replacement?", a: "The 50% rule: if the repair cost exceeds 50% of a new system's price and your unit is over 10 years old, replacement is usually the smarter investment. For newer systems or lower-cost repairs, repair is the right choice. Licensed technicians give you an honest recommendation before any work begins." },
+  { q: "Do you service all AC brands?", a: "Yes — local licensed technicians in our network service all major residential brands including Carrier, Trane, Lennox, Goodman, Rheem, York, Ruud, American Standard, Daikin, Bosch, and Mitsubishi. If it's a residential system, it can be serviced." },
+  { q: "Is there an after-hours upcharge for emergency calls?", a: "No. The quoted repair price is the same whether the call is at 9am or 9pm, Monday or Sunday. There is no after-hours premium or weekend surcharge. Same price, same service, any time." },
+  { q: "How long does AC repair take?", a: "Most AC repairs take 1–3 hours from arrival to completion. Simple repairs like capacitor or contactor replacement take under an hour. More involved repairs like blower motor replacement take 2–3 hours. Same-day completion is the standard for most common failures." },
+  { q: "What areas do you serve?", a: "We serve Simpsonville, Mauldin, Fountain Inn, and Greenville, SC. Call 864-754-7291 to confirm service availability for your specific address." },
+];
+---
+
+<BaseLayout
+  title="Simpsonville AC Repair | Same-Day HVAC Service | 864-754-7291"
+  description="Simpsonville's top-rated AC repair and HVAC service. Same-day service, licensed technicians, no after-hours upcharge. Call 864-754-7291."
+  canonical="/"
+  schema={schema}
+>
+  <div class="page-root">
+    <div class="topbar">
+      <div class="tb-inner">
+        <span>📍 Serving Simpsonville &amp; Greenville Areas</span>
+        <span class="tb-div">|</span>
+        <span>📞 <a href="tel:8647547291" style="color:#fff;font-weight:700">864-754-7291</a></span>
+      </div>
+    </div>
+
+    <SiteHeader client:load />
+
+    <section class="hero" aria-label="Hero — AC repair in Simpsonville SC">
+      <picture>
+        <source srcset="/van-hero.webp" type="image/webp" />
+        <img
+          src="/van-hero.webp"
+          alt="Simpsonville AC Repair — HVAC service van in Simpsonville SC"
+          class="hero-bg"
+          width="1440"
+          height="600"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-badge">⚡ Same-Day Service Available</div>
+          <h1 class="hero-h1">
+            Simpsonville's #1<br />
+            AC Repair Service
+          </h1>
+          <p class="hero-sub">
+            Licensed HVAC contractors dispatched same-day · No after-hours upcharge · Free estimates on new systems
+          </p>
+          <div class="hero-ctas">
+            <a href="tel:8647547291" class="cta-primary">📞 864-754-7291 — Call Now</a>
+            <a href="/free-estimate/" class="cta-secondary">📅 Free Estimate</a>
+          </div>
+          <div class="hero-trust">
+            <span>⭐ 4.8 Google Rating</span>
+            <span>✅ Licensed &amp; Insured</span>
+            <span>⚡ Same-Day</span>
+          </div>
+        </div>
+
+        <div class="hero-form-col">
+          <LeadForm
+            client:load
+            title="Request Service"
+            subtitle="We'll call you back within 60 minutes."
+            dark
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-badges-section" aria-label="Why choose Simpsonville AC Repair">
+      <div class="trust-badges-inner">
+        {TRUST_BADGES.map(b => (
+          <div class="trust-badge">
+            <div class="trust-badge-icon">{b.icon}</div>
+            <div class="trust-badge-label">{b.label}</div>
+            <div class="trust-badge-sub">{b.sub}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="services-section" aria-label="HVAC services in Simpsonville SC">
+      <div class="section-inner">
+        <h2 class="section-h2">HVAC Services in Simpsonville, SC</h2>
+        <p class="section-sub">Licensed contractors dispatched same-day for all heating and cooling needs</p>
+        <div class="services-grid">
+          {SERVICES.map(s => (
+            <a href={s.href} class="service-card">
+              <div class="sc-icon">{s.icon}</div>
+              <div class="sc-title">{s.title}</div>
+              <div class="sc-desc">{s.desc}</div>
+              <div class="sc-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="content-offer" aria-label="How Simpsonville AC Repair works">
+      <div class="co-inner">
+        <div class="co-text">
+          <h2>How Simpsonville AC Repair Works</h2>
+          <p>We connect homeowners in Simpsonville, Mauldin, Fountain Inn, and Greenville with pre-screened, licensed HVAC contractors in our network. When you call, we dispatch the nearest available technician to your home — no middle-man delays, no call centers, no waiting days for an appointment.</p>
+          <div class="co-steps">
+            <div class="co-step">
+              <div class="co-step-num">1</div>
+              <div>
+                <strong>Call 864-754-7291</strong>
+                <p>Describe your problem. We confirm same-day availability and dispatch a technician immediately.</p>
+              </div>
+            </div>
+            <div class="co-step">
+              <div class="co-step-num">2</div>
+              <div>
+                <strong>Technician Arrives — Same Day</strong>
+                <p>A local licensed contractor arrives with a fully stocked service vehicle. Most common parts are on the truck.</p>
+              </div>
+            </div>
+            <div class="co-step">
+              <div class="co-step-num">3</div>
+              <div>
+                <strong>Upfront Quote — You Approve</strong>
+                <p>The technician diagnoses the problem and provides a written quote before touching anything. You approve the repair.</p>
+              </div>
+            </div>
+            <div class="co-step">
+              <div class="co-step-num">4</div>
+              <div>
+                <strong>Repair Completed and Tested</strong>
+                <p>After the repair, the system is run through a full cycle and verified before the technician leaves your home.</p>
+              </div>
+            </div>
+          </div>
+          <a href="tel:8647547291" class="cta-primary" style="margin-top:24px;display:inline-flex">📞 Call Now — 864-754-7291</a>
+        </div>
+        <div class="co-img">
+          <img
+            src="/van-hero.webp"
+            alt="Licensed HVAC contractor service vehicle in Simpsonville SC"
+            loading="lazy"
+            decoding="async"
+            width="560"
+            height="420"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="local-factors" aria-label="Why Simpsonville homeowners choose us">
+      <div class="section-inner">
+        <h2 class="section-h2">Built for Simpsonville's Climate</h2>
+        <p class="section-sub">Upstate SC's heat and humidity create specific HVAC demands — here's what sets local service apart</p>
+        <div class="factors-grid">
+          {LOCAL_FACTORS.map(f => (
+            <div class="factor-card">
+              <div class="factor-icon">{f.icon}</div>
+              <h3 class="factor-title">{f.title}</h3>
+              <p class="factor-body">{f.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="areas-section" aria-label="Service areas">
+      <div class="section-inner">
+        <h2 class="section-h2">Areas We Serve</h2>
+        <div class="areas-grid">
+          {[
+            { city: "Simpsonville, SC", zip: "29680 · 29681", href: "/simpsonville-sc/" },
+            { city: "Mauldin, SC", zip: "29662", href: "/mauldin-sc/" },
+            { city: "Fountain Inn, SC", zip: "29644", href: "/fountain-inn-sc/" },
+            { city: "Greenville, SC", zip: "29601 · 29607 · 29615", href: "/greenville-sc/" },
+            { city: "Pelzer, SC", zip: "29669", href: "/simpsonville-sc/" },
+            { city: "Greer, SC", zip: "29650", href: "/greenville-sc/" },
+          ].map(a => (
+            <a href={a.href} class="area-card">
+              <span class="area-city">📍 {a.city}</span>
+              <span class="area-zip">{a.zip}</span>
+            </a>
+          ))}
+        </div>
+        <p class="areas-note">Can't find your city? Call 864-754-7291 — we serve all of southern Greenville County.</p>
+      </div>
+    </section>
+
+    <section class="neighborhoods-section" aria-label="Simpsonville neighborhoods served">
+      <div class="section-inner">
+        <h2 class="section-h2">Simpsonville Neighborhoods We Serve</h2>
+        <div class="neighborhoods-list">
+          {["Five Forks", "Neely Farm", "Durbin Creek", "Bramblewood", "White Oaks", "Heritage Hills", "Simpsonville Place", "Woodruff Estates", "Asheton Lakes", "Bennetts Bridge", "Gilder Creek Farm", "Pebble Creek", "Waterford Place", "Copperfield"].map(n => (
+            <span class="neighborhood-tag">📍 {n}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials-section" aria-label="Customer reviews">
+      <div class="section-inner">
+        <h2 class="section-h2">What Simpsonville Homeowners Say</h2>
+        <p class="section-sub">127+ verified Google reviews · 4.8 star average</p>
+        <div class="testimonials-grid">
+          {TESTIMONIALS.map(t => (
+            <div class="testimonial-card">
+              <div class="t-stars">{"⭐".repeat(t.rating)}</div>
+              <p class="t-text">"{t.text}"</p>
+              <div class="t-meta">
+                <strong>{t.name}</strong>
+                <span>{t.loc}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" aria-labelledby="faq-h2">
+      <div class="section-inner">
+        <h2 id="faq-h2" class="section-h2">AC Repair FAQ — Simpsonville, SC</h2>
+        <div class="faq-list">
+          {FAQ_ITEMS.map((item, i) => (
+            <details class="faq-item" open={i === 0}>
+              <summary class="faq-summary">
+                <span>{item.q}</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 8l5 5 5-5"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                <p>{item.a}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="home-lead-section" aria-label="Request HVAC service">
+      <div class="home-lead-inner">
+        <div class="home-lead-text">
+          <h2>Need AC Repair in Simpsonville?</h2>
+          <p>Call 864-754-7291 now or fill out the form — a licensed HVAC contractor will call you back within 60 minutes to confirm availability and dispatch.</p>
+          <div class="home-lead-bullets">
+            <div>✅ Same-day service available</div>
+            <div>✅ No after-hours upcharge</div>
+            <div>✅ Upfront pricing — no surprises</div>
+            <div>✅ Licensed &amp; insured contractors</div>
+          </div>
+          <a href="tel:8647547291" class="cta-primary" style="margin-top:24px;display:inline-flex">📞 864-754-7291 — Call Now</a>
+        </div>
+        <div class="home-lead-form">
+          <LeadForm
+            client:load
+            title="Request Free Estimate"
+            subtitle="We'll call within 60 minutes to confirm."
+          />
+        </div>
+      </div>
+    </section>
+
+    <SiteFooter />
+  </div>
+
+  <style>
+    .faq-item {
+      border: 1.5px solid #d8e2f3;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .faq-summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #0D2D6E;
+      list-style: none;
+      user-select: none;
+    }
+    .faq-summary::-webkit-details-marker { display: none; }
+    .faq-chevron { flex-shrink: 0; transition: transform 0.2s; color: #0D2D6E; }
+    details[open] .faq-chevron { transform: rotate(180deg); }
+    .faq-body {
+      padding: 0 20px 16px;
+      color: #444;
+      line-height: 1.75;
+      font-size: 0.97rem;
+    }
+    .faq-body p { margin: 0; }
+  </style>
+</BaseLayout>

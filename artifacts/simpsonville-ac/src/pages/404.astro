@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SiteHeader } from '../components/SiteHeader';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+
+<BaseLayout
+  title="Page Not Found | Simpsonville AC Repair"
+  description="The page you're looking for doesn't exist. Visit Simpsonville AC Repair's homepage or call 864-754-7291."
+  canonical="/404/"
+>
+  <div class="page-root">
+    <div class="topbar">
+      <div class="tb-inner">
+        <span>📍 Serving Simpsonville &amp; Greenville Areas</span>
+        <span class="tb-div">|</span>
+        <span>📞 <a href="tel:8647547291" style="color:#fff;font-weight:700">864-754-7291</a></span>
+      </div>
+    </div>
+
+    <SiteHeader client:load />
+
+    <div style="min-height:60vh;display:flex;align-items:center;justify-content:center;padding:60px 20px;text-align:center">
+      <div style="max-width:520px">
+        <div style="font-size:5rem;margin-bottom:16px">❄️</div>
+        <h1 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:2rem;color:#0D2D6E;margin:0 0 16px">
+          Page Not Found
+        </h1>
+        <p style="color:#555;font-size:1.05rem;line-height:1.7;margin-bottom:32px">
+          This page doesn't exist or has been moved. Head back to the homepage or call us directly.
+        </p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+          <a href="/" class="cta-primary">← Back to Homepage</a>
+          <a href="tel:8647547291" class="cta-secondary">📞 864-754-7291</a>
+        </div>
+
+        <div style="margin-top:40px;display:flex;flex-direction:column;gap:12px">
+          <p style="font-weight:600;color:#0D2D6E;font-family:'Poppins',sans-serif">Popular Pages</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
+            {[
+              ["AC Repair", "/ac-repair/"],
+              ["Emergency AC Repair", "/emergency-ac-repair/"],
+              ["AC Installation", "/ac-installation/"],
+              ["Furnace Repair", "/furnace-repair/"],
+              ["AC Maintenance", "/ac-maintenance/"],
+              ["Free Estimate", "/free-estimate/"],
+            ].map(([label, href]) => (
+              <a href={href} style="background:#EEF4FF;color:#0D2D6E;padding:8px 14px;border-radius:6px;font-size:0.85rem;text-decoration:none;font-weight:600">{label}</a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <SiteFooter />
+  </div>
+</BaseLayout>

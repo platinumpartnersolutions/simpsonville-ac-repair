@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "wouter";
 
 export function Stars({ n = 5, size = 15, color = "#FFD700" }: { n?: number; size?: number; color?: string }) {
   return (
@@ -90,7 +89,7 @@ function DesktopNavItem({ item }: { item: NavItem }) {
   if ("href" in item) {
     return (
       <li>
-        <Link href={item.href} className="nav-link">{item.label}</Link>
+        <a href={item.href} className="nav-link">{item.label}</a>
       </li>
     );
   }
@@ -113,7 +112,7 @@ function DesktopNavItem({ item }: { item: NavItem }) {
       </button>
       <div className={`nav-dropdown${open ? " open" : ""}`} role="menu">
         {item.dropdown.map((child, i) => (
-          <Link
+          <a
             key={i}
             href={child.href}
             className="nav-dd-link"
@@ -121,7 +120,7 @@ function DesktopNavItem({ item }: { item: NavItem }) {
             onClick={() => setOpen(false)}
           >
             {child.label}
-          </Link>
+          </a>
         ))}
       </div>
     </li>
@@ -132,12 +131,6 @@ export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
-  const [location] = useLocation();
-
-  useEffect(() => {
-    setMobileOpen(false);
-    setExpanded(null);
-  }, [location]);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 4);
@@ -154,7 +147,7 @@ export function SiteHeader() {
     <>
       <header className={`site-header${scrolled ? " stuck" : ""}`}>
         <div className="hdr-combined">
-          <Link href="/" className="brand-block" onClick={() => setMobileOpen(false)}>
+          <a href="/" className="brand-block" onClick={() => setMobileOpen(false)}>
             <img
               src="/logo.png"
               alt="Simpsonville AC Repair logo"
@@ -166,7 +159,7 @@ export function SiteHeader() {
               <div className="brand-block-name">SIMPSONVILLE<br />AC REPAIR</div>
               <div className="brand-block-services">COOLING · HEATING · PLUMBING · ELECTRICAL</div>
             </div>
-          </Link>
+          </a>
 
           <div className="hdr-right-col">
             <div className="hdr-top-row">
@@ -198,7 +191,6 @@ export function SiteHeader() {
                 </a>
               </div>
 
-              {/* Hamburger — mobile only */}
               <button
                 className={`hamburger-btn${mobileOpen ? " is-open" : ""}`}
                 onClick={() => setMobileOpen(o => !o)}
@@ -212,7 +204,6 @@ export function SiteHeader() {
               </button>
             </div>
 
-            {/* Desktop nav */}
             <nav className="hdr-nav" aria-label="Main navigation">
               <ul className="nav-list">
                 {NAV_ITEMS.map((item, i) => (
@@ -223,16 +214,15 @@ export function SiteHeader() {
                 <a href="tel:8647547291" className="nav-tel-compact" aria-label="Call Simpsonville: 864-754-7291">
                   📞 864-754-7291
                 </a>
-                <Link href="/emergency-ac-repair/" className="book-now">
+                <a href="/emergency-ac-repair/" className="book-now">
                   Emergency Service
-                </Link>
+                </a>
               </div>
             </nav>
           </div>
         </div>
       </header>
 
-      {/* Mobile nav overlay */}
       <div
         id="mobile-nav"
         className={`mobile-nav${mobileOpen ? " mobile-nav-open" : ""}`}
@@ -240,28 +230,27 @@ export function SiteHeader() {
         role="dialog"
         aria-label="Navigation menu"
       >
-        {/* Phone CTA at top of mobile menu */}
         <div className="mobile-nav-top">
           <a href="tel:8647547291" className="mobile-call-btn">
             📞 Call 864-754-7291
           </a>
-          <Link href="/free-estimate/" className="mobile-estimate-btn" onClick={() => setMobileOpen(false)}>
+          <a href="/free-estimate/" className="mobile-estimate-btn" onClick={() => setMobileOpen(false)}>
             📅 Get Free Estimate
-          </Link>
+          </a>
         </div>
 
         <nav aria-label="Mobile navigation">
           {NAV_ITEMS.map((item, i) => {
             if ("href" in item) {
               return (
-                <Link
+                <a
                   key={i}
                   href={item.href}
                   className="mobile-nav-link"
                   onClick={() => setMobileOpen(false)}
                 >
                   {item.label}
-                </Link>
+                </a>
               );
             }
             const isOpen = expanded === item.label;
@@ -285,14 +274,14 @@ export function SiteHeader() {
                 {isOpen && (
                   <div className="mobile-nav-subnav">
                     {item.dropdown.map((child, j) => (
-                      <Link
+                      <a
                         key={j}
                         href={child.href}
                         className="mobile-nav-sublink"
                         onClick={() => setMobileOpen(false)}
                       >
                         {child.label}
-                      </Link>
+                      </a>
                     ))}
                   </div>
                 )}
@@ -307,7 +296,6 @@ export function SiteHeader() {
         </div>
       </div>
 
-      {/* Backdrop */}
       {mobileOpen && (
         <div
           className="mobile-nav-backdrop"

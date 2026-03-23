@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SiteHeader } from '../components/SiteHeader';
+import SiteFooter from '../components/SiteFooter.astro';
+import { LeadForm } from '../components/LeadForm';
+---
+
+<BaseLayout
+  title="Free HVAC Estimate Simpsonville SC | No Obligation | 864-754-7291"
+  description="Get a free HVAC estimate in Simpsonville, SC. No obligation, licensed technicians, written quotes. Call 864-754-7291 or fill out the form."
+  canonical="/free-estimate/"
+>
+  <div class="page-root">
+    <div class="topbar">
+      <div class="tb-inner">
+        <span>📍 Serving Simpsonville &amp; Greenville Areas</span>
+        <span class="tb-div">|</span>
+        <span>📞 <a href="tel:8647547291" style="color:#fff;font-weight:700">864-754-7291</a></span>
+      </div>
+    </div>
+
+    <SiteHeader client:load />
+
+    <div class="inner-hero">
+      <div class="inner-hero-inner">
+        <nav class="inner-hero-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span> › </span>
+          <span>Free Estimate</span>
+        </nav>
+        <h1 class="inner-h1">Free HVAC Estimate in Simpsonville, SC</h1>
+        <a href="tel:8647547291" class="inner-cta-phone">
+          📞 <strong>864-754-7291</strong> — Call for a Free Quote
+        </a>
+      </div>
+    </div>
+
+    <div class="inner-body">
+      <div class="inner-content-grid">
+        <main class="inner-main">
+          <p style="font-size:1.05rem;line-height:1.8;color:#444;margin-bottom:28px">
+            Getting a free HVAC estimate in Simpsonville is simple — call 864-754-7291 or fill out the form on this page, and a licensed contractor will call you back within 60 minutes to schedule a visit. All estimates are written, itemized, and provided before any work begins. There is no obligation to proceed.
+          </p>
+
+          <h2 class="inner-h2">What's Included in a Free Estimate</h2>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:28px">
+            {[
+              { icon: "📋", title: "Written Quote", body: "You receive a written, itemized quote with labor and parts clearly separated. No verbal estimates that can change." },
+              { icon: "🔍", title: "Full System Assessment", body: "For replacement and installation estimates, the technician assesses your current system, ductwork, and home size." },
+              { icon: "📐", title: "Load Calculation", body: "New system installations include a Manual J load calculation to correctly size the system for your home — the most important factor for efficiency." },
+              { icon: "💬", title: "Multiple Options", body: "You receive multiple equipment options at different price and efficiency levels — the decision is always yours." },
+              { icon: "🚫", title: "No Obligation", body: "A free estimate is just that — free. You are not obligated to proceed and there is no pressure to make a decision on the spot." },
+              { icon: "📅", title: "Fast Scheduling", body: "Most estimates are scheduled within 1–2 business days. Emergency assessments are available same-day." },
+            ].map(card => (
+              <div style="background:#fff;border:1.5px solid #d8e2f3;border-radius:12px;padding:18px">
+                <div style="font-size:2rem;margin-bottom:8px">{card.icon}</div>
+                <h3 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:0.95rem;color:#0D2D6E;margin:0 0 6px">{card.title}</h3>
+                <p style="font-size:0.87rem;color:#555;line-height:1.6;margin:0">{card.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <h2 class="inner-h2">Services That Qualify for Free Estimates</h2>
+          <ul style="list-style:none;padding:0;margin:0 0 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px">
+            {[
+              "New AC installation",
+              "AC replacement",
+              "Heat pump installation or replacement",
+              "Furnace replacement",
+              "Ductless mini split installation",
+              "Ductwork repair or replacement",
+              "Any repair over $300",
+            ].map(item => (
+              <li style="background:#f7f9fd;border-radius:8px;padding:10px 14px;font-size:0.9rem;color:#333">✓ {item}</li>
+            ))}
+          </ul>
+
+          <div style="background:linear-gradient(90deg,#0D2D6E,#1A7AC4);border-radius:12px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:28px">
+            <div style="color:#fff">
+              <strong style="font-family:'Poppins',sans-serif;font-weight:800;font-size:1rem;display:block">Ready for your free estimate?</strong>
+              <span style="font-size:0.85rem;opacity:.9">Call now or use the form — we'll respond within 60 minutes</span>
+            </div>
+            <a href="tel:8647547291" class="cta-primary" style="background:#CC2229;border-color:#CC2229">📞 864-754-7291</a>
+          </div>
+
+          <div class="inner-related-links">
+            <h3>More Information</h3>
+            <div class="inner-related-grid">
+              <a href="/ac-installation/" class="inner-related-card"><span>📦</span> AC Installation Costs</a>
+              <a href="/ac-replacement/" class="inner-related-card"><span>🔄</span> AC Replacement Costs</a>
+              <a href="/ductless-mini-split/" class="inner-related-card"><span>🎯</span> Mini Split Costs</a>
+              <a href="/contact/" class="inner-related-card"><span>📞</span> Contact Us</a>
+            </div>
+          </div>
+        </main>
+
+        <aside class="inner-sidebar">
+          <LeadForm client:load title="Get Free Estimate" subtitle="No obligation — we'll call within 60 minutes." dark />
+          <div style="background:#f7f9fd;border:1.5px solid #d8e2f3;border-radius:12px;padding:16px;margin-top:16px">
+            <h4 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:0.9rem;color:#0D2D6E;margin:0 0 10px">Our Promise</h4>
+            <div style="font-size:0.85rem;color:#333;padding:4px 0;border-bottom:1px solid #e8eef8">✅ Written quote before any work</div>
+            <div style="font-size:0.85rem;color:#333;padding:4px 0;border-bottom:1px solid #e8eef8">✅ No obligation to proceed</div>
+            <div style="font-size:0.85rem;color:#333;padding:4px 0;border-bottom:1px solid #e8eef8">✅ SC-licensed contractors only</div>
+            <div style="font-size:0.85rem;color:#333;padding:4px 0;border-bottom:1px solid #e8eef8">✅ Honest repair vs replace guidance</div>
+            <div style="font-size:0.85rem;color:#333;padding:4px 0">⭐ 4.8 Google Rating (127+ reviews)</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <SiteFooter />
+  </div>
+</BaseLayout>
