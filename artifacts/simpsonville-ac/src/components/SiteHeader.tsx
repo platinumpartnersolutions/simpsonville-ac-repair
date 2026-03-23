@@ -149,7 +149,7 @@ export function SiteHeader() {
         <div className="hdr-combined">
           <a href="/" className="brand-block" onClick={() => setMobileOpen(false)}>
             <img
-              src="/logo.png"
+              src="/logo-opt.webp"
               alt="Simpsonville AC Repair logo"
               className="brand-block-logo"
               width={96}

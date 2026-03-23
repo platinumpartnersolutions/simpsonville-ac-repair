@@ -12,11 +12,11 @@
 }
 
 @keyframes float      { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-@keyframes pulseBadge { 0%,100%{box-shadow:0 6px 22px rgba(204,34,41,.5)} 50%{box-shadow:0 14px 38px rgba(204,34,41,.75)} }
+@keyframes pulseBadge { 0%,100%{filter:drop-shadow(0 4px 12px rgba(204,34,41,.45))} 50%{filter:drop-shadow(0 8px 24px rgba(204,34,41,.70))} }
 @keyframes slideIn    { from{opacity:0;transform:translateX(20px)} to{opacity:1;transform:none} }
 @keyframes btnShimmer { 0%{transform:translateX(-140%) skewX(-18deg);opacity:0} 40%{opacity:1} 60%{opacity:1} 100%{transform:translateX(300%) skewX(-18deg);opacity:0} }
-@keyframes btnGlow    { 0%,100%{box-shadow:0 6px 22px rgba(204,34,41,.52)} 50%{box-shadow:0 8px 34px rgba(204,34,41,.88),0 0 0 5px rgba(204,34,41,.13)} }
-@keyframes emergencyGlow { 0%,100%{box-shadow:0 4px 18px rgba(204,34,41,.6)} 50%{box-shadow:0 6px 44px rgba(204,34,41,1),0 0 0 9px rgba(204,34,41,.22)} }
+@keyframes btnGlow    { 0%,100%{filter:drop-shadow(0 4px 10px rgba(204,34,41,.48))} 50%{filter:drop-shadow(0 6px 24px rgba(204,34,41,.85))} }
+@keyframes emergencyGlow { 0%,100%{filter:drop-shadow(0 3px 10px rgba(204,34,41,.55))} 50%{filter:drop-shadow(0 5px 30px rgba(204,34,41,.95))} }
 @keyframes iconFloat  { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-5px) scale(1.04)} }
 
 *,*::before,*::after { box-sizing:border-box }
@@ -253,11 +253,11 @@ ul { list-style:none; margin:0; padding:0 }
 .footer-cta-btn { display:block; background:var(--red); color:#fff; font-family:'Poppins',sans-serif; font-weight:800; font-size:14px; padding:12px 18px; border-radius:6px; text-align:center; box-shadow:0 4px 14px rgba(204,34,41,.4); transition:background .2s }
 .footer-cta-btn:hover { background:var(--red-dk); color:#fff }
 .footer-disclaimer { border-top:1px solid rgba(255,255,255,.08); padding:20px 0 0; max-width:1200px; margin:0 auto }
-.footer-disclaimer p { font-size:11px; color:#4a6a94; line-height:1.7; margin:0 }
-.footer-bottom { max-width:1200px; margin:0 auto; border-top:1px solid rgba(255,255,255,.08); padding:18px 0 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; font-size:12px; color:#4a6a94 }
+.footer-disclaimer p { font-size:11px; color:#7a9cc4; line-height:1.7; margin:0 }
+.footer-bottom { max-width:1200px; margin:0 auto; border-top:1px solid rgba(255,255,255,.08); padding:18px 0 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; font-size:12px; color:#7a9cc4 }
 .footer-bottom-links { display:flex; gap:18px }
-.fbl { font-size:12px; color:#4a6a94; transition:color .2s }
-.fbl:hover { color:#7a9cc4 }
+.fbl { font-size:12px; color:#7a9cc4; transition:color .2s }
+.fbl:hover { color:#a8c4e8 }
 .footer-flag-stripe { height:6px; background:linear-gradient(90deg,var(--red) 33%,#fff 33%,#fff 66%,var(--navy) 66%) }
 
 /* RESPONSIVE */
@@ -289,7 +289,7 @@ ul { list-style:none; margin:0; padding:0 }
 .trust-badge-icon { font-size:20px; display:flex; align-items:center }
 .trust-badge-icon svg { display:block }
 .trust-badge-label { font-family:'Poppins',sans-serif; font-weight:700; font-size:12.5px; color:#fff; line-height:1.2 }
-.trust-badge-sub { font-size:11px; color:rgba(255,255,255,.55) }
+.trust-badge-sub { font-size:11px; color:rgba(255,255,255,.82) }
 
 /* ─── ALL SERVICES GRID ─── */
 .all-services-section { padding:64px 24px; background:#fff }

@@ -97,7 +97,7 @@ export const LOCAL_BUSINESS_SCHEMA = {
   "name": "Simpsonville AC Repair",
   "url": "https://simpsonvilleacrepair.com",
   "telephone": "+18647547291",
-  "image": "https://simpsonvilleacrepair.com/van.jpeg",
+  "image": "https://simpsonvilleacrepair.com/van-hero.webp",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Simpsonville",
