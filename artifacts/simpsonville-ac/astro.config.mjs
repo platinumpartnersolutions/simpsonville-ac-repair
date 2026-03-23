@@ -21,7 +21,7 @@ export default defineConfig({
       },
     },
     server: {
-      allowedHosts: true,
+      allowedHosts: ['.replit.dev', 'localhost', '127.0.0.1'],
     },
   },
 });

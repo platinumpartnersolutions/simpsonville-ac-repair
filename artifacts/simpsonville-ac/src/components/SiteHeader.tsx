@@ -227,8 +227,10 @@ export function SiteHeader() {
         id="mobile-nav"
         className={`mobile-nav${mobileOpen ? " mobile-nav-open" : ""}`}
         aria-hidden={!mobileOpen}
+        aria-modal={mobileOpen ? "true" : undefined}
         role="dialog"
         aria-label="Navigation menu"
+        {...(!mobileOpen ? { inert: true } : {})}
       >
         <div className="mobile-nav-top">
           <a href="tel:8647547291" className="mobile-call-btn">

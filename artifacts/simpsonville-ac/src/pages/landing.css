@@ -21,6 +21,8 @@
 
 *,*::before,*::after { box-sizing:border-box }
 html { scroll-behavior:smooth }
+.skip-link { position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:-1 }
+.skip-link:focus { position:fixed;top:0;left:0;width:auto;height:auto;padding:12px 20px;background:var(--navy);color:#fff;font-weight:700;font-size:1rem;z-index:99999;text-decoration:none;border-bottom-right-radius:6px;overflow:visible }
 .page-root { font-family:'Roboto',sans-serif; font-size:15px; color:#333; background:#fff; line-height:1.6 }
 a { text-decoration:none; transition:color .2s,opacity .2s }
 p { margin:0 0 14px; line-height:1.78 }
