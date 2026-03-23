@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SiteHeader } from '../components/SiteHeader';
+import SiteFooter from '../components/SiteFooter.astro';
+
+const SECTIONS = [
+  {
+    heading: "Main Pages",
+    icon: "🏠",
+    links: [
+      { label: "Home", href: "/" },
+      { label: "About Us", href: "/about/" },
+      { label: "Contact Us", href: "/contact/" },
+      { label: "Free Estimate", href: "/free-estimate/" },
+    ],
+  },
+  {
+    heading: "HVAC Services",
+    icon: "❄️",
+    links: [
+      { label: "AC Repair", href: "/ac-repair/" },
+      { label: "AC Installation", href: "/ac-installation/" },
+      { label: "AC Replacement", href: "/ac-replacement/" },
+      { label: "AC Maintenance", href: "/ac-maintenance/" },
+      { label: "HVAC Repair", href: "/hvac-repair/" },
+      { label: "Heat Pump Repair", href: "/heat-pump-repair/" },
+      { label: "Furnace Repair", href: "/furnace-repair/" },
+      { label: "Ductless Mini Split", href: "/ductless-mini-split/" },
+    ],
+  },
+  {
+    heading: "Emergency Services",
+    icon: "🚨",
+    links: [
+      { label: "Emergency AC Repair", href: "/emergency-ac-repair/" },
+      { label: "Emergency Furnace Repair", href: "/emergency-furnace-repair/" },
+      { label: "Emergency Heat Pump Repair", href: "/emergency-heat-pump-repair/" },
+    ],
+  },
+  {
+    heading: "Problems We Fix",
+    icon: "🔧",
+    links: [
+      { label: "AC Not Cooling", href: "/ac-not-cooling/" },
+      { label: "AC Won't Turn On", href: "/ac-not-turning-on/" },
+      { label: "AC Leaking Water", href: "/ac-leaking-water/" },
+      { label: "AC Making Noise", href: "/ac-making-noise/" },
+      { label: "High Electric Bill", href: "/high-electric-bill/" },
+    ],
+  },
+  {
+    heading: "Service Areas",
+    icon: "📍",
+    links: [
+      { label: "Simpsonville, SC", href: "/simpsonville-sc/" },
+      { label: "Greenville, SC", href: "/greenville-sc/" },
+      { label: "Mauldin, SC", href: "/mauldin-sc/" },
+      { label: "Fountain Inn, SC", href: "/fountain-inn-sc/" },
+    ],
+  },
+  {
+    heading: "Legal",
+    icon: "📄",
+    links: [
+      { label: "Privacy Policy", href: "/privacy-policy/" },
+      { label: "Terms of Service", href: "/terms-of-service/" },
+      { label: "Sitemap", href: "/sitemap/" },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Sitemap | Simpsonville AC Repair"
+  description="Full sitemap for Simpsonville AC Repair — browse all HVAC service pages, service area pages, and company information."
+  canonical="/sitemap/"
+>
+  <div class="page-root">
+    <div class="topbar">
+      <div class="tb-inner">
+        <span>📍 Serving Simpsonville &amp; Greenville Areas</span>
+        <span class="tb-div">|</span>
+        <span>📞 <a href="tel:8647547291" style="color:#fff;font-weight:700">864-754-7291</a></span>
+      </div>
+    </div>
+
+    <SiteHeader client:load />
+
+    <div class="inner-hero">
+      <div class="inner-hero-inner">
+        <nav class="inner-hero-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span> › </span>
+          <span>Sitemap</span>
+        </nav>
+        <h1 class="inner-h1">Sitemap</h1>
+        <p style="color:rgba(255,255,255,.8);font-size:0.9rem;margin-top:6px">All pages on Simpsonville AC Repair</p>
+      </div>
+    </div>
+
+    <div class="inner-body">
+      <div style="max-width:960px;margin:0 auto;padding:48px 24px 64px">
+        <main id="main-content">
+
+          <p style="color:#555;line-height:1.8;margin-bottom:36px;font-size:1rem">
+            Below is a complete listing of all pages on simpsonvilleacrepair.com. Looking for HVAC service in Simpsonville, SC? Call us at <a href="tel:8647547291" style="color:#1A7AC4;font-weight:700">864-754-7291</a> or <a href="/free-estimate/" style="color:#1A7AC4;font-weight:700">request a free estimate</a>.
+          </p>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px">
+            {SECTIONS.map(section => (
+              <div style="background:#fff;border:1.5px solid #d8e2f3;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(13,45,110,.06)">
+                <div style="background:#0D2D6E;padding:14px 20px;display:flex;align-items:center;gap:10px">
+                  <span style="font-size:1.2rem">{section.icon}</span>
+                  <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:0.95rem;color:#fff;margin:0">{section.heading}</h2>
+                </div>
+                <ul style="list-style:none;margin:0;padding:12px 0">
+                  {section.links.map(link => (
+                    <li style="border-bottom:1px solid #f0f4fb">
+                      <a
+                        href={link.href}
+                        style="display:block;padding:10px 20px;color:#1A7AC4;font-size:0.9rem;font-weight:500;transition:background .15s;text-decoration:none"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div style="background:#EEF4FF;border-left:4px solid #0D2D6E;border-radius:8px;padding:18px 22px;margin-top:40px">
+            <p style="margin:0;color:#2c3e6b;line-height:1.75;font-size:0.9rem">
+              <strong>Disclaimer:</strong> Simpsonville AC Repair is a local lead generation and referral service, not a licensed HVAC contractor. We connect homeowners with pre-screened, licensed, and insured HVAC contractors in the Simpsonville, SC area. All HVAC work is performed by independent third-party contractors. We may receive compensation for referrals.
+            </p>
+          </div>
+
+        </main>
+      </div>
+    </div>
+
+    <SiteFooter />
+  </div>
+</BaseLayout>
