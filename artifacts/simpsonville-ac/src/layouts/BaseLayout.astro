@@ -11,7 +11,43 @@ interface Props {
 
 const { title, description, canonical, schema, ogImage = '/van-hero.webp' } = Astro.props;
 const canonicalUrl = `https://simpsonvilleacrepair.com${canonical}`;
-const schemaArr = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Simpsonville AC Repair",
+  "url": "https://simpsonvilleacrepair.com",
+  "telephone": "+18647547291",
+  "image": "https://simpsonvilleacrepair.com/logo.png",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Simpsonville",
+    "addressRegion": "SC",
+    "postalCode": "29681",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 34.7376,
+    "longitude": -82.2543
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "127"
+  },
+  "sameAs": ["https://simpsonvilleacrepair.com"]
+};
+
+const pageSchemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+const schemaArr = [localBusinessSchema, ...pageSchemas];
 ---
 
 <!doctype html>
@@ -57,7 +93,8 @@ const schemaArr = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
       <script type="application/ld+json" set:html={JSON.stringify(s)} />
     ))}
 
-    <script defer data-cfasync="false" src="//cdn.callrail.com/companies/949407482/a94a6edcb0c7de39e3e1/12/swap.js"></script>
+    <link rel="dns-prefetch" href="//cdn.callrail.com" />
+    <script defer type="text/javascript" src="//cdn.callrail.com/companies/712304613/09f45d063cc53d7fae4b/12/swap.js"></script>
   </head>
   <body>
     <slot />

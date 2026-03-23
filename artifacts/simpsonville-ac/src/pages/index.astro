@@ -99,7 +99,8 @@ const FAQ_ITEMS = [
 
     <section class="hero" aria-label="Hero — AC repair in Simpsonville SC">
       <picture>
-        <source srcset="/van-hero.webp" type="image/webp" />
+        <source media="(max-width: 639px)" srcset="/van-hero-mobile.webp" type="image/webp" />
+        <source media="(min-width: 640px)" srcset="/van-hero.webp" type="image/webp" />
         <img
           src="/van-hero.webp"
           alt="Simpsonville AC Repair — HVAC service van in Simpsonville SC"
